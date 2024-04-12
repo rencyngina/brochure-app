@@ -8,6 +8,12 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* to remove the scroll */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -16,18 +22,47 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+button-1 {
+  padding: 0.8em 1.8em;
+  border: 2px solid #03234d;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: white;
+ }
+ 
+ button-1::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #03234d;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ button-1:hover::before {
+  width: 105%;
+ }
+ 
+ button-1:hover {
+  color: #fff;
+ }
+ 
