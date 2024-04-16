@@ -1,10 +1,20 @@
-import React from 'react'
+import React from 'react';
+import FloatingObject2 from './floating-object2';
+import Image from 'next/image';
 
 const Section2 = () => {
+  
   return (
-    <div className='h-[50vh] bg-white-smoke'>section2
-    </div>
-  )
-}
+    <>
+      <FloatingObject2 />
+      <div className='bg-white w-full  lg:h[85vh]'>
+   { /*<div>
+      <Image src="/image/byron.png" alt=''/>
+  </div>*/}
+      </div>
+    </>
+  );
+};
 
 export default Section2;
+

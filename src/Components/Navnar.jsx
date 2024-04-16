@@ -23,16 +23,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex backdrop-blur-sm bg-[#03234d]/95 sticky top-0 z-10  h-[10vh] items-center justify-between px-8">
+    <nav className="lg:flex backdrop-blur-sm w-full bg-[#03234d]/95 sticky top-0 z-20  h-[10vh] lg:items-center lg:justify-between px-8 py-4">
       <div>
         <Link href="/" passHref>
-          <div className="cursor-pointer">
-            <Image src="/images/logo.svg" alt="logo" width={150} height={100} />
+          <div className="cursor-pointer ">
+            <Image className='' src="/images/logo.svg" alt="logo" width={150} height={100} />
           </div>
         </Link>
       </div>
 
-      <div className="flex flex-grow text-yellow-300 justify-center gap-10 text-lg">
+      <div className="lg:flex lg:flex-grow hidden text-yellow-300 justify-center gap-10 text-lg">
         <Link href="/" passHref>
           <div
             className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer"
@@ -93,13 +93,13 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div className="flex gap-4">
-        <button className="mt-4 text-sm text-white py-2 px-2 hover:bg-yellow-500 transition duration-300  border border-yellow-300">
+      <div className="gap-4 mb-3 lg:flex hidden">
+        <button className="mt-4 text-sm text-white py-1 px-5 hover:bg-yellow-500 transition duration-300  border border-yellow-300">
           Client Portal
         </button>
         <a href="mailto:info@royfordlaw.com">
           <button
-            className="mt-4 text-white py-2 px-3 hover:bg-[#03234d] bg-yellow-500 transition duration-300  border border-yellow-300"
+            className="mt-4 text-white py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300  border border-yellow-300"
           >
             Contact Us
           </button>
