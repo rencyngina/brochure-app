@@ -30,7 +30,7 @@ const Section1 = () => {
   return (
     <>
     <FloatingObject />
-      <div className="bg-gray-100 w-full  h-auto lg:h-[85vh] xl:h-[89vh]  ">
+      <div className="bg-white w-full  h-auto lg:h-[85vh] xl:h-[89vh]  ">
         <div className="container mx-auto lg:flex lg:items-center lg:justify-between lg:gap-8 xl:gap-10 lg:mb-0 p-6 xl:p-12 lg:p-8">
           <div className="lg:w-1/2 relative ">
             <Slider {...settings} className="w-full lg:h-[80vh]">
