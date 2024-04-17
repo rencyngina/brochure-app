@@ -30,7 +30,7 @@ const Section1 = () => {
     <>
    
       <div className="bg-white w-full  h-auto lg:h-[90vh] xl:h-[110vh]  ">
-        <div className="bg-red-400  lg:flex lg:items-center lg:justify-between lg:gap-10 xl:gap-20 lg:mb-0 p-6 xl:p-16 lg:p-8">
+        <div className="bgwhite  lg:flex lg:items-center lg:justify-between lg:gap-10 xl:gap-20 lg:mb-0 p-6 xl:p-16 lg:p-8">
           <div className="lg:w-1/2 relative ">
             <Slider {...settings} className="w-full lg:h-[60vh]">
               {partners.map((partner, index) => (
@@ -51,7 +51,7 @@ const Section1 = () => {
             <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
               Our Partners
             </h1>
-            <div className="w-20 h-1 bg-[#A65A2A] mb-6"></div>
+            <div className="w-20 h-1 bg-white mb-6"></div>
             <p className="text-yellow-500 text-lg lg:text-xl xl:text-2xl mb-4">
               Our lawyers are enthusiastic, committed, flexible, and
               commercially minded.
