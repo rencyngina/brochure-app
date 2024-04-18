@@ -1,20 +1,107 @@
-import React from 'react';
-import FloatingObject2 from './floating-object2';
+import React from "react";
+import FloatingObject2 from "./floating-object2";
+import Image from "next/image";
 
 const Bluesection = () => {
+  // Data for cards
+  const cardsData = [
+    {
+      title: "Financial Planning Services",
+      description:
+        "We offer comprehensive wealth management and financial planning services to pre-retirees, retirees, federal employees, and business owners.",
+      imageUrl: "/images/Group-3-1.png",
+    },
+    {
+      title: "Risk Management & Insurance",
+      description:
+        "Make sure you’re shielded with our insurance and risk management services, including insurance needs analysis, evaluation of risk exposures, and more.",
+      imageUrl: "/images/Group-1.png",
+    },
+    {
+      title: "Investment Planning",
+      description:
+        "We offer investment advice and help develop investing strategies with our clients’ goals and risk level in mind.",
+      imageUrl: "/images/Group-4-1.png",
+    },
+    {
+      title: "Retirement Planning",
+      description:
+        "Retirement is an important milestone and requires diligent planning. We provide retirement planning services, including retirement needs analysis, Social Security maximization, and more.",
+      imageUrl: "/images/Group-5.png",
+    },
+  ];
+
   return (
-    <> 
-    <div className=''>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
-        <path fill="#03234d" fillOpacity="1" d="M0,64L26.7,80C53.3,96,107,128,160,117.3C213.3,107,267,53,320,42.7C373.3,32,427,64,480,90.7C533.3,117,587,139,640,133.3C693.3,128,747,96,800,106.7C853.3,117,907,171,960,192C1013.3,213,1067,203,1120,186.7C1173.3,171,1227,149,1280,128C1333.3,107,1387,85,1413,74.7L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path>
-      </svg>
-      <div className='bg-[#03234d] w-full h-auto lg:h-[85vh] xl:h-[89vh] '>
-        {/* Content of your section */}
+    <>
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+          /* Define CSS rules using the Playfair Display font */
+          body {
+            font-family: 'Playfair Display', serif;
+          }
+          /* Apply Playfair Display font to card titles */
+          .card-title {
+            font-family: 'Playfair Display', serif;
+          }
+          /* Apply Playfair Display font to card descriptions */
+          .card-description {
+            font-family: 'Playfair Display', serif;
+          }
+        `}
+      </style>
+      <div className="bg-[#03234d] w-full min-h-screen flex flex-col justify-center items-center">
+        <h1 className="text-xl lg:text-2xl font-bold mt-10 text-yellow-500">
+          Our Services
+        </h1>
+        <p className="text-white text-center text-2xl mt-4 lg:text-4xl lg:mt-6 lg:px-20">
+          We are fiduciaries and independent,
+          <br />
+          fee-based financial advisors.
+        </p>
+        <p className="text-white text-center text-lg mt-4 lg:text-xl lg:mt-6 lg:px-20">
+          Every financial plan we create is unique.
+        </p>
+        {/* Dynamic cards */}
+        <div className="flex flex-wrap justify-center gap-8 mt-10 px-4 mb-10 lg:px-40 lg:mb-20 lg:mt-20">
+          {cardsData.map((card, index) => (
+            <div
+              key={index}
+              className="relative w-full md:w-1/2 lg:w-1/2 xl:w-1/4 flex flex-col bg-white bg-clip-border text-gray-700 shadow-md transition duration-300 hover:shadow-lg"
+            >
+              <div className="relative -mt-6 h-40 overflow-hidden bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                <Image
+                  src={card.imageUrl}
+                  alt={card.title}
+                  width={40}
+                  height={20}
+                  className="w-35 h-30"
+                />
+              </div>
+              <div className="p-6">
+                <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased card-title">
+                  {card.title}
+                </h5>
+                <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased card-description">
+                  {card.description}
+                </p>
+              </div>
+              <div className="p-8 pt-2 opacity-0 absolute top-2 left-0 w-full h-full flex items-center justify-center hover:opacity-100">
+                <button
+                  data-ripple-light="true"
+                  type="button"
+                  className="select-none bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-    <div className=''>
-    <FloatingObject2 />
-  </div>
+      <div>
+        <FloatingObject2 />
+      </div>
     </>
   );
 };
