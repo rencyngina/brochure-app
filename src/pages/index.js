@@ -6,6 +6,7 @@ import Hero from "@/Components/HeroSection/Hero";
 import Section1 from "../Components/section1";
 import Section2 from "@/Components/section2";
 import Bluesection from "@/Components/bluesection";
+import Section3 from "@/Components/section3";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,6 +19,7 @@ export default function Home() {
       <Section1 />
       <Bluesection />
       <Section2 />
+      <Section3 />
       <Footer />
     </main>
   );
