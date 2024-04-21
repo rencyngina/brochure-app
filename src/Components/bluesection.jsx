@@ -1,7 +1,7 @@
 import React from "react";
 import FloatingObject2 from "./floating-object2";
 import Image from "next/image";
-
+// import '../styles/global.css'
 const Bluesection = () => {
   // Data for cards
   const cardsData = [
@@ -33,23 +33,7 @@ const Bluesection = () => {
 
   return (
     <>
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-          /* Define CSS rules using the Playfair Display font */
-          body {
-            font-family: 'Playfair Display', serif;
-          }
-          /* Apply Playfair Display font to card titles */
-          .card-title {
-            font-family: 'Playfair Display', serif;
-          }
-          /* Apply Playfair Display font to card descriptions */
-          .card-description {
-            font-family: 'Playfair Display', serif;
-          }
-        `}
-      </style>
+      
       <div className="bg-[#03234d] w-full min-h-screen flex flex-col justify-center items-center">
         <h1 className="text-xl lg:text-2xl font-bold mt-10 text-yellow-500">
           Our Services

@@ -16,15 +16,6 @@ const Section1 = () => {
 
   return (
     <>
-    <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-          /* Define CSS rules using the Playfair Display font */
-          body {
-            font-family: 'Playfair Display', serif;
-          }
-        `}
-      </style>
     <section className="bg-white py-5 lg:py-20">
       <div className="mb-10 lg:mb-20 lg:justify-center lg:items-center lg:text-center">
         <p className="text-sm lg:text-xl leading-normal px-2 font-semibold text-gray-800 max-w-4xl mx-auto">
@@ -34,7 +25,7 @@ const Section1 = () => {
           using a planning-based and consultative approach.{" "}
         </p>
       </div>
-      <div className="container shadow-lg lg:border-2 lg:border-yellow-500 mx-auto gap-4 flex flex-col lg:flex-row lg:items-center lg:justify-between relative p-4 lg:p-10 mb-8 lg:mb-20">
+      <div className="container shadow-lg lg:border-2  mx-auto gap-4 flex flex-col lg:flex-row lg:items-center lg:justify-between relative p-4 lg:p-10 mb-8 lg:mb-20">
 
         <div className="lg:mr-6 relative z-10">
           <div className="bg-blue-900 shadow-lg p-6 z-0">
