@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
 import FloatingObject2 from "./floating-object2";
 import { motion, useAnimation } from "framer-motion";
 
 const Bluesection = () => {
   // Data for cards
-  const cardsData = [
+  const cardsData = useMemo(() => [
     {
       title: "Financial Planning Services",
       description:
@@ -30,7 +30,7 @@ const Bluesection = () => {
         "Retirement is an important milestone and requires diligent planning. We provide retirement planning services, including retirement needs analysis, Social Security maximization, and more.",
       imageUrl: "/images/Group-5.png",
     },
-  ];
+  ], []);
 
   // Initialize controls array using useAnimation hook
   const controls = cardsData.map(() => useAnimation());
@@ -65,7 +65,7 @@ const Bluesection = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [cardsData, controls, isVisible]);
 
   return (
     <>
