@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import FloatingObject2 from "./floating-object2";
@@ -32,7 +33,9 @@ const Bluesection = () => {
     },
   ];
 
+  // Initialize controls array using useAnimation hook
   const controls = cardsData.map(() => useAnimation());
+
   const [isVisible, setIsVisible] = useState(Array(cardsData.length).fill(false));
 
   useEffect(() => {
