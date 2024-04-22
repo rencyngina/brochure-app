@@ -12,7 +12,7 @@ import Section4 from "@/Components/section4";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const Home = () => {
   return (
     <main>
       <Navbar />
@@ -26,3 +26,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home;

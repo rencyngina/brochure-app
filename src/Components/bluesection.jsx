@@ -1,7 +1,8 @@
-import React from "react";
-import FloatingObject2 from "./floating-object2";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-// import '../styles/global.css'
+import FloatingObject2 from "./floating-object2";
+import { motion, useAnimation } from "framer-motion";
+
 const Bluesection = () => {
   // Data for cards
   const cardsData = [
@@ -31,11 +32,43 @@ const Bluesection = () => {
     },
   ];
 
+  const controls = cardsData.map(() => useAnimation());
+  const [isVisible, setIsVisible] = useState(Array(cardsData.length).fill(false));
+
+  useEffect(() => {
+    const handleScroll = () => {
+      cardsData.forEach((_, index) => {
+        const element = document.getElementById(`card-${index}`);
+        if (element) {
+          const elementTop = element.getBoundingClientRect().top;
+          const screenHeight = window.innerHeight;
+          if (elementTop < screenHeight * 0.9 && !isVisible[index]) {
+            controls[index].start({
+              opacity: 1,
+              y: 0,
+              transition: { delay: index * 0.3, duration: 0.5, ease: "easeOut" },
+            });
+            setIsVisible((prev) => {
+              const newVisibility = [...prev];
+              newVisibility[index] = true;
+              return newVisibility;
+            });
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      
       <div className="bg-[#03234d] w-full min-h-screen flex flex-col justify-center items-center">
-        <h1 className="text-xl lg:text-2xl font-bold mt-10 text-yellow-500">
+        <h1 className="text-xl lg:text-3xl font-bold mt-10 text-yellow-500">
           Our Services
         </h1>
         <p className="text-white text-center text-2xl mt-4 lg:text-4xl lg:mt-6 lg:px-20">
@@ -49,9 +82,12 @@ const Bluesection = () => {
         {/* Dynamic cards */}
         <div className="flex flex-wrap justify-center gap-8 mt-10 px-4 mb-10 lg:px-40 lg:mb-20 lg:mt-20">
           {cardsData.map((card, index) => (
-            <div
+            <motion.div
               key={index}
+              id={`card-${index}`}
               className="relative w-full md:w-1/2 lg:w-1/2 xl:w-1/4 flex flex-col bg-white bg-clip-border text-gray-700 shadow-md transition duration-300 hover:shadow-lg"
+              initial={{ opacity: 0, y: 100 }}
+              animate={controls[index]}
             >
               <div className="relative -mt-6 h-40 overflow-hidden bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
                 <Image
@@ -79,7 +115,7 @@ const Bluesection = () => {
                   Learn More
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

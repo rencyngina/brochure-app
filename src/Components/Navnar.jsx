@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
+import { IoLogInOutline } from "react-icons/io5";
+
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -30,7 +32,8 @@ const Navbar = () => {
     ) {
       setIsDropdownOpen(false);
     }
-  };
+};
+
 
   const handleMobileNavToggle = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
@@ -119,9 +122,14 @@ const Navbar = () => {
         </div>
       </div>
       <div className="hidden lg:flex lg:gap-4 gap-2 lg:mb-10 mt-6">
-        <button className="mt-4 text-sm text-white py-1 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300">
-          Client Portal
-        </button>
+      <div className="flex ">
+      <button className="mt-4 text-md text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex">
+        <div className="" >
+              Client Portal
+            </div>
+            <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px'}} />
+      </button>
+      </div>
         <a href="mailto:info@royfordlaw.com">
           <button className="mt-4 text-white py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
             Contact Us

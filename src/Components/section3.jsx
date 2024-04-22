@@ -61,7 +61,7 @@ const Section3 = () => {
       </div>
       <div className="container mx-auto lg:py-8 py-4">
         <div className=" lg:mt-10 lg:mb-8 p-3">
-          <p className="text-2xl lg:text-3xl text-yellow-500 ">Articles</p>
+          <p className="text-2xl lg:text-3xl text-yellow-500 font-bold">Articles</p>
           <h1 className="mt-10 text-3xl lg:text-4xl leading-tight">
             Articles that might
             <br />

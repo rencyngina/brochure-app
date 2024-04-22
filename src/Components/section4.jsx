@@ -4,8 +4,8 @@ import Image from 'next/image';
 const Section4 = () => {
   return (
     <div className='w-full lg:min-h-screen h-[70vh] bg-[#FDFAF4] flex justify-center items-center p-2 lg:p-0'>
-      <div className='container mx-auto flex flex-col lg:flex-row items-center justify-center relative mb-10'>
-        <div className='lg:w-1/2 lg:mr-8 relative z-10 lg:border-2 lg:border-yellow-600 p-8 lg:p-16 shadow-lg backdrop-blur-lg bg-white/30 flex flex-col justify-center items-center lg:items-start'>
+      <div className='container mx-auto flex flex-col lg:flex-row items-center justify-center relative'>
+        <div className='lg:w-1/2 lg:mr-8 relative z-10 lg:border-2 lg:border-yellow-600 p-8 lg:p-16 shadow-lg backdrop-blur-sm bg-white/30 flex flex-col justify-center items-center'>
           <h1 className='text-3xl lg:text-5xl font-bold text-[#03234D] mb-4 lg:mb-6 text-center lg:text-left'>Start Your Financial Plan</h1>
           <p className='text-[#03234D] mt-2 lg:mt-4 lg:text-xl text-center lg:text-left max-w-lg'>
             We’re here to help you be a steward of your wealth. We can answer your questions about retirement planning and business planning. Contact us today to get started.
@@ -16,7 +16,7 @@ const Section4 = () => {
             </button>
           </div>
         </div>
-        <div className='absolute top-0 right-0 bottom-0 left-0 z-0 lg:w-1/1 mt-10 lg:mt-20 flex justify-center items-center'>
+        <div className='absolute top-0 right-0 bottom-0 left-0 z-0 lg:w-1/1 mt-10 lg:mt-10 flex justify-center items-center'>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-10">
             <div className="rounded-lg">
               <Image 
@@ -93,7 +93,6 @@ const Section4 = () => {
           </div>
         </div>
       </div>
-      {/* Below images */}
     </div>
   );
 };
