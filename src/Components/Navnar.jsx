@@ -42,7 +42,7 @@ const Navbar = () => {
             Home
           </div>
         </Link>
-        <Link href="/about" passHref>
+        <Link href="/about">
           <div
             className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer"
             onMouseEnter={handleMouseEnter}
