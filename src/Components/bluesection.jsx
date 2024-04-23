@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import FloatingObject2 from "./floating-object2";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const BlueSection = () => {
-  const cardsData = useMemo(() => [
+  const cardsData = [
     {
       title: "Financial Planning Services",
       description:
@@ -29,26 +29,21 @@ const BlueSection = () => {
         "Retirement is an important milestone and requires diligent planning. We provide retirement planning services, including retirement needs analysis, Social Security maximization, and more.",
       imageUrl: "/images/Group-5.png",
     },
-  ], []);
+  ];
 
-  const [controls] = useState(cardsData.map(() => useAnimation()));
-
-  const [isVisible, setIsVisible] = useState(Array(cardsData.length).fill(false));
+  const [isVisible, setIsVisible] = useState(cardsData.map(() => false));
+  const refArray = useRef([]);
 
   useEffect(() => {
     const handleScroll = () => {
+      const screenHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
       cardsData.forEach((_, index) => {
-        const element = document.getElementById(`card-${index}`);
+        const element = refArray.current[index];
         if (element) {
-          const elementTop = element.getBoundingClientRect().top;
-          const screenHeight = window.innerHeight;
+          const elementTop = element.getBoundingClientRect().top + scrollTop;
           if (elementTop < screenHeight * 0.9 && !isVisible[index]) {
-            controls[index].start({
-              opacity: 1,
-              y: 0,
-              transition: { delay: index * 0.3, duration: 0.5, ease: "easeOut" },
-            });
-            setIsVisible((prev) => {
+            setIsVisible(prev => {
               const newVisibility = [...prev];
               newVisibility[index] = true;
               return newVisibility;
@@ -63,7 +58,7 @@ const BlueSection = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [cardsData, isVisible, controls]);
+  }, [isVisible]);
 
   return (
     <>
@@ -85,9 +80,11 @@ const BlueSection = () => {
             <motion.div
               key={index}
               id={`card-${index}`}
+              ref={element => (refArray.current[index] = element)}
               className="relative w-full md:w-1/2 lg:w-1/2 xl:w-1/4 flex flex-col bg-white bg-clip-border text-gray-700 shadow-md transition duration-300 hover:shadow-lg"
               initial={{ opacity: 0, y: 100 }}
-              animate={controls[index]}
+              animate={{ opacity: isVisible[index] ? 1 : 0, y: isVisible[index] ? 0 : 100 }}
+              transition={{ delay: index * 0.3, duration: 0.5, ease: "easeOut" }}
             >
               <div className="relative -mt-6 h-40 overflow-hidden bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
                 <Image
