@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const FloatingObject = () => {
   return (
-    <div className='flex justify-center items-center h-[10vh] bg-white lg:p-12 p-6'>
+    <div className='flex justify-center items-center h-[10vh] bg-[#EEF5FF] lg:p-12 p-6'>
     <div className='flex mb-20 p-6 gap-4 lg:flex lg:flex-grow lg:justify-center lg:gap-20 bg-[#1e3758] shadow-xl lg:py-3 py-2 lg:px-20 px-5 z-10 lg:mb-20 rounded-lg items-center'>
 
     <div className='text-center text-white flex flex-col items-center mb-4 lg:mb-0'>

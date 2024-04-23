@@ -6,7 +6,7 @@ import { FaSpotify, FaPinterest, FaDribbble, FaTelegram, FaFacebook, FaTwitter, 
 
 const FloatingObject2 = () => {
   return (
-    <div className='flex flex-col items-center justify-center bg-white lg:h-[25vh] h-auto lg:p-12 p-6'>
+    <div className='flex flex-col items-center justify-center bg-[#F3F4F6] lg:h-[25vh] h-auto lg:p-12 p-6'>
       <div className='bg-yellow-500 flex mb-5 lg:mb-30 flex-col z-10 justify-center items-center w-full max-w-screen-lg shadow-md'>
         <div className='text-xl'>
           <h1 className='text-center text-lg lg:text-4xl md:text-5xl mt-12 mb-4 md:mb-4'>Not sure where to start?</h1>
@@ -15,7 +15,7 @@ const FloatingObject2 = () => {
            Contact us today to get started!</p>
           <div className="flex justify-center mt-5">
             <button-1 className=''>
-              <span className='text-black'>Contact Us</span>
+              <span className='text-black font-bold'>SCHEDULE A CALL</span>
             </button-1>
           </div>
         </div>

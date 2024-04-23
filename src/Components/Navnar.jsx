@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -10,6 +10,23 @@ import { IoLogInOutline } from "react-icons/io5";
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); 
 
   const handleMouseEnter = () => {
     setIsDropdownOpen(true);
@@ -41,12 +58,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="lg:flex lg:justify-between backdrop-blur-sm w-full bg-[#03234d]/95 sticky top-0 z-20 h-[10vh] lg:items-center px-8 py-4">
+    <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between w-full sticky top-0 z-20 h-[10vh] lg:items-center px-0 py-4`}>
       <div>
         <Link href="/" passHref>
           <div className="cursor-pointer ">
             <Image
-              className="lg:flex hidden"
+              className="hidden lg:flex lg:ml-8"
               src="/images/Logo.svg"
               alt="logo"
               width={150}
@@ -56,17 +73,13 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div
-        className={`lg:flex ${
-          isMobileNavOpen ? "flex" : ""
-        } flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 text-yellow-300 text-lg`}
-      >
-        <div className="flex lg:hidden justify-end mt-6">
+      <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
+        <div className="flex lg:hidden justify-end mt-6 mr-6">
           <button className="mobile-nav-toggle" onClick={handleMobileNavToggle}>
             <FaBars className="h-8 w-8 text-white " />
           </button>
         </div>
-        <div className="lg:flex lg:flex-grow hidden text-yellow-300 justify-center gap-10 text-lg">
+        <div className={`lg:flex lg:flex-grow hidden justify-center gap-10 text-lg ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
           <Link href="/" passHref>
             <div className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer">
               Home
@@ -77,9 +90,9 @@ const Navbar = () => {
               About
             </div>
           </Link>
-          <div className="relative flex items-center">
+          <div className={`relative flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
             <button
-              className="dropdown-button text-yellow-300 relative text-xl flex items-center"
+              className={`dropdown-button  relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
               onMouseEnter={handleDropdownMouseEnter}
               onMouseLeave={handleDropdownMouseLeave}
             >
@@ -122,9 +135,9 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className="hidden lg:flex lg:gap-4 gap-2 lg:mb-10 mt-6">
+      <div className="hidden lg:flex lg:gap-3 gap-2 lg:mb-10 mt-6 lg:mr-8">
       <div className="flex ">
-      <button className="mt-4 text-md text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex">
+      <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex">
         <div className="" >
               Client Portal
             </div>
@@ -132,7 +145,7 @@ const Navbar = () => {
       </button>
       </div>
         <a href="mailto:info@royfordlaw.com">
-          <button className="mt-4 text-white py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
+          <button className="mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
             Contact Us
           </button>
         </a>
