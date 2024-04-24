@@ -13,7 +13,7 @@ const FloatingObject = () => {
   
     <div className='text-white flex flex-col items-center mb-4 lg:mb-0'>
       <Image src="/images/assured2.png" alt="logo" width={40} height={40} />
-      <p className="text-xs lg:text-base">Planned for Success</p>
+      <p className="text-xs lg:text-base">Planned for Success!</p>
     </div>
   
     <div className='text-white flex flex-col items-center mb-4 lg:mb-0'>
