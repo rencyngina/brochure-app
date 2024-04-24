@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 
+
 const FloatingObject = () => {
   return (
     <div className='flex justify-center items-center h-[10vh] bg-white lg:p-12 p-6'>
