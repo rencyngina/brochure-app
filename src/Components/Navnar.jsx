@@ -76,7 +76,7 @@ const Navbar = () => {
       <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
         <div className="flex lg:hidden justify-end mt-2 mr-6">
           <button className="mobile-nav-toggle" onClick={handleMobileNavToggle}>
-            <FaBars className="h-8 w-8 text-white " />
+            <FaBars className="h-6 w-6 text-black " />
           </button>
         </div>
         <div className={`lg:flex lg:flex-grow hidden justify-center gap-10 text-lg ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
@@ -150,8 +150,8 @@ const Navbar = () => {
           </button>
         </a>
       </div>
-      <div className={`block lg:hidden gap-2 lg:mb-10 mt-6 w-full ${isMobileNavOpen ? "flex lg:hidden flex-col" : "hidden"}`} style={{ backgroundColor: "#03234d" }}>
-        <nav className="bg-[#03234d] flex flex-col items-center justify-center">
+      <div className={`block lg:hidden gap-2 lg:mb-10 mt-6 w-full ${isMobileNavOpen ? "flex lg:hidden flex-col" : "hidden"}`}>
+        <nav className="backdrop-blur-2xl bg-white/20 flex flex-col items-center justify-center">
           <ul className="flex flex-col items-center justify-center">
             <li>
               <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
@@ -183,7 +183,7 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="mt-4 text-white text-sm text-center lg:hidden mb-10">
-          <p>&copy; 2023 Royford Law</p>
+          <p>&copy; 2023 Sovereign</p>
         </div>
       </div>
     </nav>

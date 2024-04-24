@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 /* to remove the scroll */
 ::-webkit-scrollbar {
   width: 0;
@@ -158,4 +159,15 @@ ul {
 .example-2 .icon-content a[data-social="telegram"] ~ .tooltip {
   background-color: #0088cc;
 }
- 
+
+.spaced-list li {
+  margin-bottom: 10px; /* Adjust the spacing as needed */
+  /* Add a bullet point */
+  /* list-style-type: disc; */
+}
+
+.font-italian {
+  font-family: 'Italian Font', sans-serif; /* Replace 'Italian Font' with the actual font family name */
+}
+
+

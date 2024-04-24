@@ -16,29 +16,27 @@ const FloatingObject = () => {
           />
           <p className="text-xs lg:text-base">Market Friendly</p>
         </div>
-
-        <div className="text-white flex flex-col items-center mb-4 sm:mb-0">
-          <Image
-            src="/images/assured2.png"
-            alt="logo"
-            width={20}
-            height={20}
-            className="sm:w-10 sm:h-10"
-          />
-          <p className="text-xs lg:text-base">Planned for Success</p>
-        </div>
-
-        <div className="text-white flex flex-col items-center mb-4 sm:mb-0">
-          <Image
-            src="/images/assured3.png"
-            alt="logo"
-            width={20}
-            height={20}
-            className="sm:w-10 sm:h-10"
-          />
-          <p className="text-xs lg:text-base">Retirement Ready</p>
-        </div>
-
+    <div className='text-center text-white flex flex-col items-center mb-4 lg:mb-0'>
+      <Image src="/images/assured1.png" alt="logo" width={40} height={40} />
+      <p className="text-xs lg:text-base">Market Friendly</p>
+    </div>
+  
+    <div className='text-white flex flex-col items-center mb-4 lg:mb-0'>
+      <Image src="/images/assured2.png" alt="logo" width={40} height={40} />
+      <p className="text-xs lg:text-base">Planned for Success!</p>
+    </div>
+  
+    <div className='text-white flex flex-col items-center mb-4 lg:mb-0'>
+      <Image src="/images/assured3.png" alt="logo" width={30} height={40} />
+      <p className="text-xs lg:text-base">Retirement Ready</p>
+    </div>
+  
+    <div className='text-white flex flex-col items-center'>
+      <Image src="/images/assured4.png" alt="logo" width={40} height={40} />
+      <p className="text-xs lg:text-base">Satisfaction Guaranteed</p>
+    </div>
+  </div>
+</div>
         <div className="text-white flex flex-col items-center">
           <Image
             src="/images/assured4.png"

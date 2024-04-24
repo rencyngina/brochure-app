@@ -80,13 +80,13 @@ const Section1 = () => {
             transition={{ duration: 1 }}
             className="lg:w-1/2 lg:ml-4 xl:ml-4 lg:mb-40 mt-10"
           >
-            <h1 className="text-3xl lg:text-xl xl:text-2xl font-bold mb-4">
+            <h1 className="text-2xl lg:text-xl xl:text-2xl font-bold mb-4">
               Who We Serve
             </h1>
             <p className="text-yellow-500 text-lg lg:text-xl xl:text-4xl mb-4">
               Learn how to be a steward of your finances.
             </p>
-            <p className="text-black text-md lg:text-lg xl:text-xl leading-normal mb-8">
+            <p className="text-black text-sm lg:text-lg xl:text-xl leading-normal mb-8">
               We offer financial planning for clients who want to be in control
               of their assets,
               <br />

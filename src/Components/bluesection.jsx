@@ -66,12 +66,12 @@ const BlueSection = () => {
         <h1 className="text-xl lg:text-3xl font-bold mt-10 text-yellow-500">
           Our Services
         </h1>
-        <p className="text-white text-center text-2xl mt-4 lg:text-4xl lg:mt-6 lg:px-20">
+        <p className="text-white lg:text-center text-xl mt-4 lg:text-4xl lg:mt-6 lg:px-20">
           We are fiduciaries and independent,
           <br />
           fee-based financial advisors.
         </p>
-        <p className="text-white text-center text-lg mt-4 lg:text-xl lg:mt-6 lg:px-20">
+        <p className="text-white lg:text-center text-md mt-4 lg:text-xl lg:mt-6 lg:px-20">
           Every financial plan we create is unique.
         </p>
         {/* Dynamic cards */}
@@ -108,7 +108,7 @@ const BlueSection = () => {
                   <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased card-title">
                     {card.title}
                   </h5>
-                  <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased card-description">
+                  <p className="block font-sans text-sm font-light leading-relaxed text-inherit antialiased card-description">
                     {card.description}
                   </p>
                 </div>
@@ -132,5 +132,4 @@ const BlueSection = () => {
     </>
   );
 };
-
 export default BlueSection;
