@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <div className='h-[95vh] lg:p-0 p-10 top-0 mt-0  lg:h-[96vh] w-full lg:w-full md:h-[85vh] z-0 relative lg:flex block lg:flex-row justify-center items-center' style={{ backgroundImage: 'url("/images/nature.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+    <div className='h-auto lg:p-0 p-10 top-0 mt-0  lg:h-[96vh] w-full lg:w-full md:h-[85vh] z-0 relative lg:flex block lg:flex-row justify-center items-center' style={{ backgroundImage: 'url("/images/nature.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
 
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
@@ -27,7 +27,7 @@ const Hero = () => {
             alt="logo" 
             width={600} 
             height={100} 
-            className="rounded-tr-2xl rounded-bl-2xl shadow-lg lg:h-100 lg:w-full w-full h-90" // Removed fixed width for better responsiveness
+            className="rounded-tr-2xl rounded-bl-2xl shadow-lg lg:h-100 lg:w-full w-full h-90"
           />
         </div>
       </div>
