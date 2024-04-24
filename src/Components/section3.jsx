@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 "use_client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const Section3 = () => {
   const [email, setEmail] = useState("");
@@ -27,7 +29,13 @@ const Section3 = () => {
         </div>
         <div>
           <div className="lg:flex items-center justify-center lg:mr-20">
-            <img src="/images/Logo.svg" alt="Logo" className="h-16" />
+            <Image
+              src="/images/Logo.svg"
+              alt="Logo"
+              className="h-16"
+              width={80}
+              height={40}
+            />
           </div>
           <div className="mt-8 justify-center items-center lg:text-center">
             <h2 className="text-xl font-semibold text-gray-200 mb-4">
@@ -61,7 +69,9 @@ const Section3 = () => {
       </div>
       <div className="container mx-auto lg:py-8 py-4">
         <div className=" lg:mt-10 lg:mb-8 p-3">
-          <p className="text-2xl lg:text-3xl text-yellow-500 font-bold">Articles</p>
+          <p className="text-2xl lg:text-3xl text-yellow-500 font-bold">
+            Articles
+          </p>
           <h1 className="mt-10 text-3xl lg:text-4xl leading-tight">
             Articles that might
             <br />
@@ -70,26 +80,31 @@ const Section3 = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500">
-            <img
+            <Image
               src="/images/pic1.jpg"
               alt="pic1"
               className="w-full h-48 object-cover"
+              width={80}
+              height={40}
             />
             <h2 className="text-lg font-semibold text-gray-800 mt-4">
               Why I Became a Financial Advisor
             </h2>
             <p className="text-gray-500 mt-2">
-              By Byron Moore Experiencing difficult things in life can hopefully bring about blessings and good, and sometimes
+              By Byron Moore Experiencing difficult things in life can hopefully
+              bring about blessings and good, and sometimes
             </p>
             <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-10">
               READ MORE
             </button>
           </div>
           <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
-            <img
+            <Image
               src="/images/pic2.jpg"
               alt="pic2"
               className="w-full h-48 object-cover"
+              width={80}
+              height={40}
             />
             <h2 className="text-lg font-semibold text-gray-800 mt-4">
               Article 2
@@ -102,10 +117,12 @@ const Section3 = () => {
             </button>
           </div>
           <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
-            <img
+            <Image
               src="/images/pic3.jpg"
               alt="pic3"
               className="w-full h-48 object-cover"
+              width={80}
+              height={40}
             />
             <h2 className="text-lg font-semibold text-gray-800 mt-4">
               Article 3
@@ -118,7 +135,13 @@ const Section3 = () => {
             </button>
           </div>
           <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
-            <img src="/images/oldpple.jpg" alt="pic6" />
+            <Image
+              src="/images/oldpple.jpg"
+              alt="pic6"
+              width={80}
+              height={40}
+              className="w-full h-48 object-cover"
+            />
             <h2 className="text-lg font-semibold text-gray-800 mt-4">
               Article 6
             </h2>
