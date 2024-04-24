@@ -74,7 +74,7 @@ const Navbar = () => {
       </div>
 
       <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
-        <div className="flex lg:hidden justify-end mt-6 mr-6">
+        <div className="flex lg:hidden justify-end mt-2 mr-6">
           <button className="mobile-nav-toggle" onClick={handleMobileNavToggle}>
             <FaBars className="h-8 w-8 text-white " />
           </button>

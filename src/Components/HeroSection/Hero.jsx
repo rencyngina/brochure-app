@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <div className='h-auto lg:p-0 p-10 top-0 mt-0  lg:h-[96vh] w-full lg:w-full md:h-[85vh] z-0 relative lg:flex block lg:flex-row justify-center items-center' style={{ backgroundImage: 'url("/images/nature.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+    <div className='h-[110vh] lg:p-0 p-10 top-0 mt-0  lg:h-[96vh] w-full lg:w-full md:h-[85vh] z-0 relative lg:flex block lg:flex-row justify-center items-center' style={{ backgroundImage: 'url("/images/nature.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
 
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
@@ -20,7 +20,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className='lg:w-1/2 lg:flex justify-center z-0 '>
+      <div className='lg:w-1/2 lg:flex justify-center z-0 mt-10 '>
         <div className="w-full lg:max-w-[600px]">
           <Image 
             src="/images/couples.png" 
