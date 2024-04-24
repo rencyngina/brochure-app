@@ -13,21 +13,12 @@ const Foot = () => {
       <div className="flex items-center mt-2 mb-3 sm:mb-0">
         <p className="mr-4 hidden sm:block">|</p>
         <Link href="mailto:wendaandroyfordadvocates@example.com">
-          <p className="mr-4 sm:mr-8 text-xs lg:text-sm"></p>
+          <p className="mr-40 lg:mr-4 sm:mr-8 text-xs lg:text-sm">admin@thesovereignwealth.com</p>
         </Link>
       </div>
       <div className="flex items-center mt-2 mb-3 sm:mb-0">
-        <p className="mr-4 sm:mr-8 text-xs lg:text-sm">© {currentYear}. All rights reserved</p>
-        <p className="mr-4 hidden sm:block">admin@thesovereignwealth.com</p>
-        <a href="https://my-portfolio-beta-ruby-32.vercel.app/"
-        rel="noreferrer"
-        target="_blank"
-        className="text-xs lg:text-sm">Developed by Rency Ngina</a>
-        <p className="ml-4 mr-4 hidden sm:block">|</p>
-        <a href="https://my-portfolio-sand-ten-81.vercel.app/"
-        rel="noreferrer"
-        target="_blank"
-        className="mr-4 sm:mr-8 text-xs lg:text-sm"> Erick Adikah</a>
+        <p className="lg:mr-4 sm:mr-10 text-xs lg:text-sm">© {currentYear}.Sovereign Wealth Management. All rights reserved</p>
+        <p className='sm:ml:8'>Privacy Policy</p>
       </div>
     </div>
   </div>

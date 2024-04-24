@@ -43,7 +43,7 @@ const Section1 = () => {
           <p className="text-sm lg:text-xl leading-normal px-2 font-semibold text-gray-800 max-w-4xl mx-auto">
             <span className="text-4xl lg:text-7xl text-gray-700">&ldquo;</span>{" "}
             Wealth Management is a comprehensive and holistic investment process
-            that integrates the client's long-term goals with financial
+            that integrates the client long-term goals with financial
             solutions, using a planning-based and consultative approach.{" "}
           </p>
         </motion.div>

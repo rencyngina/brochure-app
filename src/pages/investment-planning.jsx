@@ -4,20 +4,19 @@ import Foot from '@/Components/foot';
 import Navbar from '@/Components/Navnar';
 import { IoMdCheckboxOutline } from "react-icons/io";
 
-const FinancialPlanning = () => {
+const RetirementPlanning = () => {
     return (
         <>
         <Navbar />
           <div className="flex flex-col h-[65vh]">
             <div className="bg-[#284f83] flex-grow flex justify-center items-center w-full">
               <div className="flex flex-col justify-center items-center text-center">
-                <h1 className='text-3xl text-yellow-600 mb-10'>Financial Planning Services</h1>
-                <p className='text-5xl'>Sovereign Wealth Management offers financial planning and
-                <br />
-                 discretionary portfolio management services.</p>
-                <p className='text-xl mt-10 mb-10'>Synchronizing your wealth with your values, values-based financial planning goes further, helping you make a
+                <h1 className='text-3xl text-yellow-600 mb-10'>Investment Planning</h1>
+                <p className='text-5xl'>Strategies developed to help you pursue your financial goals.</p>
+                <p className='text-xl mt-10 mb-10'>At the heart of any wise financial plan lies effective investment management. It not only prioritizes your goals but also
                 <br /> 
-                meaningful impact on the things that matter most.</p>
+                empowers you to grow your nest egg and preserve your family’s future.
+                </p>
                 <button-1>
                   Get Started
                 </button-1>
@@ -30,28 +29,21 @@ const FinancialPlanning = () => {
           <div className='h-auto lg:w-1/2'>
           <h4 className='mt-40 mb-10 text-yellow-600 text-3xl'>How it working</h4>
 
-          <h1 className='text-2xl lg:text-5xl mb-3 lg:mb-5 font-bold'>Alignment of your wealth and values.</h1>
-          <p className='text-md lg:text-2xl'>
-          A well-crafted plan should include an accurate summary of your finances, your goals,
-           and strategies to work toward reaching them. But values-based financial planning takes 
-           it up a notch, leveraging your values to create a plan that not only grows your wealth but 
-           also aligns it with what you hold dear. Working together,
-           we can create a financial plan that speaks powerfully to the values that matter most to you.
+          <h1 className='text-5xl mb-5'>Values-based investing made simple.</h1>
+          <p className='text-2xl'>
+          At its core, values-based investing is the alignment of investment decisions with your personal ethics or values. While we all consider what is important to us when making choices in life, when it comes to investment decisions, this is often more complicated than it should be. We help simplify the complex.
           </p>
           <h1 className='text-5xl mb-10 mt-10'>
-          Collaboration in pursuing your financial goals.
+          A personalized strategy to meet your needs.
           </h1>
           <p className='text-2xl'>
-          Our process is designed to help you work toward your financial goals by following a clear path that aligns with your values.
-           We’ll start by organizing your finances and getting a clear picture of your current situation. Then we’ll work with you to
-            develop and define your goals and values before crafting a customized plan tailored to your unique needs.
+          Our client discovery process can help uncover what is important to you when it comes to how your money is invested. We’ll then craft an investment portfolio uniquely tailored to your needs and objectives, taking into consideration your tolerance for risk, financial goal timeline, and short-term and long-term objectives.
           </p>
           <h1 className='text-5xl mt-10 mb-10'>
-          Optimized plans for informed progress.
+          Ongoing monitoring and adjustments as needed.
           </h1>
           <p className='text-2xl mb-20'>
-          For steady and consistent progress, we’ll continually review and revise your plan.
-           We will help you keep your financial interests aligned with the core values that guide you.
+          As part of our investment plan, we work to understand the status of your current investments. By looking closely at these factors, we can develop a personalized investment strategy that meets your specific needs. We’ll continuously monitor and review this strategy, evaluate its alignment with your goals, and adjust as necessary.
           </p>
           </div>
 
@@ -87,4 +79,4 @@ const FinancialPlanning = () => {
     );
 }     
 
-export default FinancialPlanning;
+export default RetirementPlanning;
