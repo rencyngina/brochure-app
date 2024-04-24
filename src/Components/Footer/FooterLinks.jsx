@@ -19,7 +19,7 @@ const Footer = () => {
               <p className="lg:text-lg  sm:text-xl font-bold text-white">
                 About Us
               </p>
-              <p className="lg:text-xs  mt-4 text-white">
+              <p className="lg:text-md  mt-4 text-white">
               Established in 2016, Mwenda Royford and Company Advocates 
               stands at the forefront of legal innovation, sculpting a legacy
                of excellence with unwavering commitment. Our vision is anchored in
@@ -28,9 +28,9 @@ const Footer = () => {
             </div>
               </div>
               <div className="col-span-2 lg:col-span-1">
-                <p className="text-lg font-bold text-[#A65A2A]">Location</p>
-                <ul className="mt-6 space-y-4 text-sm">
-                  <li className="flex text-xs text-white items-center">
+                <p className="text-lg lg:text-xl font-bold text-[#A65A2A]">Location</p>
+                <ul className="mt-6 space-y-4 text-sm lg:text-md">
+                  <li className="flex text-xs lg:text-md text-white items-center">
                    
                       5TH AVENUE OFFICE SUITES 4TH FLOOR SUITE 4 – 15 OFF NGONG
                       ROAD
@@ -177,7 +177,7 @@ const Footer = () => {
           </div>
           <div className="border-t border-gray-100 pt-8 dark:border-gray-800 mt-4">
             <div className="sm:flex sm:justify-between">
-              <p className="text-xs text-gray-400">
+              <p className="text-xs lg:text-md text-gray-400">
                 © {currentYear}. Mwenda RoyFord & Company Advocates. All rights reserved.
               </p>
               <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">

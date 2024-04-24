@@ -7,11 +7,12 @@ import Section1 from "../Components/section1";
 import Section2 from "@/Components/section2";
 import Bluesection from "@/Components/bluesection";
 import Section3 from "@/Components/section3";
+import Section4 from "@/Components/section4";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const Home = () => {
   return (
     <main>
       <Navbar />
@@ -20,7 +21,10 @@ export default function Home() {
       <Bluesection />
       <Section2 />
       <Section3 />
+      <Section4 />
       <Footer />
     </main>
   );
 }
+
+export default Home;
