@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,7 +15,7 @@ const FloatingObject2 = () => {
            Contact us today to get started!</p>
           <div className="flex justify-center mt-5">
             <button-1 className=''>
-              <span className='text-black'>Contact Us</span>
+              <span className='text-black font-bold'>SCHEDULE A CALL</span>
             </button-1>
           </div>
         </div>

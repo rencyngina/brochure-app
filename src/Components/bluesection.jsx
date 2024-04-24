@@ -132,5 +132,4 @@ const BlueSection = () => {
     </>
   );
 };
-
 export default BlueSection;
