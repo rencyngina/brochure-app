@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import FloatingObject2 from "./floating-object2";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const BlueSection = () => {
   const cardsData = [
@@ -36,14 +37,13 @@ const BlueSection = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const screenHeight = window.innerHeight;
-      const scrollTop = window.scrollY;
       cardsData.forEach((_, index) => {
         const element = refArray.current[index];
         if (element) {
-          const elementTop = element.getBoundingClientRect().top + scrollTop;
+          const elementTop = element.getBoundingClientRect().top;
+          const screenHeight = window.innerHeight;
           if (elementTop < screenHeight * 0.9 && !isVisible[index]) {
-            setIsVisible(prev => {
+            setIsVisible((prev) => {
               const newVisibility = [...prev];
               newVisibility[index] = true;
               return newVisibility;
@@ -58,7 +58,7 @@ const BlueSection = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isVisible]);
+  }, [isVisible, cardsData]);
 
   return (
     <>
@@ -77,42 +77,52 @@ const BlueSection = () => {
         {/* Dynamic cards */}
         <div className="flex flex-wrap justify-center gap-8 mt-10 px-4 mb-10 lg:px-40 lg:mb-20 lg:mt-20">
           {cardsData.map((card, index) => (
-            <motion.div
+            <div
               key={index}
-              id={`card-${index}`}
-              ref={element => (refArray.current[index] = element)}
-              className="relative w-full md:w-1/2 lg:w-1/2 xl:w-1/4 flex flex-col bg-white bg-clip-border text-gray-700 shadow-md transition duration-300 hover:shadow-lg"
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: isVisible[index] ? 1 : 0, y: isVisible[index] ? 0 : 100 }}
-              transition={{ delay: index * 0.3, duration: 0.5, ease: "easeOut" }}
+              ref={(element) => (refArray.current[index] = element)}
+              className="w-full md:w-1/2 lg:w-1/2 xl:w-1/4 mb-8"
             >
-              <div className="relative -mt-6 h-40 overflow-hidden bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
-                <Image
-                  src={card.imageUrl}
-                  alt={card.title}
-                  width={40}
-                  height={20}
-                  className="w-35 h-30"
-                />
-              </div>
-              <div className="p-6">
-                <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased card-title">
-                  {card.title}
-                </h5>
-                <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased card-description">
-                  {card.description}
-                </p>
-              </div>
-              <div className="p-8 pt-2 opacity-0 absolute top-2 left-0 w-full h-full flex items-center justify-center hover:opacity-100">
-                <button
-                  data-ripple-light="true"
-                  type="button"
-                  className="select-none bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                >
-                  Learn More
-                </button>
-              </div>
-            </motion.div>
+              <motion.div
+                className="relative w-full flex flex-col bg-white bg-clip-border text-gray-700 shadow-md transition duration-300 hover:shadow-lg"
+                initial={{ opacity: 0, y: 100 }}
+                animate={{
+                  opacity: isVisible[index] ? 1 : 0,
+                  y: isVisible[index] ? 0 : 100,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.3,
+                  ease: "easeOut",
+                }}
+              >
+                <div className="relative -mt-6 h-40 overflow-hidden bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                  <Image
+                    src={card.imageUrl}
+                    alt={card.title}
+                    width={40}
+                    height={20}
+                    className="w-35 h-30"
+                  />
+                </div>
+                <div className="p-6">
+                  <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased card-title">
+                    {card.title}
+                  </h5>
+                  <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased card-description">
+                    {card.description}
+                  </p>
+                </div>
+                <div className="p-8 pt-2 opacity-0 absolute top-2 left-0 w-full h-full flex items-center justify-center hover:opacity-100">
+                  <button
+                    data-ripple-light="true"
+                    type="button"
+                    className="select-none bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                  >
+                    Learn More
+                  </button>
+                </div>
+              </motion.div>
+            </div>
           ))}
         </div>
       </div>
