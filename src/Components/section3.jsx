@@ -100,7 +100,7 @@ const Section3 = () => {
           </div>
           <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
             <Image
-              src="/images/pic2.jpg"
+              src="/images/old4.jpg"
               alt="pic2"
               className="w-full h-48 object-cover"
               width={80}
@@ -118,7 +118,7 @@ const Section3 = () => {
           </div>
           <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
             <Image
-              src="/images/pic3.jpg"
+              src="/images/old3.jpg"
               alt="pic3"
               className="w-full h-48 object-cover"
               width={80}
@@ -126,24 +126,6 @@ const Section3 = () => {
             />
             <h2 className="text-lg font-semibold text-gray-800 mt-4">
               Article 3
-            </h2>
-            <p className="text-gray-500 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-10">
-              READ MORE
-            </button>
-          </div>
-          <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
-            <Image
-              src="/images/oldpple.jpg"
-              alt="pic6"
-              width={80}
-              height={40}
-              className="w-full h-48 object-cover"
-            />
-            <h2 className="text-lg font-semibold text-gray-800 mt-4">
-              Article 6
             </h2>
             <p className="text-gray-500 mt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.

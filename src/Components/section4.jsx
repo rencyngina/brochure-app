@@ -80,7 +80,7 @@ const Section4 = () => {
             </div>
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="/images/pic4.jpg"
+                src="/images/old1.jpg"
                 alt="Pic 4"
                 width={350}
                 height={200}
@@ -89,7 +89,7 @@ const Section4 = () => {
             </div>
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="/images/pic4.jpg"
+                src="/images/old4.jpg"
                 alt="Pic 4"
                 width={350}
                 height={200}
@@ -98,7 +98,7 @@ const Section4 = () => {
             </div>
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="/images/pic4.jpg"
+                src="/images/old3.jpg"
                 alt="Pic 4"
                 width={350}
                 height={200}

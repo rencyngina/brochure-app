@@ -23,10 +23,10 @@ const Hero = () => {
       <div className='lg:w-1/2 lg:flex justify-center lg:z-0 z-0 mt-10 '>
         <div className="w-full lg:max-w-[600px]">
           <Image 
-            src="/images/couples.png" 
+            src="/images/old2.webp"
             alt="logo" 
-            width={600} 
-            height={100} 
+            width={700} 
+            height={200} 
             className="rounded-tr-2xl rounded-bl-2xl shadow-lg lg:h-100 lg:w-full w-full h-90"
           />
         </div>
