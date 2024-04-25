@@ -17,9 +17,9 @@ const Investment = () => {
                 <br /> 
                 empowers you to grow your nest egg and preserve your family’s future.
                 </p>
-                <button-1>
-                  Get Started
-                </button-1>
+                <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-4 px-10 hover:bg-yellow-500 transition duration-300 border font-bold border-yellow-300 flex text-white">
+              <div className="">Get Started</div>
+            </button>
               </div>
             </div>
           </div>
