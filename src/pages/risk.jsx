@@ -17,9 +17,9 @@ const Risk = () => {
                 <br /> 
                 That’s why risk management is such a critical component of our role as financial advisors.
                 </p>
-                <button-1>
-                  Get Started
-                </button-1>
+                <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-4 px-10 hover:bg-yellow-500 transition duration-300 border font-bold border-yellow-300 flex text-white">
+              <div className="">Get Started</div>
+            </button>
               </div>
             </div>
           </div>
