@@ -122,8 +122,8 @@ const About = () => {
       </HeroSection>
       <ContentSection>
       
-      <div className="relative lg:mb-10">
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4">
+      <div className="relative lg:mb-10 mb-10">
+      <div className="grid grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-4">
       <div className="col-span-2 lg:col-span-1">
         <ImageWithHover src="/images/pic1.jpg" width={300} height={200} />
       </div>
@@ -161,18 +161,18 @@ const About = () => {
         <br></br>
 
         <div className="flex flex-col items-center">
-        <h1 className="text-black text-4xl font-family: Playfair Display, serif;">My Plan of Care for You</h1>
-      <div className="block lg:flex gap-8 mt-10">
-        <ul className="spaced-list">
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Help you identify your financial goals and create a plan to achieve them.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Provide guidance on investments that align with your values.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Work with you to create a budget and manage your expenses, so you can live within your means while still pursuing your financial goals.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Offer strategies to manage debt and improve your credit score, if needed.</li>
+        <h1 className="text-black text-lg lg:text-4xl font-family: Playfair Display, serif;">My Plan of Care for You</h1>
+      <div className="block lg:flex lg:gap-8 gap-4 lg:mt-10 mt-4">
+        <ul className="spaced-list ">
+          <li className="text-sm lg:text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Help you identify your financial goals and create a plan to achieve them.</li>
+          <li className="text-sm lg:text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Provide guidance on investments that align with your values.</li>
+          <li className="text-sm lg:text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Work with you to create a budget and manage your expenses, so you can live within your means while still pursuing your financial goals.</li>
+          <li className="text-sm lg:text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Offer strategies to manage debt and improve your credit score, if needed.</li>
         </ul>
         <ul className="spaced-list">
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Help you plan for major life events such as retirement, college tuition, or the purchase of a home.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Regularly review your financial plan and make adjustments as needed, to keep you on track to meet your goals.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Serve as a resource for financial education and advice like estate planning, tax strategies, insurance options, etc.</li>
+          <li className="text-sm lg:text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Help you plan for major life events such as retirement, college tuition, or the purchase of a home.</li>
+          <li className="text-sm lg:text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Regularly review your financial plan and make adjustments as needed, to keep you on track to meet your goals.</li>
+          <li className="text-sm lg:text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Serve as a resource for financial education and advice like estate planning, tax strategies, insurance options, etc.</li>
         </ul>
       </div>
     </div>
