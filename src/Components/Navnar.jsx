@@ -58,12 +58,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between w-full sticky top-0 z-20 h-[10vh] lg:items-center px-0 py-4`}>
+    <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between w-full sticky top-0 z-20 h-[15vh] lg:items-center px-0 lg:py-6 py-4`}>
       <div>
         <Link href="/" passHref>
           <div className="cursor-pointer ">
             <Image
-              className="hidden lg:flex lg:ml-8"
+              className=" lg:flex lg:ml-4 ml-4 lg:mr-0 mr-0"
               src="/images/Logo.svg"
               alt="logo"
               width={150}
@@ -74,7 +74,7 @@ const Navbar = () => {
       </div>
 
       <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
-        <div className="flex lg:hidden justify-end mt-2 mr-6">
+        <div className="flex lg:hidden justify-end mt-0 mr-8">
           <button className="mobile-nav-toggle" onClick={handleMobileNavToggle}>
             <FaBars className="h-6 w-6 text-black " />
           </button>
@@ -144,14 +144,14 @@ const Navbar = () => {
             <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px'}} />
       </button>
       </div>
-        <a href="mailto:info@royfordlaw.com">
+        <Link href="mailto:info@royfordlaw.com">
           <button className="mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
             Contact Us
           </button>
-        </a>
+        </Link>
       </div>
       <div className={`block lg:hidden gap-2 lg:mb-10 mt-6 w-full ${isMobileNavOpen ? "flex lg:hidden flex-col" : "hidden"}`}>
-        <nav className="backdrop-blur-2xl bg-white/20 flex flex-col items-center justify-center">
+        <nav className=" bg-blue-950 flex flex-col items-center justify-center">
           <ul className="flex flex-col items-center justify-center">
             <li>
               <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
@@ -159,26 +159,26 @@ const Navbar = () => {
               </button>
             </li>
             <li>
-              <a href="#">
+              <Link href="#">
                 <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   Contact Us
                 </button>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link href="/about">
                 <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   About Us
                 </button>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">
+              <Link href="#">
                 <button className="mt-4 text-white flex items-center justify-between py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   <span>Services</span>
                   <RiArrowDropDownLine className="text-xl" />
                 </button>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
