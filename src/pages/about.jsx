@@ -53,7 +53,7 @@ const HeroSection = styled.div`
     margin-bottom: 10px;
 
     @media (max-width: 768px) {
-      font-size: 2rem;
+      font-size: 16px;
     }
   }
 `;
