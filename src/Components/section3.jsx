@@ -33,8 +33,8 @@ const Section3 = () => {
               src="/images/Logo.svg"
               alt="Logo"
               className="h-16"
-              width={80}
-              height={40}
+              width={150}
+              height={80}
             />
           </div>
           <div className="mt-8 justify-center items-center lg:text-center">

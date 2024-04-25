@@ -59,7 +59,7 @@ const HeroSection = styled.div`
 `;
 
 const ContentSection = styled.div`
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 10px;
   text-align: justify;
@@ -122,26 +122,28 @@ const About = () => {
       </HeroSection>
       <ContentSection>
         <div className="relative lg:mb-10 mb-10">
-          <div className="grid grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-4">
-            <div className="col-span-2 lg:col-span-1">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4">
+            <div className="col-span-1 lg:col-span-1">
               <ImageWithHover src="/images/pic1.jpg" width={300} height={200} />
             </div>
-            <div className="col-span-1 lg:col-span-2">
+            <div className="col-span-1 lg:col-span-1">
               <ImageWithHover src="/images/pic2.jpg" width={300} height={200} />
             </div>
-            <div className="col-span-1">
-              <ImageWithHover src="/images/pic5.jpg" width={300} height={200} />
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic3.jpg" width={300} height={200} />
             </div>
-            <div className="col-span-1">
+            <div className="col-span-1 lg:col-span-1">
               <ImageWithHover src="/images/pic4.jpg" width={300} height={200} />
             </div>
-            <div className="col-span-1">
-              <ImageWithHover src="/images/pic3.jpg" width={300} height={200} />
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic5.jpg" width={300} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/old1.jpg" width={300} height={200} />
             </div>
           </div>
         </div>
-
-        <p className='lg:text-lg text-sm'>
+        <p>
           Byron Moore is the CEO of Sovereign Wealth Management, an independent
           financial planning firm that serves clients in{" "}
           <span style={{ color: "#D0B220" }}>

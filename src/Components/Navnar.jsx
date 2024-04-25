@@ -140,7 +140,7 @@ const Navbar = () => {
             <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px'}} />
       </button>
       </div>
-        <Link href="mailto:info@royfordlaw.com">
+        <Link href="/contact">
           <button className="mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
             Contact Us
           </button>
@@ -155,16 +155,9 @@ const Navbar = () => {
               </button>
             </li>
             <li>
-              <Link href="#">
+              <Link href="contact">
                 <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   Contact Us
-                </button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
-                  About Us
                 </button>
               </Link>
             </li>
@@ -173,6 +166,13 @@ const Navbar = () => {
                 <button className="mt-4 text-white flex items-center justify-between py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   <span>Services</span>
                   <RiArrowDropDownLine className="text-xl" />
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
+                  About Us
                 </button>
               </Link>
             </li>

@@ -7,7 +7,7 @@ const Section4 = () => {
     <div
       className="w-full lg:min-h-screen h-[70vh] flex justify-center items-center p-2 lg:p-0 relative"
       style={{
-        backgroundImage: 'url("/images/nature.jpg")',
+        backgroundImage: 'url("/images/old1.jpg")',
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
