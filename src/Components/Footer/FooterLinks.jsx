@@ -20,7 +20,7 @@ const Footer = () => {
               <p className="lg:text-lg  sm:text-xl font-bold text-white">
                 About Us
               </p>
-              <p className="lg:text-md  mt-4 text-white">
+              <p className="sm:text-sm lg:text-sm  mt-4 text-white">
               Byron Moore is a Registered Representative of Coastal Equities, Inc. and an Investment Advisory 
               Representative of Coastal Investment Advisors, Inc. Neither Coastal Equities, Inc. nor Coastal 
               Investment Advisors, Inc. is affiliated with Sovereign Wealth Management. Investment Advisory 
@@ -179,7 +179,7 @@ const Footer = () => {
           <div className="border-t border-gray-100 pt-8 dark:border-gray-800 mt-4">
             <div className="sm:flex sm:justify-between">
               <p className="text-xs lg:text-md text-gray-400">
-                © {currentYear}. Mwenda RoyFord & Company Advocates. All rights reserved.
+                © {currentYear}. © 2024 Sovereign Wealth Management. All Rights Reserved.
               </p>
               <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
                 <li>
