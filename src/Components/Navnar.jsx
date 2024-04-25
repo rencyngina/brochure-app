@@ -28,13 +28,10 @@ const Navbar = () => {
     };
   }, []); 
 
-  const handleMouseEnter = () => {
-    setIsDropdownOpen(true);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleMouseLeave = () => {
-    setIsDropdownOpen(false);
-  };
 
   const handleDropdownMouseEnter = () => {
     setIsDropdownOpen(true);
@@ -58,7 +55,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between w-full sticky top-0 z-20 h-[15vh] lg:items-center px-0 lg:py-6 py-4`}>
+    <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between w-full sticky top-0 z-20 h-[15vh] lg:h-[10vh] lg:items-center px-0 lg:py-6 py-4`}>
       <div>
         <Link href="/" passHref>
           <div className="cursor-pointer ">
@@ -91,36 +88,35 @@ const Navbar = () => {
             </div>
           </Link>
           <div className={`relative flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
-            <button
-              className={`dropdown-button  relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
-              onMouseEnter={handleDropdownMouseEnter}
-              onMouseLeave={handleDropdownMouseLeave}
-            >
-              Services <RiArrowDropDownLine />
-            </button>
+        <button
+          className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
+          onClick={toggleDropdown}
+        >
+          Services <RiArrowDropDownLine />
+        </button>
             {isDropdownOpen && (
               <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-60 shadow-lg py-4 p top-14">
-                <Link href="/services/overview" passHref>
+                <Link href="/overview" passHref>
                   <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
                     Services Overview
                   </div>
                 </Link>
-                <Link href="/services/financial-planning" passHref>
+                <Link href="/financial" passHref>
                   <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
                     Financial Planning
                   </div>
                 </Link>
-                <Link href="/services/risk-management" passHref>
+                <Link href="/risk" passHref>
                   <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
                     Risk Management
                   </div>
                 </Link>
-                <Link href="/services/investment-planning" passHref>
+                <Link href="/investment" passHref>
                   <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
                     Investment Planning
                   </div>
                 </Link>
-                <Link href="/services/retirement-planning" passHref>
+                <Link href="/retirement" passHref>
                   <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
                     Retirement Planning
                   </div>
@@ -144,7 +140,7 @@ const Navbar = () => {
             <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px'}} />
       </button>
       </div>
-        <Link href="mailto:info@royfordlaw.com">
+        <Link href="/contact">
           <button className="mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
             Contact Us
           </button>
@@ -159,16 +155,9 @@ const Navbar = () => {
               </button>
             </li>
             <li>
-              <Link href="#">
+              <Link href="contact">
                 <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   Contact Us
-                </button>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
-                  About Us
                 </button>
               </Link>
             </li>
@@ -177,6 +166,13 @@ const Navbar = () => {
                 <button className="mt-4 text-white flex items-center justify-between py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   <span>Services</span>
                   <RiArrowDropDownLine className="text-xl" />
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
+                  About Us
                 </button>
               </Link>
             </li>
