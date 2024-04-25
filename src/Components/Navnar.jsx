@@ -178,9 +178,6 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        <div className="mt-4 text-white text-sm text-center lg:hidden mb-10">
-          <p>&copy; 2023 Sovereign</p>
-        </div>
       </div>
     </nav>
   );

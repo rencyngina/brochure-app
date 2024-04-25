@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-// import Testimonial from "./testimonial";
-// import SoftwareRequestForm from "./SoftwareRequestForm";
 import { IoCloseCircle } from "react-icons/io5";
 import Navbar from "@/Components/Navnar";
 import Foot from "@/Components/foot";
