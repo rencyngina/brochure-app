@@ -130,11 +130,12 @@ const Navbar = () => {
             <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px'}} />
       </button>
       </div>
-        <a href="mailto:info@royfordlaw.com">
-          <button className="mt-4 text-white py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
-            Contact Us
-          </button>
-        </a>
+        <Link href="/contact" passHref>
+        <button className="mt-4 text-white py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
+          Contact Us
+        </button>
+        </Link>
+        
       </div>
       <div className={`block lg:hidden gap-2 lg:mb-10 mt-6 w-full ${isMobileNavOpen ? "flex lg:hidden flex-col" : "hidden"}`} style={{ backgroundColor: "#03234d" }}>
         <nav className="bg-[#03234d] flex flex-col items-center justify-center">

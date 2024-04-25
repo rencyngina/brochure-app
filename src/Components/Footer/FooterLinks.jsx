@@ -20,10 +20,11 @@ const Footer = () => {
                 About Us
               </p>
               <p className="lg:text-md  mt-4 text-white">
-              Established in 2016, Mwenda Royford and Company Advocates 
-              stands at the forefront of legal innovation, sculpting a legacy
-               of excellence with unwavering commitment. Our vision is anchored in
-                a passion for transformative legal solutions, setting us apart in the legal landscape.
+              Byron Moore is a Registered Representative of Coastal Equities, Inc. and an Investment Advisory 
+              Representative of Coastal Investment Advisors, Inc. Neither Coastal Equities, Inc. nor Coastal 
+              Investment Advisors, Inc. is affiliated with Sovereign Wealth Management. Investment Advisory 
+              Services are offered through Coastal Investment Advisors, Inc., a US SEC Registered Investment Advisor, 
+              and securities are offered through Coastal Equities, Inc., Member FINRA/SIPC, 1201 N. Orange St., Suite 729, Wilmington, DE 19801.
               </p>
             </div>
               </div>
@@ -32,8 +33,7 @@ const Footer = () => {
                 <ul className="mt-6 space-y-4 text-sm lg:text-md">
                   <li className="flex text-xs lg:text-md text-white items-center">
                    
-                      5TH AVENUE OFFICE SUITES 4TH FLOOR SUITE 4 – 15 OFF NGONG
-                      ROAD
+                  10440 Little Patuxent parkway, Suite 300, Columbia, Maryland 21044
                     
                   </li>
                   <li className="flex items-center text-xs">
@@ -41,12 +41,12 @@ const Footer = () => {
                       href="#"
                       className="transition hover:opacity-75 text-gray-200"
                     >
-                      +254 701 331176
+                    (443) 774-4050
                     </a>
                   </li>
                   
                     <p className="transition text-xs hover:opacity-75 text-gray-200">
-                      info@royfordlaw.com
+                    admin@thesovereignwealth.com
                     </p>
                   
                 </ul>
@@ -67,18 +67,18 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="team"
+                        href="contact"
                         className="transition hover:opacity-75 text-gray-200"
                       >
-                        Our Team
+                        Contact Us
                       </a>
                     </li>
                     <li>
                       <Link
-                        href="#"
+                        href="overview"
                         className="transition hover:opacity-75 text-gray-200"
                       >
-                        Join Our team
+                        Services
                       </Link>
                     </li>
                   </ul>

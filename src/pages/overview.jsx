@@ -52,7 +52,7 @@ const Overview = () => {
       id="features">
     <div className="lg:justify-center lg:items-center bg-[#284f83]  w-full">
       <h1 className='text-3xl text-yellow-600 mb-10 text-center mt-20'>Financial Planning Services</h1>
-      <p className='text-5xl text-center'>Sovereign Wealth Management offers financial planning and
+      <p className='text-2xl mr-2 ml-8 lg:text-5xl'>Sovereign Wealth Management offers financial planning and
       <br />
        discretionary portfolio management services.</p>
       <p className='text-xl mt-10 mb-10 text-center'>Synchronizing your wealth with your values, values-based financial planning goes further, helping you make a
@@ -84,7 +84,7 @@ const Overview = () => {
                 {feature.description}
               </p>
             </div>
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 mb-10">
               <Image
                 src={feature.imageUrl}
                 alt="feature-image"

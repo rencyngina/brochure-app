@@ -20,9 +20,9 @@ const Hero = () => {
       </div>
       
       <div className='lg:w-1/2 lg:flex justify-center z-0 '>
-        <div className="w-full lg:max-w-[600px]">
+        <div className="w-full lg:max-w-[800px]">
           <Image 
-            src="/images/couples.png" 
+            src="/images/old2.jpg" 
             alt="logo" 
             width={600} 
             height={100} 

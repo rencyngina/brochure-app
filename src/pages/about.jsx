@@ -142,7 +142,7 @@ const About = () => {
     </div>
       </div>
       
-        <p>Byron Moore is the CEO of Sovereign Wealth Management, an independent financial planning firm that serves clients in
+        <p className="mt-10">Byron Moore is the CEO of Sovereign Wealth Management, an independent financial planning firm that serves clients in
           {" "}
           <span style={{ color: "#D0B220" }}>
           D.C., Virginia, and Maryland. In his role, he enjoys the flexibility of being able to serve clients with customized solutions.
@@ -162,7 +162,7 @@ const About = () => {
 
         <div className="flex flex-col items-center">
         <h1 className="text-black text-4xl font-family: Playfair Display, serif;">My Plan of Care for You</h1>
-      <div className="block lg:flex gap-8 mt-10">
+      <div className="block lg:flex gap-8 lg:mt-10">
         <ul className="spaced-list">
           <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Help you identify your financial goals and create a plan to achieve them.</li>
           <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Provide guidance on investments that align with your values.</li>
