@@ -9,30 +9,30 @@ import Foot from "@/Components/foot";
 const features = [
   {
     id: 1,
-    title: "Search Engine Optimization (SEO) Services",
+    title: "Financial Planning Services",
     description:
-      "SEO is crucial for improving a website's visibility in search engine results. Highlight your agency's expertise in optimizing websites to rank higher in search engine results pages (SERPs). Explain the importance of keyword research, on-page optimization, and link building in improving search rankings and driving organic traffic to websites.",
+      "A solid financial plan, essential in pursuing your financial goals, will include a detailed overview of your current financial situation and the strategies you’ll implement. But values-based financial planning takes things to the next level. Rather than just focusing on accumulating wealth, it aligns your values with your financial strategy. Leveraging your wealth to support the things that matter most to you allows you to make a meaningful impact and live a more purposeful life.",
     imageUrl: "/images/financial.jpeg",
   },
   {
     id: 2,
-    title: "Content Creation and Marketing",
+    title: "Risk Management Insurance",
     description:
-      "Content is king in the digital world. Showcase your agency's ability to create high-quality content that engages audiences and drives traffic. Explain how content marketing strategies can help businesses attract, educate, and convert potential customers through valuable and relevant content.",
+      "An inevitable part of life, risk can have a significant impact on your financial security. Our goal is to minimize the potential financial and other losses that may arise from risks to your assets, health, or business. As your financial advisors, our role is to safeguard your financial well-being, which may entail helping you mitigate certain risks. We take proactive measures to manage risk so we can help you pursue your ideal financial future and experience greater peace.",
     imageUrl: "/images/risk.jpeg",
   },
   {
     id: 3,
-    title: "Website Design and Development(web and mobile)",
+    title: "Investment Planning",
     description:
-      "A professional website is essential for establishing a strong online presence. Highlight your agency's expertise in designing and developing custom websites that are visually appealing, user-friendly, and optimized for performance. Showcase examples of your work to demonstrate your design and development capabilities.",
+      "Investment management plays a pivotal role in any comprehensive financial plan, serving as a road map for prioritizing your financial objectives, such as building wealth and safeguarding your family’s financial stability. As your financial advisor, we’ll take the time to understand your individual goals and tailor strategies that align with your unique needs. Partnering together, we can help you work toward your financial aspirations and enjoy greater financial freedom.",
     imageUrl: "/images/investment.jpeg",
   },
   {
     id: 4,
-    title: "Content Creation and Marketing",
+    title: "Retirement Planning",
     description:
-      "Content is king in the digital world. Showcase your agency's ability to create high-quality content that engages audiences and drives traffic. Explain how content marketing strategies can help businesses attract, educate, and convert potential customers through valuable and relevant content.",
+      "Whether retirement is right around the corner or several years away, partnering with a financial advisor can be instrumental in setting realistic financial objectives as you plan for the next phase of life. We’ll work closely with you to understand your unique circumstances and develop strategies that help make your retirement dreams a reality. Through our collaboration, we can help prepare you financially for the next chapter and allow you to enjoy the retirement you’ve always envisioned.",
     imageUrl: "/images/retirement.jpeg",
   },
 ];
