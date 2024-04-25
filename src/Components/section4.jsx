@@ -103,6 +103,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+
               />
             </div>
           </div>

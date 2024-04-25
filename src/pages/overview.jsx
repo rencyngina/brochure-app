@@ -46,30 +46,37 @@ const Overview = () => {
 
   return (
     <>
-    <Navbar />
-    <div
-      className="flex flex-col items-center justify-center  bg-[#F3F5F8] "
-      id="features">
-    <div className="lg:justify-center lg:items-center bg-[#284f83]  w-full">
-      <h1 className='text-3xl text-yellow-600 mb-10 text-center mt-20'>Financial Planning Services</h1>
-      <p className='text-5xl text-center'>Sovereign Wealth Management offers financial planning and
-      <br />
-       discretionary portfolio management services.</p>
-      <p className='text-xl mt-10 mb-10 text-center'>Synchronizing your wealth with your values, values-based financial planning goes further, helping you make a
-      <br /> 
-      meaningful impact on the things that matter most.</p>
-      <div className="flex lg:justify-center items-center justify-center lg:items-center mb-10 ">
-      <button className="font-bold text-white py-4 px-20 bg-yellow-500 hover:bg-yellow-600 transition duration-300">
-        Get Started
-      </button>
-      </div>
-                
-              </div>
-              
+      <Navbar />
+      <div
+        className="flex flex-col items-center justify-center  bg-[#F3F5F8] "
+        id="features"
+      >
+        <div className="lg:justify-center lg:items-center bg-[#03234D]  w-full lg:p-0 p-4">
+          <h1 className="text-4xl lg:text-3xl text-yellow-600 mb-10 text-center mt-20">
+            Financial Planning Services
+          </h1>
+          <p className="text-lg lg:text-5xl lg:text-center text-white">
+            Sovereign Wealth Management offers financial planning and
+            <br />
+            discretionary portfolio management services.
+          </p>
+          <p className="text-sm lg:text-xl mt-10 mb-10 lg:text-center text-white">
+            Synchronizing your wealth with your values, values-based financial
+            planning goes further, helping you make a
+            <br />
+            meaningful impact on the things that matter most.
+          </p>
+          <div className="flex lg:justify-center items-center justify-center lg:items-center mb-10 ">
+            <button className="font-bold text-white py-4 px-20 bg-yellow-500 hover:bg-yellow-600 transition duration-300">
+              Get Started
+            </button>
+          </div>
+        </div>
+
         {features.map((feature, index) => (
           <div
             key={feature.id}
-            className={`flex flex-col lg:container md:flex-row items-center lg:gap-16 gap-4 lg:mt-20 mt-10 ${
+            className={`flex flex-col lg:container md:flex-row items-center lg:gap-16 gap-4 lg:mt-20 mt-10 lg:mb-20 mb-10 lg:p-0 p-4 ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
             data-aos-duration="1000"
@@ -95,8 +102,8 @@ const Overview = () => {
             </div>
           </div>
         ))}
-    </div>
-  <Foot />
+      </div>
+      <Foot />
     </>
   );
 };
