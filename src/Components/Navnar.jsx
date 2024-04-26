@@ -60,7 +60,7 @@ const Navbar = () => {
         <Link href="/" passHref>
           <div className="cursor-pointer ">
             <Image
-              className=" lg:flex lg:ml-4 ml-4 lg:mr-0 mr-0"
+              className="hidden lg:flex lg:ml-4 ml-4 lg:mr-0 mr-0"
               src="/images/Logo.svg"
               alt="logo"
               width={150}
@@ -71,10 +71,21 @@ const Navbar = () => {
       </div>
 
       <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
-        <div className="flex lg:hidden justify-end mt-0 mr-8">
-          <button className="mobile-nav-toggle" onClick={handleMobileNavToggle}>
-            <FaBars className="h-6 w-6 text-black " />
-          </button>
+        <div className="flex lg:hidden">
+          <button className="mobile-nav-toggle ml-5 mt-6" onClick={handleMobileNavToggle}>
+            <FaBars className="h-8 w-8 text-black " />
+            </button>
+            <Link href="/" passHref>
+          <div className="cursor-pointer mt-8 ml-8 ">
+            <Image
+              className=""
+              src="/images/Logo.svg"
+              alt="logo"
+              width={150}
+              height={120}
+            />
+          </div>
+          </Link>
         </div>
         <div className={`lg:flex lg:flex-grow hidden justify-center gap-10 text-lg ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
           <Link href="/" passHref>
