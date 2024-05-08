@@ -122,18 +122,6 @@ const Section3 = () => {
               READ MORE
             </button>
           </div>
-          <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
-            <Image src="/images/oldpple.jpg" alt="pic6" width={80} height={40}/>
-            <h2 className="text-lg font-semibold text-gray-800 mt-4">
-              Article 6
-            </h2>
-            <p className="text-gray-500 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-10">
-              READ MORE
-            </button>
-          </div>
         </div>
         <button className="bg-[#03234D] hover:bg-blue-700 text-white lg:font-bold lg:py-4 lg:px-6 py-3 px-6 mt-10 lg:ml-0 ml-4">
           SEE MORE ARTICLES
