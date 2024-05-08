@@ -36,7 +36,7 @@ const HeroSection = styled.div`
   background: linear-gradient(
     rgba(21, 21, 21, 0.8),
     rgba(30, 29, 29, 0.8)
-  ), url(/images/care.jpg);
+  ), url(/images/old1.jpg);
   background-position: 0% 0%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -116,7 +116,7 @@ const HeroSection = styled.div`
 const FormSection = styled.section`
   padding: 20px;
   background-color: #fff;
-  border-radius: 10px;
+//   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: 0 auto;
@@ -166,7 +166,7 @@ const SubmitButton = styled.button`
   color: white;
   padding: 15px 20px;
   border: none;
-  border-radius: 5px;
+//   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -338,10 +338,10 @@ const Contact = () => {
           Map & Location
         </h1>
         <p style={{ fontSize: "1rem", marginBottom: "20px", color: "#666" }}>
-          We are located along 5th avenue office suite 4th floor suite 4 – 15 off gong road
+          We are located along 10440 Little Patuxent Pkwy ste, 300, Columbia, MD 21044, USA
         </p>
         <GoogleMap
-          src="https://www.google.com/maps/place/10440+Little+Patuxent+Pkwy+ste,+300,+Columbia,+MD+21044/@39.212204,-76.861044,10z/data=!4m6!3m5!1s0x89b7dfa2d10937b5:0x1b85ad351b4fe3c7!8m2!3d39.2122043!4d-76.861044!16s%2Fg%2F11p71vnvrb?hl=en-US&entry=ttu"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3091.350516700368!2d-76.86104399999999!3d39.212204299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7dfa2d10937b5%3A0x1b85ad351b4fe3c7!2s10440%20Little%20Patuxent%20Pkwy%20ste%2C%20300%2C%20Columbia%2C%20MD%2021044%2C%20USA!5e0!3m2!1sen!2ske!4v1714018857160!5m2!1sen!2ske"
           width="100%"
           height="400"
           style={{ border: 0, borderRadius: "10px", boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)" }}

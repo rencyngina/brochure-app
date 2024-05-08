@@ -8,7 +8,7 @@ import Navbar from "@/Components/Navnar";
 // import FooterLinks from "../components/Footer/FooterLinks";
 import Image from "next/image";
 import Foot from "@/Components/foot";
-import { TiTick} from 'react-icons/ti'
+import { TiTick } from "react-icons/ti";
 import { IoMdCheckboxOutline } from "react-icons/io";
 
 const fadeIn = keyframes`
@@ -25,7 +25,7 @@ const AboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 70vh;
-  font-family:  "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
 `;
 
 const HeroSection = styled.div`
@@ -53,13 +53,13 @@ const HeroSection = styled.div`
     margin-bottom: 10px;
 
     @media (max-width: 768px) {
-      font-size: 2rem;
+      font-size: 16px;
     }
   }
 `;
 
 const ContentSection = styled.div`
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 10px;
   text-align: justify;
@@ -71,9 +71,9 @@ const ContentSection = styled.div`
     margin-bottom: 20px;
     color: #333;
     line-height: 1.5;
-    
-    @media(max-width:768px){
-      font-size:16px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
     }
   }
 
@@ -116,69 +116,137 @@ const ImageGrid = styled.div`
 const About = () => {
   return (
     <AboutWrapper>
-    <Navbar />
+      <Navbar />
       <HeroSection>
         <h1>About Us</h1>
       </HeroSection>
       <ContentSection>
-      
-      <div className="relative lg:mb-10">
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4">
-      <div className="col-span-2 lg:col-span-1">
-        <ImageWithHover src="/images/pic1.jpg" width={300} height={200} />
-      </div>
-      <div className="col-span-1 lg:col-span-2">
-        <ImageWithHover src="/images/pic2.jpg" width={300} height={200} />
-      </div>
-      <div className="col-span-1">
-        <ImageWithHover src="/images/pic5.jpg" width={300} height={200} />
-      </div>
-      <div className="col-span-1">
-        <ImageWithHover src="/images/pic4.jpg" width={300} height={200} />
-      </div>
-      <div className="col-span-1">
-        <ImageWithHover src="/images/pic3.jpg" width={300} height={200} />
-      </div>
-    </div>
-      </div>
-      
-        <p className="mt-10">Byron Moore is the CEO of Sovereign Wealth Management, an independent financial planning firm that serves clients in
-          {" "}
+        <div className="relative lg:mb-10 mb-10">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-4">
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic1.jpg" width={300} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic2.jpg" width={300} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic3.jpg" width={300} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic4.jpg" width={300} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic5.jpg" width={300} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/old1.jpg" width={300} height={200} />
+            </div>
+          </div>
+        </div>
+        <p>
+          Byron Moore is the CEO of Sovereign Wealth Management, an independent
+          financial planning firm that serves clients in{" "}
           <span style={{ color: "#D0B220" }}>
-          D.C., Virginia, and Maryland. In his role, he enjoys the flexibility of being able to serve clients with customized solutions.
+            D.C., Virginia, and Maryland. In his role, he enjoys the flexibility
+            of being able to serve clients with customized solutions.
           </span>{" "}
-          Before founding Sovereign Wealth Management, Byron’s experience in the financial industry included working at larger firms, including serving as Vice President at Capital One. 
+          Before founding Sovereign Wealth Management, Byron’s experience in the
+          financial industry included working at larger firms, including serving
+          as Vice President at Capital One.
         </p>
         <p>
-        He has always wanted to own his own firm and enjoys educating his clients and helping them be stewards of their finances. He finds satisfaction in prioritizing his clients’ best interest with no conflicts of interest. Byron believes that money can make you happy, but God gives you joy.
+          He has always wanted to own his own firm and enjoys educating his
+          clients and helping them be stewards of their finances. He finds
+          satisfaction in prioritizing his clients’ best interest with no
+          conflicts of interest. Byron believes that money can make you happy,
+          but God gives you joy.
         </p>
         <p>
-        Byron has been a financial advisor for over 20 years and thrives on making an impact in his clients’ lives. He specializes in working with individuals and business owners who are in the mid-to-late growth stage and focused on preservation and smart money management. 
+          Byron has been a financial advisor for over 20 years and thrives on
+          making an impact in his clients’ lives. He specializes in working with
+          individuals and business owners who are in the mid-to-late growth
+          stage and focused on preservation and smart money management.
         </p>
         <p>
-        Outside of the office, Byron enjoys hiking, biking, watching sports, spending time with family, and donating his time to charitable causes. Byron is a native-born Liberian from Monrovia, and he and Divinity sponsor a School for the Blind Orphanage, for which they provide clothes, food, musical instruments, and advanced learning devices. They also visit regularly to help them be as productive and self-sufficient as possible.
+          Outside of the office, Byron enjoys hiking, biking, watching sports,
+          spending time with family, and donating his time to charitable causes.
+          Byron is a native-born Liberian from Monrovia, and he and Divinity
+          sponsor a School for the Blind Orphanage, for which they provide
+          clothes, food, musical instruments, and advanced learning devices.
+          They also visit regularly to help them be as productive and
+          self-sufficient as possible.
         </p>
         <br></br>
-
-        <div className="flex flex-col items-center">
-        <h1 className="text-black text-4xl font-family: Playfair Display, serif;">My Plan of Care for You</h1>
-      <div className="block lg:flex gap-8 lg:mt-10">
-        <ul className="spaced-list">
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Help you identify your financial goals and create a plan to achieve them.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Provide guidance on investments that align with your values.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Work with you to create a budget and manage your expenses, so you can live within your means while still pursuing your financial goals.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Offer strategies to manage debt and improve your credit score, if needed.</li>
-        </ul>
-        <ul className="spaced-list">
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Help you plan for major life events such as retirement, college tuition, or the purchase of a home.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Regularly review your financial plan and make adjustments as needed, to keep you on track to meet your goals.</li>
-          <li className="text-lg"><IoMdCheckboxOutline size={20} className="inline-block mr-2 text-yellow-500" />Serve as a resource for financial education and advice like estate planning, tax strategies, insurance options, etc.</li>
-        </ul>
-      </div>
-    </div>
+        <div className="flex flex-col items-center lg:mb-20 mb-10">
+          <h1 className="text-black text-lg lg:text-4xl font-family: Playfair Display, serif;">
+            My Plan of Care for You
+          </h1>
+          <div className="block lg:flex lg:gap-8 gap-4 lg:mt-10 mt-4">
+            <ul className="spaced-list ">
+              <li className="text-sm lg:text-lg">
+                <IoMdCheckboxOutline
+                  size={20}
+                  className="inline-block mr-2 text-yellow-500"
+                />
+                Help you identify your financial goals and create a plan to
+                achieve them.
+              </li>
+              <li className="text-sm lg:text-lg">
+                <IoMdCheckboxOutline
+                  size={20}
+                  className="inline-block mr-2 text-yellow-500"
+                />
+                Provide guidance on investments that align with your values.
+              </li>
+              <li className="text-sm lg:text-lg">
+                <IoMdCheckboxOutline
+                  size={20}
+                  className="inline-block mr-2 text-yellow-500"
+                />
+                Work with you to create a budget and manage your expenses, so
+                you can live within your means while still pursuing your
+                financial goals.
+              </li>
+              <li className="text-sm lg:text-lg">
+                <IoMdCheckboxOutline
+                  size={20}
+                  className="inline-block mr-2 text-yellow-500"
+                />
+                Offer strategies to manage debt and improve your credit score,
+                if needed.
+              </li>
+            </ul>
+            <ul className="spaced-list">
+              <li className="text-sm lg:text-lg">
+                <IoMdCheckboxOutline
+                  size={20}
+                  className="inline-block mr-2 text-yellow-500"
+                />
+                Help you plan for major life events such as retirement, college
+                tuition, or the purchase of a home.
+              </li>
+              <li className="text-sm lg:text-lg">
+                <IoMdCheckboxOutline
+                  size={20}
+                  className="inline-block mr-2 text-yellow-500"
+                />
+                Regularly review your financial plan and make adjustments as
+                needed, to keep you on track to meet your goals.
+              </li>
+              <li className="text-sm lg:text-lg">
+                <IoMdCheckboxOutline
+                  size={20}
+                  className="inline-block mr-2 text-yellow-500"
+                />
+                Serve as a resource for financial education and advice like
+                estate planning, tax strategies, insurance options, etc.
+              </li>
+            </ul>
+          </div>
+        </div>
       </ContentSection>
       {/*footer*/}
-      <Foot/>
+      <Foot />
     </AboutWrapper>
   );
 };
@@ -186,7 +254,14 @@ const About = () => {
 const ImageWithHover = ({ src, width, height }) => {
   return (
     <div className="group relative overflow-hidden rounded-lg transition-transform duration-200 transform hover:scale-105">
-      <Image src={src} className="object-cover" width={width} height={height} alt="" loading="lazy" />
+      <Image
+        src={src}
+        className="object-cover"
+        width={width}
+        height={height}
+        alt=""
+        loading="lazy"
+      />
     </div>
   );
 };
