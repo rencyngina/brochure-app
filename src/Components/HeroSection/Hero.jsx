@@ -15,7 +15,7 @@ const Hero = () => {
           </button-1>
         </div>
       </div>
-      <div className='lg:w-1/2 lg:flex justify-center lg:z-0 z-0 mt-20 lg:mt-10 lg:p-0 p-2'>
+      <div className='lg:w-1/2 lg:flex justify-center lg:z-0 z-0 mt-20 lg:mt-10 lg:p-0 p-4'>
       <div className="relative w-full lg:max-w-[600px]">
       <div className="relative top-[-40px] lg:left-[-20px]">
         <Image 
@@ -25,23 +25,24 @@ const Hero = () => {
           height={200} 
           className="rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-2xl border-4 border-blue-950 shadow-lg lg:h-100 lg:w-full w-full h-90"
         />
-        <div className="absolute top-[-98px] lg:top-[-90px] right-[-16px] lg:right-[-95px] ">
-          <Image 
-            src="/images/old4.jpg"
-            alt="Second image"
-            width={260} 
-            height={100}
-            className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl border-4 border-yellow-500 lg:h-50 lg:w-25 w-full h-32"
-          />
-        </div>
-        <div className="absolute bottom-[-90px] lg:bottom-[-40px] left-[-20px] lg:left-[-80px]">
+        <div className="absolute top-[-90px] lg:top-[-90px] right-[-28px] lg:right-[-110px]">
+        <Image 
+          src="/images/old4.jpg"
+          alt="Second image"
+          width={200} 
+          height={100}
+          className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl border-4 border-yellow-500 lg:h-44 h-28 w-full object-cover"
+        />
+      </div>
+      
+        <div className="absolute bottom-[-80px] lg:bottom-[-90px] left-[-28px] lg:left-[-110px] ">
           <Image 
           src="/images/old3.jpg"
           alt="Third image"
           width={200} 
           height={150}
-          className="shadow-md rounded-tl-2xl rounded-br-2xl border-4 border-orange-400 lg:h-50 lg:w-full w-full h-32 "
-          />e
+          className="shadow-md rounded-tl-2xl rounded-br-2xl border-4 border-orange-400 lg:h-40  h-24 w-full object-cover "
+          />
         </div>
       </div>
     </div>

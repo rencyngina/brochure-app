@@ -188,7 +188,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link href="/about">
-                <button className="mt-4 text-white py-2 px-6 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
+                <button className="mt-4 text-white py-2 px-6 hover:bg-yellow-500 transition duration-300 w-full max-w-xs">
                   About Us
                 </button>
               </Link>
