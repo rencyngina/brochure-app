@@ -1,5 +1,6 @@
 import dbConnect from '../../pages/utils/dbConnect';
 import Article from '../../pages/models/Article';
+import { trace } from 'next/dist/trace';
 
 export default async function handler(req, res) {
   try {
@@ -9,6 +10,7 @@ export default async function handler(req, res) {
 
     // Retrieve articles from the database
     const articles = await Article.find();
+    // console.log('Articles:', articles);
 
     // Return articles as the response
     res.status(200).json({ articles });

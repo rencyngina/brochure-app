@@ -22,16 +22,38 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className='lg:w-1/2 lg:flex justify-center lg:z-0 z-0 mt-10 '>
-        <div className="w-full lg:max-w-[600px]">
+      <div className='lg:w-1/2 lg:flex justify-center lg:z-0 z-0 mt-20 lg:mt-10 lg:p-0 p-2'>
+      <div className="relative w-full lg:max-w-[600px]">
+      <div className="relative top-[-40px] lg:left-[-20px]">
+        <Image 
+          src="/images/old2.webp"
+          alt="logo" 
+          width={700} 
+          height={200} 
+          className="rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-2xl shadow-lg lg:h-100 lg:w-full w-full h-90"
+        />
+        <div className="absolute top-[-98px] lg:top-[-90px] right-[-16px] lg:right-[-95px] ">
           <Image 
-            src="/images/old2.webp"
-            alt="logo" 
-            width={700} 
-            height={200} 
-            className="rounded-tr-2xl rounded-bl-2xl shadow-lg lg:h-100 lg:w-full w-full h-90"
+            src="/images/old4.jpg"
+            alt="Second image"
+            width={260} 
+            height={100}
+            className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl border-4 lg:mr-6 border-yellow-500 lg:h-50 lg:w-25 w-full h-32"
           />
         </div>
+        <div className="absolute bottom-[-90px] lg:bottom-[-40px] left-[-20px] lg:left-[-80px]">
+          <Image 
+          src="/images/old3.jpg"
+          alt="Third image"
+          width={200} 
+          height={150}
+          className="shadow-md rounded-tl-2xl rounded-br-2xl border-4 border-orange-400 lg:h-50 lg:w-full w-full h-32 "
+          />
+        </div>
+      </div>
+    </div>
+    
+    
       </div>
 
     </div>

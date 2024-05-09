@@ -2,6 +2,7 @@
 "use_client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from 'next/link';
 
 const Section3 = () => {
   const [email, setEmail] = useState("");
@@ -97,10 +98,12 @@ const Section3 = () => {
               />
               <h2 className="text-lg font-semibold text-gray-800 mt-4">{article.title}</h2>
               <p className="text-gray-500 mt-2">{truncateContent(article.content, 20)}</p>
-              {article.isNew && <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-sm">New</span>}
+              <Link href={`/article/${article._id}`}>
               <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
                 READ MORE
               </button>
+              </Link>
+              {article.isNew && <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-sm">New</span>}
             </div>
           ))}
         </div>
