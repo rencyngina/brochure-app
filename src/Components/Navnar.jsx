@@ -32,6 +32,10 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
 
   const handleDropdownMouseEnter = () => {
     setIsDropdownOpen(true);
@@ -141,37 +145,50 @@ const Navbar = () => {
       </button>
       </div>
         <Link href="/contact">
-          <button className="mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
+          <button className="mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 ">
             Contact Us
           </button>
         </Link>
       </div>
       <div className={`block lg:hidden gap-2 lg:mb-10 mt-6 w-full ${isMobileNavOpen ? "flex lg:hidden flex-col" : "hidden"}`}>
-        <nav className=" bg-blue-950 flex flex-col items-center justify-center">
+        <nav className=" bg-blue-900 flex flex-col items-center justify-center">
           <ul className="flex flex-col items-center justify-center">
             <li>
-              <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
+              <button className="mt-4 text-sm text-white py-3 px-5 hover:bg-yellow-500 transition duration-300   w-full max-w-xs">
                 Client Portal
               </button>
             </li>
             <li>
               <Link href="contact">
-                <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
+                <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300  w-full max-w-xs">
                   Contact Us
                 </button>
               </Link>
             </li>
             <li>
-              <Link href="#">
-                <button className="mt-4 text-white flex items-center justify-between py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
-                  <span>Services</span>
-                  <RiArrowDropDownLine className="text-xl" />
-                </button>
-              </Link>
+            <Link href="#">
+      <button
+        className="mt-4 text-white flex items-center justify-between py-2 px-5 hover:bg-yellow-500 transition duration-300  w-full max-w-xs"
+        onClick={handleDropdownToggle}
+      >
+        <span>Services</span>
+        <RiArrowDropDownLine className="text-xl" />
+        {isDropdownOpen && (
+          <div className="absolute top-full left-0 bg-[#03234d] text-yellow-300 shadow-lg p-4 w-48">
+            <ul className="text-white">
+              <li>Services Overview</li>
+              <li>Financial Planning</li>
+              <li>Risk Management</li>
+              <li>Investment Planning</li>
+            </ul>
+          </div>
+        )}
+      </button>
+    </Link>
             </li>
             <li>
               <Link href="/about">
-                <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
+                <button className="mt-4 text-white py-2 px-6 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   About Us
                 </button>
               </Link>
