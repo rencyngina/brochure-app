@@ -123,8 +123,8 @@ const About = () => {
       <ContentSection>
       <div className="flex justify-center"> {/* Center the container */}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-2 mb-12"> {/* Adjusted gap values */}
-        <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic1.jpg" width={220} height={200} />
+        <div className="col-span-1 lg:col-span-1 ">
+          <ImageWithHover src="/images/pic1.jpg  " width={220} height={200} className=" border-4 border-yellow-500 "/>
         </div>
         <div className="col-span-1 lg:col-span-1">
           <ImageWithHover src="/images/pic2.jpg" width={220} height={200} />
