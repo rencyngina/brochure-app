@@ -25,13 +25,13 @@ const Hero = () => {
           height={200} 
           className="rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-2xl border-4 border-blue-950 shadow-lg lg:h-100 lg:w-full w-full h-90"
         />
-        <div className="absolute top-[-90px] lg:top-[-90px] right-[-28px] lg:right-[-110px]">
+        <div className="absolute top-[-90px] lg:top-[-90px] right-[-28px] lg:right-[-80px]">
         <Image 
           src="/images/old4.jpg"
           alt="Second image"
           width={200} 
           height={100}
-          className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl border-4 border-yellow-500 lg:h-44 h-28 w-full object-cover"
+          className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl border-4 border-yellow-500 lg:h-40 h-28 w-full object-cover"
         />
       </div>
       
@@ -39,9 +39,9 @@ const Hero = () => {
           <Image 
           src="/images/old3.jpg"
           alt="Third image"
-          width={200} 
+          width={180} 
           height={150}
-          className="shadow-md rounded-tl-2xl rounded-br-2xl border-4 border-orange-400 lg:h-40  h-24 w-full object-cover "
+          className="shadow-md rounded-tl-2xl rounded-br-2xl border-4 border-orange-400 lg:h-32  h-24 w-full object-cover "
           />
         </div>
       </div>

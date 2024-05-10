@@ -91,39 +91,34 @@ const Navbar = () => {
               About
             </div>
           </Link>
-          <div className={`relative flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
-        <button
-          className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
-          onClick={toggleDropdown}
-        >
-          Services <RiArrowDropDownLine />
-        </button>
-            {isDropdownOpen && (
-              <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-60 shadow-lg py-4 p top-14">
-                <Link href="/overview" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Services Overview
-                  </div>
-                </Link>
-                <Link href="/financial" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Financial Planning
-                  </div>
-                </Link>
-                <Link href="/risk" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Risk Management
-                  </div>
-                </Link>
-                <Link href="/investment" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Investment Planning
-                  </div>
-                </Link>
-                <Link href="/retirement" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Retirement Planning
-                  </div>
+          <div className={`relative ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
+          <button
+            className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
+            onClick={toggleDropdown}
+          >
+            Services <RiArrowDropDownLine />
+          </button>
+          {isDropdownOpen && (
+            <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-52 shadow-lg py-2 top-10 rounded-md left-0">
+              <Link href="/overview" passHref>
+                <div className="cursor-pointer px-3 py-1 hover:bg-gray-600 hover:text-white rounded-md">
+                  Services Overview
+                </div>
+              </Link>
+              <Link href="/financial" passHref>
+                <div className="cursor-pointer px-3 py-1 hover:bg-gray-600 hover:text-white rounded-md">
+                  Financial Planning
+                </div>
+              </Link>
+              <Link href="/risk" passHref>
+                <div className="cursor-pointer px-3 py-1 hover:bg-gray-600 hover:text-white rounded-md">
+                  Risk Management
+                </div>
+              </Link>
+              <Link href="/investment" passHref>
+                <div className="cursor-pointer px-3 py-1 hover:bg-gray-600 hover:text-white rounded-md">
+                  Investment Planning
+                </div>
                 </Link>
               </div>
             )}
@@ -167,24 +162,25 @@ const Navbar = () => {
             </li>
             <li>
             <Link href="#">
-      <button
-        className="mt-4 text-white flex items-center justify-between py-2 px-5 hover:bg-yellow-500 transition duration-300  w-full max-w-xs"
-        onClick={handleDropdownToggle}
-      >
-        <span>Services</span>
-        <RiArrowDropDownLine className="text-xl" />
-        {isDropdownOpen && (
-          <div className="absolute top-full left-0 bg-[#03234d] text-yellow-300 shadow-lg p-4 w-48">
-            <ul className="text-white">
-              <li>Services Overview</li>
-              <li>Financial Planning</li>
-              <li>Risk Management</li>
-              <li>Investment Planning</li>
-            </ul>
-          </div>
-        )}
-      </button>
-    </Link>
+            <button
+              className="mt-4 text-white flex items-center justify-between py-2 px-5 hover:bg-yellow-500 transition duration-300 w-full max-w-xs relative"
+              onClick={handleDropdownToggle}
+            >
+              <span>Services</span>
+              <RiArrowDropDownLine className="text-xl" />
+              {isDropdownOpen && (
+                <div className="absolute top-full left-0 bg-[#03234d] text-yellow-300 shadow-lg p-2 w-36 rounded-md">
+                  <ul className="text-white">
+                    <li>Services Overview</li>
+                    <li>Financial Planning</li>
+                    <li>Risk Management</li>
+                    <li>Investment Planning</li>
+                  </ul>
+                </div>
+              )}
+            </button>
+          </Link>
+          
             </li>
             <li>
               <Link href="/about">
