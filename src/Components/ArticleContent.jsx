@@ -14,12 +14,9 @@ const ArticleContent = ({ article }) => {
   console.log("Article content:", content);
 
   // Create a preview container to preview the content
-  const contentPreview = (
-    <div className="content-preview" dangerouslySetInnerHTML={{ __html: content }} />
-  );
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
+    <div className="max-w-5xl mx-auto px-4">
       {/* Render image if it exists */}
       {image && (
         <div className="mt-4">
@@ -27,8 +24,8 @@ const ArticleContent = ({ article }) => {
             src={image}
             alt={title}
             width={700}
-            height={400}
-            className="rounded-sm lg:w-full h-96 object-cover"
+            height={200}
+            className="rounded-sm"
           />
         </div>
       )}
@@ -45,7 +42,7 @@ const ArticleContent = ({ article }) => {
       {/* Render content if it exists */}
       {content && (
         <div
-          className="text-gray-700 mt-4"
+          className="text-gray-700 mt-4 lg:text-lg text-md"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       )}

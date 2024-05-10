@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ArticleContent from "../../Components/ArticleContent"; // Create this component to display article content
+import Navbar from "../../Components/Navnar";
+import Foot from "@/Components/foot";
 
 const ArticlePage = () => {
   const router = useRouter();
@@ -25,6 +27,8 @@ const ArticlePage = () => {
   }, [id]);
 
   return (
+    <>
+    <Navbar />
     <div className="container mx-auto py-8 flex justify-center items-center">
   {article ? (
     <ArticleContent article={article} />
@@ -37,6 +41,8 @@ const ArticlePage = () => {
     </div>
   )}
 </div>
+<Foot />
+    </>
 
   );
 };

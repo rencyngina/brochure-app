@@ -96,8 +96,8 @@ const Section3 = () => {
                 width={80}
                 height={40}
               />
-              <h2 className="text-lg font-semibold text-gray-800 mt-4">{article.title}</h2>
-              <p className="text-gray-500 mt-2" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
+              <h2 className="text-xl font-semibold text-gray-800 mt-4">{article.title}</h2>
+              <p className="text-gray-500 mt-2 text-lg" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
               <Link href={`/article/${article._id}`}>
               <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
                 READ MORE
@@ -107,9 +107,11 @@ const Section3 = () => {
             </div>
           ))}
         </div>
+        <Link href="/articles">
         <button className="bg-[#03234D] hover:bg-blue-700 text-white lg:font-bold lg:py-4 lg:px-6 py-3 px-6 mt-10 lg:ml-0 ml-4">
           SEE MORE ARTICLES
         </button>
+        </Link>
       </div>
     </div>
   );

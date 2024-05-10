@@ -56,10 +56,10 @@ const NewArticleForm = () => {
     <>
     <Nav />
       <ToastContainer />
-      <form onSubmit={handleSubmit} className="max-w-5xl mx-auto p-8 rounded-lg mt-20">
+      <form onSubmit={handleSubmit} className="max-w-5xl mx-auto p-4 lg:p-8  mt-20 bg-white shadow-lg border border-yellow-500">
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">Create New Article</h2>
         <div className="mb-4">
-          <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-1">Image</label>
+          <label htmlFor="image" className="block text-sm lg:text-2xl font-medium text-gray-700 mb-4">Image</label>
           <input
             type="file"
             id="image"
@@ -85,13 +85,13 @@ const NewArticleForm = () => {
             required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-8">
           <div className="input-field rounded-md focus-within:border-blue-500">
             <ReactQuill
               theme="snow" // Use Quill's snow theme
               value={content}
               onChange={setContent}
-              className="h-96 w-full resize-none p-4 focus:outline-none mb-10"
+              className="h-96 lg:h-100 w-full resize-none p-4 focus:outline-none mb-3 lg:mb-10"
               modules={quillModules} // Pass the modules object containing toolbar options
               formats={quillFormats} // Pass the formats array to enable text color
               required
