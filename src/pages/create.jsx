@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import dynamic from 'next/dynamic'; // Import dynamic from next/dynamic
+
 import Image from "next/image";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "../Components/Nav";
+
+// Import ReactQuill dynamically to ensure it's only loaded in the browser
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
+import "react-quill/dist/quill.snow.css"; // Add Quill's snow theme CSS
+
 const NewArticleForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -49,7 +57,7 @@ const NewArticleForm = () => {
     <Nav />
       <ToastContainer />
       <form onSubmit={handleSubmit} className="max-w-5xl mx-auto p-8 rounded-lg mt-20">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Create New Article</h2>
+        <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">Create New Article</h2>
         <div className="mb-4">
           <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-1">Image</label>
           <input
@@ -61,7 +69,7 @@ const NewArticleForm = () => {
           {image && (
             <div className="mt-2">
               <p className="text-gray-700">Selected Image:</p>
-              <img src={URL.createObjectURL(image)} alt="Selected" className="mt-2 rounded-md" style={{ maxWidth: '100%' }} />
+              <image src={URL.createObjectURL(image)} alt="Selected" className="mt-2 rounded-md" style={{ maxWidth: '100%' }} />
             </div>
           )}
         </div>
@@ -78,16 +86,16 @@ const NewArticleForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">Content</label>
-          <div className="input-field rounded-md border border-gray-300 focus-within:border-blue-500">
-            <textarea
-              id="content"
-              placeholder="Tell your story..."
+          <div className="input-field rounded-md focus-within:border-blue-500">
+            <ReactQuill
+              theme="snow" // Use Quill's snow theme
               value={content}
-              onChange={(e) => setContent(e.target.value)}
-              className="h-96 w-full resize-none p-4 focus:outline-none"
+              onChange={setContent}
+              className="h-96 w-full resize-none p-4 focus:outline-none mb-10"
+              modules={quillModules} // Pass the modules object containing toolbar options
+              formats={quillFormats} // Pass the formats array to enable text color
               required
-            ></textarea>
+            />
           </div>
         </div>
         <button type="submit" className="btn-primary w-40 py-3 px-4 bg-blue-950 text-white font-semibold transition duration-300 hover:bg-blue-600">PUBLISH</button>
@@ -96,4 +104,30 @@ const NewArticleForm = () => {
   );
 };
 
+{/*modules and formats for Quill editor */}
+const quillModules = {
+  toolbar: {
+    container: [
+      [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+      [{ size: [] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      ['link', 'image', 'video'],
+      ['clean']
+    ],
+    handlers: {
+      'color': function (value) { // Custom handler for text color
+        this.quill.format('color', value);
+      }
+    }
+  }
+};
+
+const quillFormats = [
+  'header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote',
+  'color', 'background', 'list', 'bullet', 'link', 'image', 'video'
+];
+
 export default NewArticleForm;
+

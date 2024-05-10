@@ -97,7 +97,7 @@ const Section3 = () => {
                 height={40}
               />
               <h2 className="text-lg font-semibold text-gray-800 mt-4">{article.title}</h2>
-              <p className="text-gray-500 mt-2">{truncateContent(article.content, 20)}</p>
+              <p className="text-gray-500 mt-2" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
               <Link href={`/article/${article._id}`}>
               <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
                 READ MORE

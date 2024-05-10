@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from 'next/link';
 import Navbar from "@/Components/Navnar";
 import Foot from "@/Components/foot";
+import Section4 from "@/Components/section4";
 
 const Articles = () => {
-const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(true); // State variable to track loading state
+  const [email, setEmail] = useState("");
   const [articles, setArticles] = useState([]);
   const [displayedArticles, setDisplayedArticles] = useState([]);
 
@@ -13,11 +15,14 @@ const [email, setEmail] = useState("");
     // Fetch articles data from API or use mock data
     const fetchArticles = async () => {
       try {
+        setLoading(true); // Set loading to true when fetching data
         const response = await fetch("/api/articles");
         const data = await response.json();
         setArticles(data.articles); // Assuming your API returns an array of articles
+        setLoading(false); // Set loading to false when data is fetched
       } catch (error) {
         console.error("Error fetching articles:", error);
+        setLoading(false); // Set loading to false in case of error
       }
     };
 
@@ -35,7 +40,7 @@ const [email, setEmail] = useState("");
     const sortedArticles = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
 
     // Take the first 3 articles
-    const latestArticles = sortedArticles.slice(0, 8);
+    const latestArticles = sortedArticles.slice(0, 100);
 
     // Mark articles as new if they are published within the last 3 days
     const currentDate = new Date();
@@ -86,36 +91,43 @@ const [email, setEmail] = useState("");
             help you, In your journey
           </h1>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {displayedArticles.map((article, index) => (
-            <div key={index} className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500">
-              <Image
-                src={article.image}
-                alt={`pic${index}`}
-                className="w-full h-48 object-cover"
-                layout="responsive"
-                width={80}
-                height={40}
-              />
-              <h2 className="text-lg font-semibold text-gray-800 mt-4">{article.title}</h2>
-              <p className="text-gray-500 mt-2">{truncateContent(article.content, 20)}</p>
-              <Link href={`/article/${article._id}`}>
-              <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
-                READ MORE
-              </button>
-              </Link>
-              {article.isNew && <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-sm">New</span>}
-            </div>
-          ))}
-        </div>
+        {loading ? ( // Display spinner if loading
+          <div className="flex justify-center items-center h-40">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {displayedArticles.map((article, index) => (
+              <div key={index} className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500">
+                <Image
+                  src={article.image}
+                  alt={`pic${index}`}
+                  className="w-full h-48 object-cover"
+                  layout="responsive"
+                  width={80}
+                  height={40}
+                />
+                <h2 className="text-lg font-semibold text-gray-800 mt-4">{article.title}</h2>
+                <p className="text-gray-500 mt-2" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
+                <Link href={`/article/${article._id}`}>
+                <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
+                  READ MORE
+                </button>
+                </Link>
+                {article.isNew && <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-sm">New</span>}
+              </div>
+            ))}
+          </div>
+        )}
         <button className="bg-[#03234D] hover:bg-blue-700 text-white lg:font-bold lg:py-4 lg:px-6 py-3 px-6 mt-10 lg:ml-0 ml-4">
           LOAD MORE ARTICLES
         </button>
       </div>
     </div>
+    <Section4 />
     <Foot />
     </>
   );
 };
 
-export default Articles 
+export default Articles;
