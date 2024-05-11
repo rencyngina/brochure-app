@@ -2,13 +2,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
 import { IoLogInOutline } from "react-icons/io5";
+import { PiArticleMedium } from "react-icons/pi";
 
-const Navbar = () => {
-  const router = useRouter(); // Use useRouter hook
+
+
+const Nav = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [scrollNav, setScrollNav] = useState(false);
@@ -33,6 +34,24 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+
+  const handleDropdownMouseEnter = () => {
+    setIsDropdownOpen(true);
+  };
+
+  const handleDropdownMouseLeave = (e) => {
+    const dropdown = document.querySelector(".dropdown-content");
+    const dropdownButton = document.querySelector(".dropdown-button");
+
+    if (
+      !dropdown.contains(e.relatedTarget) &&
+      !dropdownButton.contains(e.relatedTarget)
+    ) {
+      setIsDropdownOpen(false);
+    }
+};
+
+
   const handleMobileNavToggle = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   };
@@ -43,11 +62,11 @@ const Navbar = () => {
         <Link href="/" passHref>
           <div className="cursor-pointer ">
             <Image
-              className="hidden lg:flex lg:ml-20 ml-4 lg:mr-0 mr-0"
+              className="hidden lg:flex lg:ml-4 ml-4 lg:mr-0 mr-0"
               src="/images/Logo.svg"
               alt="logo"
-              width={160}
-              height={150}
+              width={150}
+              height={100}
             />
           </div>
         </Link>
@@ -57,38 +76,37 @@ const Navbar = () => {
         <div className="flex lg:hidden">
           <button className="mobile-nav-toggle ml-5 mt-6" onClick={handleMobileNavToggle}>
             <FaBars className="h-8 w-8 text-black " />
-          </button>
-          <Link href="/" passHref>
-            <div className="cursor-pointer mt-8 ml-8 ">
-              <Image
-                className=""
-                src="/images/Logo.svg"
-                alt="logo"
-                width={150}
-                height={120}
-              />
-            </div>
+            </button>
+            <Link href="/" passHref>
+          <div className="cursor-pointer mt-8 ml-8 ">
+            <Image
+              className=""
+              src="/images/Logo.svg"
+              alt="logo"
+              width={150}
+              height={120}
+            />
+          </div>
           </Link>
         </div>
         <div className={`lg:flex lg:flex-grow hidden justify-center gap-10 text-lg ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
           <Link href="/" passHref>
-            <div className={`relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer ${router.pathname === "/" ? "text-yellow-500" : ""}`}>
+            <div className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer">
               Home
             </div>
           </Link>
           <Link href="/about" passHref>
-            <div className={`relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer ${router.pathname === "/about" ? "text-yellow-500" : ""}`}>
+            <div className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer">
               About
             </div>
           </Link>
-          {/* Add similar Link components for other navigation items */}
           <div className={`relative flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
-            <button
-              className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
-              onClick={toggleDropdown}
-            >
-              Services <RiArrowDropDownLine />
-            </button>
+        <button
+          className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
+          onClick={toggleDropdown}
+        >
+          Services <RiArrowDropDownLine />
+        </button>
             {isDropdownOpen && (
               <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-60 shadow-lg py-4 p top-14">
                 <Link href="/overview" passHref>
@@ -101,7 +119,7 @@ const Navbar = () => {
                     Financial Planning
                   </div>
                 </Link>
-                                <Link href="/risk" passHref>
+                <Link href="/risk" passHref>
                   <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
                     Risk Management
                   </div>
@@ -111,7 +129,7 @@ const Navbar = () => {
                     Investment Planning
                   </div>
                 </Link>
-                                <Link href="/retirement" passHref>
+                <Link href="/retirement" passHref>
                   <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
                     Retirement Planning
                   </div>
@@ -120,24 +138,24 @@ const Navbar = () => {
             )}
           </div>
           <Link href="/articles" passHref>
-            <div className={`relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer ${router.pathname === "/articles" ? "text-yellow-500" : ""}`}>
+            <div className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-bottom cursor-pointer">
               Articles
             </div>
           </Link>
         </div>
       </div>
       <div className="hidden lg:flex lg:gap-3 gap-2 lg:mb-10 mt-6 lg:mr-8">
-        <div className="flex ">
-          <button className={`mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex`}>
-            <div className="" >
-              Client Portal
+      <div className="flex ">
+      <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex">
+        <div className="" >
+              MY ARTICLES
             </div>
-            <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px'}} />
-          </button>
-        </div>
+            <PiArticleMedium style={{ fontSize: '24px', marginLeft: '5px'}} />
+      </button>
+      </div>
         <Link href="/contact">
-          <button className={`mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300`}>
-            Contact Us
+          <button className="mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300">
+            Messages
           </button>
         </Link>
       </div>
@@ -145,18 +163,25 @@ const Navbar = () => {
         <nav className=" bg-blue-950 flex flex-col items-center justify-center">
           <ul className="flex flex-col items-center justify-center">
             <li>
-              <button className={`mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs ${router.pathname === "/" ? "text-yellow-500" : ""}`}>
+              <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                 Client Portal
               </button>
             </li>
             <li>
-              <Link href="/contact">
-                <button className={`mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs ${router.pathname === "/contact" ? "text-yellow-500" : ""}`}>
+              <Link href="contact">
+                <button className="mt-4 text-white py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
                   Contact Us
                 </button>
               </Link>
             </li>
-            {/* Add similar links for other navigation items */}
+            <li>
+              <Link href="#">
+                <button className="mt-4 text-white flex items-center justify-between py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full max-w-xs">
+                  <span>Services</span>
+                  <RiArrowDropDownLine className="text-xl" />
+                </button>
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -164,4 +189,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Nav;

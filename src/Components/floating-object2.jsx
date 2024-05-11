@@ -1,12 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import SoftwareRequestForm from "./SoftwareRequestForm";
 import { FaSpotify, FaPinterest, FaDribbble, FaTelegram, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { IoCloseCircle } from 'react-icons/io5';
 
 const FloatingObject2 = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
   return (
-    <div className='flex flex-col items-center justify-center bg-white lg:h-[25vh] h-auto lg:p-12 p-6'>
+    <div className='flex flex-col items-center justify-center bg-[#F3F4F6] lg:h-[25vh] h-auto lg:p-12 p-6'>
       <div className='bg-yellow-500 flex mb-5 lg:mb-30 flex-col z-10 justify-center items-center w-full max-w-screen-lg shadow-md'>
         <div className='text-xl'>
           <h1 className='text-center text-lg lg:text-4xl md:text-5xl mt-12 mb-4 md:mb-4'>Not sure where to start?</h1>
@@ -14,16 +22,14 @@ const FloatingObject2 = () => {
           <br />
            Contact us today to get started!</p>
           <div className="flex justify-center mt-5">
-            <button-1 className=''>
-              <span className='text-black font-bold'>SCHEDULE A CALL</span>
+            <button-1 className=''
+            onClick={toggleForm}
+            >
+              <span className='text-black font-bold cursor-pointer'>
+              SCHEDULE A METTING</span>
             </button-1>
           </div>
         </div>
-        {/*<div className="md:w-1/2 flex justify-center lg:mt-10 mt-5">
-          <Link href="/" passHref>
-              <Image src="/images/badge.png" alt="badge" width={100} height={100} />
-          </Link>
-  </div>*/}
         <ul className="example-2">
       <li className="icon-content">
         <a
@@ -71,6 +77,19 @@ const FloatingObject2 = () => {
       </li>
     </ul>
       </div>
+      {showForm && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-20 flex items-center justify-center">
+          <div className="relative z-30">
+            <SoftwareRequestForm />
+            {/* Close button for the form */}
+            <button
+              onClick={toggleForm}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 mb-12">
+              <IoCloseCircle className="w-8 h-8 text-gray-500" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

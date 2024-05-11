@@ -31,7 +31,7 @@ const Section1 = () => {
 
   return (
     <>
-      <section className="bg-white py-5 lg:py-20">
+      <section className="bg-[#F3F4F6] py-5 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{
