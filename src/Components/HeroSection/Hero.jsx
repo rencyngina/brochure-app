@@ -39,6 +39,7 @@ const Hero = () => {
           height={100}
           className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl border-4 border-yellow-500 lg:h-40 h-28 w-full object-cover"
         />
+        
       </div>
         <div className="absolute bottom-[-80px] lg:bottom-[-90px] left-[-28px] lg:left-[-110px] ">
           <Image 
