@@ -19,7 +19,7 @@ const Articles = () => {
         setLoading(true);
         const response = await fetch("/api/articles");
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setArticles(data.articles);
