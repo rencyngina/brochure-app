@@ -18,8 +18,8 @@ async function dbConnect() {
 
   try {
     const db = await mongoose.connect(MONGODB_URI, {
-      useNewUrlParser: true,
-    //   useUnifiedTopology: true,
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
     });
 
     cachedDb = db;

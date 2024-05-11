@@ -1,5 +1,5 @@
-import dbConnect from '../../pages/utils/dbConnect';
-import Article from '../../pages/models/Article';
+import dbConnect from '../../utils/dbConnect';
+import Article from '../../models/Article';
 
 export default async function handler(req, res) {
   const { query: { id }, method } = req;

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ArticleContent = ({ article }) => {
   // Check if article is null or undefined
@@ -49,12 +50,12 @@ const ArticleContent = ({ article }) => {
 
       {/* Navigation buttons */}
       <div className="lg:flex flex-col md:flex-row lg:gap-4 gap-6 mt-4">
-        <a href="/" className="btn-primary">
+        <Link href="/" className="btn-primary">
           HOME
-        </a>
-        <a href="/articles" className="btn-primary">
+        </Link>
+        <Link href="/articles" className="btn-primary">
           MORE ARTICLES
-        </a>
+        </Link>
       </div>
     </div>
   );
