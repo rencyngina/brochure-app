@@ -76,6 +76,24 @@ const Articles = () => {
     }
   };
 
+// delete Artical
+const deleteArticle = async (id) => {
+  try {
+    const response = await fetch(`/api/delete/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      const updatedArticles = articles.filter((article) => article._id !== id);
+      setArticles(updatedArticles);
+    } else {
+      console.error("Failed to delete article:", response.statusText);
+    }
+  } catch (error) {
+    console.error("Error deleting article:", error);
+  }
+};
+
+
   return (
     <>
       <Navbar />
@@ -134,6 +152,9 @@ const Articles = () => {
                       READ MORE
                     </button>
                   </Link>
+                  <button onClick={() => deleteArticle(article._id)} className="bg-red-500 text-white py-3 px-5 text-sm mt-2 ml-10">
+                    Delete
+                  </button>
                   {article.isNew && (
                     <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-sm">
                       New
