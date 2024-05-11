@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use_client";
 import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";

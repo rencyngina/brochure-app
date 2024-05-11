@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import { FaYoutube } from "react-icons/fa";
 import Image from "next/image";
