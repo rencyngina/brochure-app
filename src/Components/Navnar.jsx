@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between w-full sticky top-0 z-20 h-[15vh] lg:h-[10vh] lg:items-center px-0 lg:py-6 py-4`}>
+    <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between w-full sticky top-0 z-20 h-[10vh] lg:h-[10vh] lg:items-center px-0 lg:py-6 py-4`}>
       <div>
         <Link href="/" passHref>
           <div className="cursor-pointer ">
@@ -55,11 +55,11 @@ const Navbar = () => {
 
       <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
         <div className="flex lg:hidden">
-          <button className="mobile-nav-toggle ml-5 mt-6" onClick={handleMobileNavToggle}>
-            <FaBars className="h-8 w-8 text-black " />
+          <button className="mobile-nav-toggle ml-5 mt-1 mb-8" onClick={handleMobileNavToggle}>
+            <FaBars className="h-7 w-7 text-black " />
           </button>
           <Link href="/" passHref>
-            <div className="cursor-pointer mt-8 ml-8 ">
+            <div className="cursor-pointer mt-0 ml-8 ">
               <Image
                 className=""
                 src="/images/Logo.svg"

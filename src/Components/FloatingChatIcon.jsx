@@ -21,7 +21,7 @@ function FloatingChatIcon() {
         </div>
       )}
       {isChatOpen && (
-        <div className="fixed bottom-10 right-10 bg-white rounded-lg shadow-md w-80 z-30 h-[380px] ">
+        <div className="fixed bottom-10 right-5 bg-white rounded-lg shadow-md w-80 z-30 h-[350px] lg:h-[380px] ">
           <div className="flex items-center justify-between bg-blue-950 text-white p-3 rounded-t-lg">
             <h3 className="text-lg font-semibold">Talk to us</h3>
             <button onClick={toggleChat} className="text-white hover:text-gray-200 focus:outline-none">
