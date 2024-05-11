@@ -78,14 +78,13 @@ const FloatingObject2 = () => {
     </ul>
       </div>
       {showForm && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-20 flex items-center justify-center">
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-20 flex items-center justify-center">
           <div className="relative z-30">
             <SoftwareRequestForm />
             {/* Close button for the form */}
             <button
               onClick={toggleForm}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 mb-12"
-            >
+              className="absolute top-4 right-4 text-white hover:text-gray-300 mb-12">
               <IoCloseCircle className="w-8 h-8 text-gray-500" />
             </button>
           </div>

@@ -29,7 +29,7 @@ const Hero = () => {
           alt="logo" 
           width={700} 
           height={200} 
-          className="rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-2xl border-4 border-blue-950 shadow-lg lg:h-100 lg:w-full w-full h-90"
+          className="rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-2xl border-4 border-blue-950 shadow-lg lg:h-90 lg:w-full w-full h-90"
         />
         <div className="absolute top-[-90px] lg:top-[-90px] right-[-28px] lg:right-[-80px]">
         <Image 
@@ -42,7 +42,7 @@ const Hero = () => {
       </div>
         <div className="absolute bottom-[-80px] lg:bottom-[-90px] left-[-28px] lg:left-[-110px] ">
           <Image 
-          src="/images/old3.jpg"
+          src="/images/pic1.jpg"
           alt="Third image"
           width={180} 
           height={150}

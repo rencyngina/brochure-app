@@ -101,7 +101,21 @@ const Navbar = () => {
                     Financial Planning
                   </div>
                 </Link>
-                {/* Add other service links */}
+                                <Link href="/risk" passHref>
+                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
+                    Risk Management
+                  </div>
+                </Link>
+                <Link href="/investment" passHref>
+                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
+                    Investment Planning
+                  </div>
+                </Link>
+                                <Link href="/retirement" passHref>
+                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
+                    Retirement Planning
+                  </div>
+                </Link>
               </div>
             )}
           </div>

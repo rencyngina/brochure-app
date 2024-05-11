@@ -28,22 +28,22 @@ const ArticlePage = () => {
 
   return (
     <>
-    <Navbar />
-    <div className="container mx-auto py-8 flex justify-center items-center">
-  {article ? (
-    <ArticleContent article={article} />
-  ) : (
-    <div className="loader">
-      <span className="item"></span>
-      <span className="item"></span>
-      <span className="item"></span>
-      <span className="item"></span>
-    </div>
-  )}
-</div>
-<Foot />
+      <Navbar />
+      <div className="container mx-auto py-8 flex justify-center items-center">
+        {article ? (
+          <ArticleContent article={article} />
+        ) : (
+          <div className="flex justify-center items-center h-40">
+            <div class="three-body">
+              <div class="three-body__dot"></div>
+              <div class="three-body__dot"></div>
+              <div class="three-body__dot"></div>
+            </div>
+          </div>
+        )}
+      </div>
+      <Foot />
     </>
-
   );
 };
 

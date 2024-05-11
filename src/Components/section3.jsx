@@ -2,42 +2,42 @@
 "use_client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 
 const Section3 = () => {
   const [email, setEmail] = useState("");
   const [articles, setArticles] = useState([]);
   const [displayedArticles, setDisplayedArticles] = useState([]);
+  const [error, setError] = useState(null); // State variable to track errors
+  const [loading, setLoading] = useState(true); // State variable to track loading state
 
   useEffect(() => {
-    // Fetch articles data from API or use mock data
     const fetchArticles = async () => {
       try {
         const response = await fetch("/api/articles");
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
         const data = await response.json();
-        setArticles(data.articles); // Assuming your API returns an array of articles
+        setArticles(data.articles);
+        setError(null); // Reset error state if successful
       } catch (error) {
         console.error("Error fetching articles:", error);
+        setError(error.message); // Set error message in case of error
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or error
       }
     };
 
     fetchArticles();
 
-    //Fetch articles after every 5 minutes
     const fetchInterval = setInterval(fetchArticles, 5 * 60 * 1000);
-
-    //Clean up function to clear the interval when component unmounts
     return () => clearInterval(fetchInterval);
-  }, []); // Fetch articles data only once on component mount
+  }, []);
 
   useEffect(() => {
-    // Sort articles by date in descending order
     const sortedArticles = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    // Take the first 3 articles
     const latestArticles = sortedArticles.slice(0, 3);
-
-    // Mark articles as new if they are published within the last 3 days
     const currentDate = new Date();
     const threeDaysAgo = new Date(currentDate);
     threeDaysAgo.setDate(currentDate.getDate() - 3);
@@ -48,7 +48,7 @@ const Section3 = () => {
     }));
 
     setDisplayedArticles(displayedArticles);
-  }, [articles]); // Update displayed articles when the articles state changes
+  }, [articles]);
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
@@ -60,7 +60,6 @@ const Section3 = () => {
     setEmail("");
   };
 
-  // Function to truncate content to a specified number of words
   const truncateContent = (content, numWords) => {
     const words = content.split(" ");
     if (words.length > numWords) {
@@ -72,8 +71,6 @@ const Section3 = () => {
 
   return (
     <div className="bg-[#F3F4F6] min-h-screen border-t">
-      {/* Your newsletter subscription form */}
-      
       <div className="container mx-auto lg:py-8 py-4">
         <div className="lg:mt-10 lg:mb-8 p-3">
           <p className="text-2xl lg:text-3xl text-yellow-500 font-bold">
@@ -86,31 +83,49 @@ const Section3 = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {displayedArticles.map((article, index) => (
-            <div key={index} className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500">
-              <Image
-                src={article.image}
-                alt={`pic${index}`}
-                className="w-full h-48 object-cover"
-                layout="responsive"
-                width={80}
-                height={40}
-              />
-              <h2 className="text-xl font-semibold text-gray-800 mt-4">{article.title}</h2>
-              <p className="text-gray-500 mt-2 text-lg" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
-              <Link href={`/article/${article._id}`}>
-              <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
-                READ MORE
-              </button>
-              </Link>
-              {article.isNew && <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-sm">New</span>}
+          {loading ? (
+            <div className="flex justify-center items-center h-40">
+              <div className="three-body">
+                <div className="three-body__dot"></div>
+                <div className="three-body__dot"></div>
+                <div className="three-body__dot"></div>
+              </div>
             </div>
-          ))}
+          ) : error ? (
+            <div className="text-center text-red-600 font-bold">
+              Network Problem: {error}
+            </div>
+          ) : articles.length === 0 ? (
+            <div className="text-center text-gray-600 font-bold">
+              No articles found.
+            </div>
+          ) : (
+            displayedArticles.map((article, index) => (
+              <div key={index} className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500">
+                <Image
+                  src={article.image}
+                  alt={`pic${index}`}
+                  className="w-full h-48 object-cover"
+                  layout="responsive"
+                  width={80}
+                  height={40}
+                />
+                <h2 className="text-xl font-semibold text-gray-800 mt-4">{article.title}</h2>
+                <p className="text-gray-500 mt-2 text-lg" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
+                <Link href={`/article/${article._id}`}>
+                  <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
+                    READ MORE
+                  </button>
+                </Link>
+                {article.isNew && <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-sm">New</span>}
+              </div>
+            ))
+          )}
         </div>
         <Link href="/articles">
-        <button className="bg-[#03234D] hover:bg-blue-700 text-white lg:font-bold lg:py-4 lg:px-6 py-3 px-6 mt-10 lg:ml-0 ml-4">
-          SEE MORE ARTICLES
-        </button>
+          <button className="bg-[#03234D] hover:bg-blue-700 text-white lg:font-bold lg:py-4 lg:px-6 py-3 px-6 mt-10 lg:ml-0 ml-4">
+            SEE MORE ARTICLES
+          </button>
         </Link>
       </div>
     </div>
@@ -118,5 +133,3 @@ const Section3 = () => {
 };
 
 export default Section3;
-
-
