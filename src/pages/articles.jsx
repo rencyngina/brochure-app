@@ -152,7 +152,7 @@ const deleteArticle = async (id) => {
                       READ MORE
                     </button>
                   </Link>
-                  <button onClick={() => deleteArticle(article._id)} className="bg-red-500 text-white py-3 px-5 text-sm mt-2 ml-10">
+                  <button onClick={() => deleteArticle(article._id)} className="hidden lg:bg-red-500 lg:text-white lg:py-3 lg:px-5 lg:text-sm lg:mt-2 lg:ml-10">
                     Delete
                   </button>
                   {article.isNew && (

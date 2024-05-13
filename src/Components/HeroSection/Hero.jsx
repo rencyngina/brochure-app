@@ -14,9 +14,8 @@ const Hero = () => {
 
   window.addEventListener("scroll", handleScroll);
 
-  // Check if animation has not occurred yet
   if (!animateHero) {
-    setAnimateHero(true); // Trigger animation
+    setAnimateHero(true);
   }
 
   return () => {
