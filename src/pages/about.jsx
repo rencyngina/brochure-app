@@ -29,16 +29,16 @@ const AboutWrapper = styled.div`
 `;
 
 const HeroSection = styled.div`
-  height: 30vh;
+  height: 0vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(21, 21, 21, 0.6), rgba(30, 29, 29, 0.6)),
-    url(/images/oldppleha.jpg);
+  background: blue;
+    
   background-position: center;
-  background-size: cover;
+  background-size:
   background-repeat: no-repeat;
   text-align: center;
   color: white;
@@ -59,9 +59,9 @@ const HeroSection = styled.div`
 `;
 
 const ContentSection = styled.div`
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 8px;
   text-align: justify;
   animation: ${fadeIn} 1s ease-in-out;
   margin-top: 30px;
@@ -117,34 +117,37 @@ const About = () => {
   return (
     <AboutWrapper>
       <Navbar />
-      <HeroSection>
-        <h1>About Us</h1>
-      </HeroSection>
+      
       <ContentSection>
+     
       <div className="flex justify-center"> {/* Center the container */}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-2 mb-12"> {/* Adjusted gap values */}
         <div className="col-span-1 lg:col-span-1 ">
-          <ImageWithHover src="/images/pic1.jpg  " width={220} height={200} className=" border-4 border-yellow-500 "/>
+          <ImageWithHover src="/images/pic1.jpg  " width={260} height={200} className=" border-4 border-yellow-500 "/>
         </div>
         <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic2.jpg" width={220} height={200} />
+          <ImageWithHover src="/images/pic2.jpg" width={260} height={200} />
         </div>
         <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic3.jpg" width={220} height={200} />
+          <ImageWithHover src="/images/pic3.jpg" width={260} height={200} />
         </div>
         <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic4.jpg" width={220} height={200} />
+          <ImageWithHover src="/images/pic4.jpg" width={260} height={200} />
         </div>
         <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic5.jpg" width={220} height={200} />
+          <ImageWithHover src="/images/pic5.jpg" width={260} height={200} />
         </div>
         <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/old1.jpg" width={220} height={200} />
+          <ImageWithHover src="/images/old1.jpg" width={260} height={200} />
         </div>
       </div>
     </div>
-    
-        <p className="">
+
+    <div className="flex justify-center">
+    <h1 className=" text-yellow-600 ">About Us</h1>
+  </div>
+  
+        <p className="mt-5">
           Byron Moore is the CEO of Sovereign Wealth Management, an independent
           financial planning firm that serves clients in{" "}
           <span style={{ color: "#D0B220" }}>
