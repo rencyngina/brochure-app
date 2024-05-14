@@ -85,7 +85,7 @@ const Section1 = () => {
                 </p>
               </div>
               <div className="flex gap-4 mt-6">
-                <a href="mailto:info@royfordlaw.com">
+                <a href="/about">
                   <button className="font-bold text-white py-3 px-8 bg-yellow-500 hover:bg-yellow-600 transition duration-300">
                     Learn More
                   </button>
