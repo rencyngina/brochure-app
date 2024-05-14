@@ -207,11 +207,11 @@ const About = () => {
               </li>
               <li className="py-4 flex items-start space-x-4">
                 <IoMdCheckboxOutline size={30} className="text-yellow-500" />
-                <span className="text-sm lg:text-lg text-white font-bold">Help you plan for major life events such as retirement, college tuition, or the purchase of a home.</span>
+                <span className="text-sm lg:text-lg text-white font-bold antialiased">Help you plan for major life events such as retirement, college tuition, or the purchase of a home.</span>
               </li>
               <li className="py-4 flex items-start space-x-4">
                 <IoMdCheckboxOutline size={40} className="text-yellow-500" />
-                <span className="text-sm lg:text-lg text-white font-bold">Regularly review your financial plan and make adjustments as needed, to keep you on track to meet your goals.</span>
+                <span className="text-sm lg:text-lg text-white font-bold subpixel-antialiased">Regularly review your financial plan and make adjustments as needed, to keep you on track to meet your goals.</span>
               </li>
              
             </ul>
