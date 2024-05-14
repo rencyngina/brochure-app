@@ -431,8 +431,8 @@ ul {
   background: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
-  left: 0; /* Cover the entire viewport from the left edge */
-  right: 0; /* Cover the entire viewport from the right edge */
+  left: 0;
+  right: 0;
   bottom: 0;
 }
 
@@ -440,11 +440,11 @@ ul {
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
-  transition: transform 0.3s ease; /* Adjust the transition property */
+  transition: transform 0.3s ease;
 }
 
 .bm-menu-wrap.menu-open {
-  transform: translateX(200px); /* Push content to the right */
+  transform: translateX(-200px);
 }
 
 .submenu {
@@ -455,8 +455,11 @@ ul {
   color: white;
 }
 
-.bm-menu a:hover {
-  color: #30e3ca;
+.bm-menu Link {
+  color: white;
+  display: block;
+  margin-bottom: 20px; /* Adjust as needed */
+  text-decoration: none;
 }
 
 .menu-item:hover .submenu {
@@ -475,5 +478,5 @@ ul {
 }
 
 .menu-push-open {
-  width: 1000px; /* Adjust this value according to your menu width */
+  width: 500px; /* Adjust this value according to your menu width */
 }
