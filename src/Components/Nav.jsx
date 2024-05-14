@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { slide as Menu } from "react-burger-menu";
+import { push as Menu } from "react-burger-menu";
 import Link from "next/link";
 import Image from "next/image";
-import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
 
 const Nav = () => {
@@ -38,7 +37,7 @@ const Nav = () => {
             <Menu
               isOpen={isDropdownOpen}
               width={"20%"}
-              right={false}
+              right={true}
               onStateChange={handleStateChange}
               customBurgerIcon={<FaBars className="h-8 w-8 text-black" />}
               disableAutoFocus
@@ -49,25 +48,13 @@ const Nav = () => {
                 bmBurgerButton: { position: "fixed", left: "36px", top: "36px" },
                 bmCrossButton: { height: "24px", width: "24px" },
                 bmCross: { background: "#bdc3c7" },
-                bmItemList: { color: "#b8b7ad" },
+                bmItemList: { color: "#333", padding: "0.8rem 0" },
                 bmOverlay: { background: "rgba(0, 0, 0, 0.3)" },
               }}
             >
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <div onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-                Services <RiArrowDropDownLine />
-                {isDropdownOpen && (
-                  <div className="submenu">
-                    <Link href="/overview">Services Overview</Link>
-                    <Link href="/financial">Financial Planning</Link>
-                    <Link href="/risk">Risk Management</Link>
-                    <Link href="/investment">Investment Planning</Link>
-                    <Link href="/retirement">Retirement Planning</Link>
-                  </div>
-                )}
-              </div>
-              <Link href="/articles">Articles</Link>
+              <Link href="/" className="block text-lg py-2 px-4 text-black hover:text-blue-500">Home</Link>
+              <Link href="/about" className="block text-lg py-2 px-4 text-black hover:text-blue-500">About</Link>
+              <Link href="/articles" className="block text-lg py-2 px-4 text-black hover:text-blue-500">Articles</Link>
             </Menu>
           </div>
           <div className="flex lg:hidden">
@@ -92,4 +79,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
