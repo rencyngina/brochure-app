@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import dynamic from 'next/dynamic'; // Import dynamic from next/dynamic
+import dynamic from 'next/dynamic';
 
 import Image from "next/image";
 import { IoIosAddCircleOutline } from "react-icons/io";

@@ -78,7 +78,7 @@ const FloatingObject2 = () => {
     </ul>
       </div>
       {showForm && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-20 flex items-center justify-center">
+        <div className="fixed top-0 left-0 w-full  lg:w-full h-full lg:h-full bg-black bg-opacity-75 z-20 flex items-center justify-center">
           <div className="relative z-30">
             <SoftwareRequestForm />
             {/* Close button for the form */}

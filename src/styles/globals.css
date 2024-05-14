@@ -382,3 +382,98 @@ ul {
   opacity: 0.8;
  }
 }
+
+/* react-burger */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* Initially hide the menu by translating it to the left */
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0; /* Cover the entire viewport from the left edge */
+  right: 0; /* Cover the entire viewport from the right edge */
+  bottom: 0;
+}
+
+/* Push page content when menu is open */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  transition: transform 0.3s ease; /* Adjust the transition property */
+}
+
+.bm-menu-wrap.menu-open {
+  transform: translateX(200px); /* Push content to the right */
+}
+
+.submenu {
+  display: none;
+}
+
+.bm-menu a {
+  color: white;
+}
+
+.bm-menu a:hover {
+  color: #30e3ca;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+}
+
+.menu-push {
+  position: fixed;
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: width 0.3s ease; /* Ensure the transition property is correctly applied */
+  z-index: 99;
+}
+
+.menu-push-open {
+  width: 1000px; /* Adjust this value according to your menu width */
+}
