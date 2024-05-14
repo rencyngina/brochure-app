@@ -8,6 +8,7 @@ import Section2 from "@/Components/section2";
 import Bluesection from "@/Components/bluesection";
 import Section3 from "@/Components/section3";
 import Section4 from "@/Components/section4";
+import FloatingChatIcon from "@/Components/FloatingChatIcon";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ const Home = () => {
       <Section3 />
       <Section4 />
       <Footer />
+      <FloatingChatIcon />
     </main>
   );
 }

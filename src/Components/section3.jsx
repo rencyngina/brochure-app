@@ -1,10 +1,54 @@
 /* eslint-disable react/no-unescaped-entities */
 "use_client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Section3 = () => {
   const [email, setEmail] = useState("");
+  const [articles, setArticles] = useState([]);
+  const [displayedArticles, setDisplayedArticles] = useState([]);
+  const [error, setError] = useState(null); // State variable to track errors
+  const [loading, setLoading] = useState(true); // State variable to track loading state
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch("/api/articles");
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setArticles(data.articles);
+        setError(null); // Reset error state if successful
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+        setError(error.message); // Set error message in case of error
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or error
+      }
+    };
+
+    fetchArticles();
+
+    const fetchInterval = setInterval(fetchArticles, 5 * 60 * 1000);
+    return () => clearInterval(fetchInterval);
+  }, []);
+
+  useEffect(() => {
+    const sortedArticles = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
+    const latestArticles = sortedArticles.slice(0, 3);
+    const currentDate = new Date();
+    const threeDaysAgo = new Date(currentDate);
+    threeDaysAgo.setDate(currentDate.getDate() - 3);
+
+    const displayedArticles = latestArticles.map(article => ({
+      ...article,
+      isNew: new Date(article.date) >= threeDaysAgo,
+    }));
+
+    setDisplayedArticles(displayedArticles);
+  }, [articles]);
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
@@ -16,59 +60,19 @@ const Section3 = () => {
     setEmail("");
   };
 
+  const truncateContent = (content, numWords) => {
+    const words = content.split(" ");
+    if (words.length > numWords) {
+      return words.slice(0, numWords).join(" ") + "...";
+    } else {
+      return content;
+    }
+  };
+
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <div className="w-full p-8 bg-[#03234D]">
-        <div>
-          <h2 className="lg:text-center text-3xl font-bold text-gray-400 mb-4">
-            Subscribe to Our Newsletter
-          </h2>
-          <p className="lg:text-center text-gray-600 mb-6">
-            Stay up to date with the latest articles and news.
-          </p>
-        </div>
-        <div>
-          <div className="lg:flex items-center justify-center lg:mr-20">
-            <Image
-              src="/images/Logo.svg"
-              alt="Logo"
-              className="h-16"
-              width={150}
-              height={80}
-            />
-          </div>
-          <div className="mt-8 justify-center items-center lg:text-center">
-            <h2 className="text-xl font-semibold text-gray-200 mb-4">
-              Get the Latest News and Offers!
-            </h2>
-            <p className="text-sm text-gray-300 mb-6">
-              Sign up to get updates of new amazing products and offers. Save
-              more!
-            </p>
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col justify-center items-center sm:flex-row sm:items-center sm:space-x-4">
-                <input
-                  type="email"
-                  id="UserEmail"
-                  placeholder="Your Email"
-                  className="w-full border border-gray-300 py-3 px-12 mb-4 sm:w-auto sm:mb-0 focus:outline-none focus:border-gray-500"
-                  value={email}
-                  onChange={handleInputChange}
-                  required
-                />
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto bg-blue-500 text-white font-semibold py-3 px-10  transition duration-300 hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-                >
-                  Sign Up
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+    <div className="bg-[#F3F4F6] min-h-screen border-t">
       <div className="container mx-auto lg:py-8 py-4">
-        <div className=" lg:mt-10 lg:mb-8 p-3">
+        <div className="lg:mt-10 lg:mb-8 p-3">
           <p className="text-2xl lg:text-3xl text-yellow-500 font-bold">
             Articles
           </p>
@@ -79,65 +83,50 @@ const Section3 = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500">
-            <Image
-              src="/images/pic1.jpg"
-              alt="pic1"
-              className="w-full h-48 object-cover"
-              width={80}
-              height={40}
-            />
-            <h2 className="text-lg font-semibold text-gray-800 mt-4">
-              Why I Became a Financial Advisor
-            </h2>
-            <p className="text-gray-500 mt-2">
-              By Byron Moore Experiencing difficult things in life can hopefully
-              bring about blessings and good, and sometimes
-            </p>
-            <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-10">
-              READ MORE
-            </button>
-          </div>
-          <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
-            <Image
-              src="/images/old4.jpg"
-              alt="pic2"
-              className="w-full h-48 object-cover"
-              width={80}
-              height={40}
-            />
-            <h2 className="text-lg font-semibold text-gray-800 mt-4">
-              Article Coming Soon
-            </h2>
-            <p className="text-gray-500 mt-2">
-              
-            </p>
-            <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-10">
-              READ MORE
-            </button>
-          </div>
-          <div className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500 cursor-pointer">
-            <Image
-              src="/images/old3.jpg"
-              alt="pic3"
-              className="w-full h-48 object-cover"
-              width={80}
-              height={40}
-            />
-            <h2 className="text-lg font-semibold text-gray-800 mt-4">
-              Article 3
-            </h2>
-            <p className="text-gray-500 mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-            <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-10">
-              READ MORE
-            </button>
-          </div>
+          {loading ? (
+            <div className="flex justify-center items-center h-40">
+              <div className="three-body">
+                <div className="three-body__dot"></div>
+                <div className="three-body__dot"></div>
+                <div className="three-body__dot"></div>
+              </div>
+            </div>
+          ) : error ? (
+            <div className="text-center text-red-600 font-bold">
+              Network Problem: {error}
+            </div>
+          ) : articles.length === 0 ? (
+            <div className="text-center text-gray-600 font-bold">
+              No articles found.
+            </div>
+          ) : (
+            displayedArticles.map((article, index) => (
+              <div key={index} className="bg-white shadow-lg p-4 hover:border-2 border-yellow-500">
+                <Image
+                  src={article.image}
+                  alt={`pic${index}`}
+                  className="w-full h-48 object-cover"
+                  layout="responsive"
+                  width={80}
+                  height={40}
+                />
+                <h2 className="text-xl font-semibold text-gray-800 mt-4">{article.title}</h2>
+                <p className="text-gray-500 mt-2 text-lg" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
+                <Link href={`/article/${article._id}`}>
+                  <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
+                    READ MORE
+                  </button>
+                </Link>
+                {article.isNew && <span className="bg-yellow-500 text-white py-1 px-2 rounded-full text-sm">New</span>}
+              </div>
+            ))
+          )}
         </div>
-        <button className="bg-[#03234D] hover:bg-blue-700 text-white lg:font-bold lg:py-4 lg:px-6 py-3 px-6 mt-10 lg:ml-0 ml-4">
-          SEE MORE ARTICLES
-        </button>
+        <Link href="/articles">
+          <button className="bg-[#03234D] hover:bg-blue-700 text-white lg:font-bold lg:py-4 lg:px-6 py-3 px-6 mt-10 lg:ml-0 ml-4">
+            SEE MORE ARTICLES
+          </button>
+        </Link>
       </div>
     </div>
   );
