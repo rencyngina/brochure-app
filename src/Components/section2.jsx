@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Section1 = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -69,7 +70,7 @@ const Section1 = () => {
               </p>
 
               <div className="text-white">
-                <p className="text-md lg:text-md leading-normal mb-6">
+                <p className="text-md lg:text-md leading-normal mb-6 subpixel-antialiased">
                   At Sovereign Wealth Management, our name says it all. We help
                   our clients be in control of their finances, not the other way
                   around. We believe in creating strong financial foundations
@@ -85,11 +86,11 @@ const Section1 = () => {
                 </p>
               </div>
               <div className="flex gap-4 mt-6">
-                <a href="/about">
+                <Link href="/about">
                   <button className="font-bold text-white py-3 px-8 bg-yellow-500 hover:bg-yellow-600 transition duration-300">
                     Learn More
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
