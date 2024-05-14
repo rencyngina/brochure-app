@@ -8,9 +8,16 @@
   width: 0;
   height: 0;
 }
-
+/* .antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
 ::-webkit-font-smoothing 
-
+/* .subpixel-antialiased {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+} */
 .card-title {
   font-family: 'Playfair Display', serif;
 }
