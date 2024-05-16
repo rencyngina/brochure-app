@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/Components/Navnar";
-import Foot from "@/Components/foot";
-import Section4 from "@/Components/section4";
-import FloatingChatIcon from "@/Components/FloatingChatIcon";
 
-const Articles = () => {
+const Article = () => {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [articles, setArticles] = useState([]);
@@ -57,15 +53,6 @@ const Articles = () => {
     setDisplayedArticles(displayedArticles);
   }, [articles]);
 
-  const handleInputChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Email submitted:", email);
-    setEmail("");
-  };
 
   const truncateContent = (content, numWords) => {
     const words = content.split(" ");
@@ -92,22 +79,9 @@ const deleteArticle = async (id) => {
     console.error("Error deleting article:", error);
   }
 };
-
-
   return (
-    <>
-      <Navbar />
-      <div className="bg-[#F3F4F6] min-h-screen border-t">
-        <div className="container mx-auto lg:py-8 py-4">
-          <div className="lg:mt-10 lg:mb-8 p-3 lg:text-center">
-            <p className="text-2xl lg:text-3xl  text-yellow-500 font-bold">
-              Articles
-            </p>
-            <h1 className="mt-10 text-3xl lg:text-4xl leading-tight">
-              Articles that might help you, In your journey
-            </h1>
-          </div>
-          {loading ? (
+    <div className="w-[70vw] h-[85vh] mx-auto mt-8 p-6 bg-blue-950 text-white rounded-sm shadow-md z-50">
+    {loading ? (
             <div className="flex justify-center items-center h-40">
               <div class="three-body">
                 <div class="three-body__dot"></div>
@@ -152,7 +126,7 @@ const deleteArticle = async (id) => {
                       READ MORE
                     </button>
                   </Link>
-                  <button onClick={() => deleteArticle(article._id)} className="hidden lg:bg-red-500 lg:text-white lg:py-3 lg:px-5 lg:text-sm lg:mt-2 lg:ml-10">
+                  <button onClick={() => deleteArticle(article._id)} className="lg:bg-red-500 lg:text-white lg:py-3 lg:px-5 lg:text-sm lg:mt-2 lg:ml-8">
                     Delete
                   </button>
                   {article.isNew && (
@@ -164,13 +138,8 @@ const deleteArticle = async (id) => {
               ))}
             </div>
           )}
-        </div>
-      </div>
-      <FloatingChatIcon />
-      <Section4 />
-      <Foot />
-    </>
+    </div>
   );
-};
+}
 
-export default Articles;
+export default Article;
