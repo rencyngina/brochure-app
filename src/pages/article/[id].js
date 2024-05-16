@@ -33,7 +33,7 @@ const ArticlePage = () => {
         {article ? (
           <ArticleContent article={article} />
         ) : (
-          <div className="flex justify-center items-center h-40">
+          <div className="flex justify-center items-center h-auto">
             <div class="three-body">
               <div class="three-body__dot"></div>
               <div class="three-body__dot"></div>
