@@ -49,14 +49,14 @@ const ArticleContent = ({ article }) => {
       )}
 
       {/* Navigation buttons */}
-      <div className="lg:flex flex-col md:flex-row lg:gap-4 gap-6 mt-4">
+      {/*<div className="lg:flex flex-col md:flex-row lg:gap-4 gap-6 mt-4">
         <Link href="/" className="btn-primary">
           HOME
         </Link>
         <Link href="/articles" className="btn-primary">
           MORE ARTICLES
         </Link>
-      </div>
+    </div>*/}
     </div>
   );
 };

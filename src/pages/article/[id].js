@@ -8,36 +8,94 @@ const ArticlePage = () => {
   const router = useRouter();
   const { id } = router.query;
   const [article, setArticle] = useState(null);
+  const [articles, setArticles] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(-1);
 
   useEffect(() => {
-    const fetchArticle = async () => {
+    const fetchArticles = async () => {
       try {
-        const response = await fetch(`/api/${id}`); // Adjust the API route path
+        const response = await fetch('/api/articles'); // Adjust the API route path to fetch all articles
         const data = await response.json();
-        setArticle(data.data); // Assuming article data is nested under 'data' property
-        console.log("Article data:", data);
+        setArticles(data.articles); // Assuming the response has a property 'articles' which is an array of articles
       } catch (error) {
-        console.error("Error fetching article:", error);
+        console.error("Error fetching articles:", error);
       }
     };
 
+    fetchArticles();
+  }, []);
+
+  useEffect(() => {
     if (id) {
+      const fetchArticle = async () => {
+        try {
+          const response = await fetch(`/api/${id}`); // Adjust the API route path
+          const data = await response.json();
+          setArticle(data.data); // Assuming article data is nested under 'data' property
+          console.log("Article data:", data);
+        } catch (error) {
+          console.error("Error fetching article:", error);
+        }
+      };
+
       fetchArticle();
+
+      // Find the current index of the article in the articles array after articles have been fetched
+      const index = articles.findIndex(article => article.id === parseInt(id));
+      setCurrentIndex(index);
     }
-  }, [id]);
+  }, [id, articles]);
+
+  const handleNext = () => {
+    if (currentIndex < articles.length - 1) {
+      const nextArticleId = articles[currentIndex + 1].id;
+      router.push(`/article/${nextArticleId}`);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      const previousArticleId = articles[currentIndex - 1].id;
+      router.push(`/article/${previousArticleId}`);
+    }
+  };
 
   return (
     <>
       <Navbar />
-      <div className="container mx-auto py-8 flex justify-center items-center">
+      <div className="container mx-auto py-8 flex flex-col items-center px-4 md:px-8">
         {article ? (
-          <ArticleContent article={article} />
+          <>
+            <ArticleContent article={article} />
+            <div className="mt-8 flex justify-between w-full lg:max-w-4xl lg:mr-24 mr-0">
+              <button
+                onClick={handlePrevious}
+                disabled={currentIndex <= 0}
+                className={`btn-primary px-4 py-2 bg-blue-950 text-white font-semibold transition duration-300 hover:bg-blue-600 ${
+                  currentIndex <= 0 ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+              >
+                Previous Article
+              </button>
+              <button
+                onClick={handleNext}
+                disabled={currentIndex >= articles.length - 1}
+                className={`btn-primary px-4 py-2 bg-blue-950 text-white font-semibold transition duration-300 hover:bg-blue-600 ${
+                  currentIndex >= articles.length - 1
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
+                }`}
+              >
+                Next Article
+              </button>
+            </div>
+          </>
         ) : (
           <div className="flex justify-center items-center h-auto">
-            <div class="three-body">
-              <div class="three-body__dot"></div>
-              <div class="three-body__dot"></div>
-              <div class="three-body__dot"></div>
+            <div className="three-body">
+              <div className="three-body__dot"></div>
+              <div className="three-body__dot"></div>
+              <div className="three-body__dot"></div>
             </div>
           </div>
         )}
