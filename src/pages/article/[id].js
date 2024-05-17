@@ -11,6 +11,7 @@ const ArticlePage = () => {
   const [articles, setArticles] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(-1);
 
+  // Fetch all articles once when the component mounts
   useEffect(() => {
     const fetchArticles = async () => {
       try {
@@ -25,36 +26,43 @@ const ArticlePage = () => {
     fetchArticles();
   }, []);
 
+  // Fetch the specific article when the 'id' changes
   useEffect(() => {
     const fetchArticle = async () => {
-      try {
-        const response = await fetch(`/api/${id}`); // Fetch the specific article
-        const data = await response.json();
-        setArticle(data.data); // Assuming article data is nested under 'data' property
-        console.log("Article data:", data);
-      } catch (error) {
-        console.error("Error fetching article:", error);
+      if (id) {
+        try {
+          const response = await fetch(`/api/${id}`); // Fetch the specific article
+          const data = await response.json();
+          setArticle(data.data); // Assuming article data is nested under 'data' property
+          console.log("Article data:", data);
+        } catch (error) {
+          console.error("Error fetching article:", error);
+        }
       }
     };
 
-    if (id) {
-      fetchArticle();
+    fetchArticle();
+  }, [id]);
+
+  // Update the current index when the articles list or 'id' changes
+  useEffect(() => {
+    if (id && articles.length > 0) {
       // Find the current index of the article in the articles array
-      const index = articles.findIndex(article => article.id === parseInt(id));
+      const index = articles.findIndex(article => article._id === id);
       setCurrentIndex(index);
     }
   }, [id, articles]);
 
   const handleNext = () => {
     if (currentIndex < articles.length - 1) {
-      const nextArticleId = articles[currentIndex + 1].id;
+      const nextArticleId = articles[currentIndex + 1]._id;
       router.push(`/article/${nextArticleId}`);
     }
   };
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
-      const previousArticleId = articles[currentIndex - 1].id;
+      const previousArticleId = articles[currentIndex - 1]._id;
       router.push(`/article/${previousArticleId}`);
     }
   };
