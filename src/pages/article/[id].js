@@ -14,7 +14,7 @@ const ArticlePage = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('/api/articles'); // Adjust the API route path to fetch all articles
+        const response = await fetch('/api/articles'); // Fetch all articles
         const data = await response.json();
         setArticles(data.articles); // Assuming the response has a property 'articles' which is an array of articles
       } catch (error) {
@@ -26,21 +26,20 @@ const ArticlePage = () => {
   }, []);
 
   useEffect(() => {
+    const fetchArticle = async () => {
+      try {
+        const response = await fetch(`/api/${id}`); // Fetch the specific article
+        const data = await response.json();
+        setArticle(data.data); // Assuming article data is nested under 'data' property
+        console.log("Article data:", data);
+      } catch (error) {
+        console.error("Error fetching article:", error);
+      }
+    };
+
     if (id) {
-      const fetchArticle = async () => {
-        try {
-          const response = await fetch(`/api/${id}`); // Adjust the API route path
-          const data = await response.json();
-          setArticle(data.data); // Assuming article data is nested under 'data' property
-          console.log("Article data:", data);
-        } catch (error) {
-          console.error("Error fetching article:", error);
-        }
-      };
-
       fetchArticle();
-
-      // Find the current index of the article in the articles array after articles have been fetched
+      // Find the current index of the article in the articles array
       const index = articles.findIndex(article => article.id === parseInt(id));
       setCurrentIndex(index);
     }
