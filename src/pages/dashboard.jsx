@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50/50">
-      <aside className="bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-20 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0">
+      <aside className="bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-20 my-4 ml-4 h-[calc(100vh-32px)] w-72 transition-transform duration-300 xl:translate-x-0">
         <div className="relative border-b border-white/20">
           <Link className="flex items-center gap-4 py-6 px-8" href="#">
             <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
