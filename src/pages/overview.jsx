@@ -74,7 +74,7 @@ const Overview = () => {
         {features.map((feature, index) => (
           <div
             key={feature.id}
-            className={`flex flex-col lg:container md:flex-row items-center lg:gap-16 gap-4 lg:mt-20 mt-10 lg:mb-20 mb-10 lg:p-0 p-4 ${
+            className={`flex flex-col lg:container md:flex-row items-center lg:gap-6 gap-4 lg:mt-20 mt-10 lg:mb-20 mb-10 lg:p-10 p-4 ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
             data-aos-duration="1000"
@@ -82,7 +82,7 @@ const Overview = () => {
             data-aos-delay="300"
           >
             <div className="md:w-1/2">
-              <h1 className="text-2xl md:text-2xl font-extrabold text-gray-900 leading-tight mb-4">
+              <h1 className="text-2xl lg:text-3xl md:text-2xl font-extrabold text-gray-900 leading-tight mb-4">
                 {feature.title}
               </h1>
               <p className="text-sm lg:text-lg text-gray-700 mb-4 lg:mt-10">

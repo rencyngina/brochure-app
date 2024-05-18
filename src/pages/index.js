@@ -24,7 +24,7 @@ const Home = () => {
       <Section3 />
       <Section4 />
       <Footer />
-      <FloatingChatIcon />
+      {/*<FloatingChatIcon />*/}
     </main>
   );
 }
