@@ -114,31 +114,49 @@ const About = () => {
     <AboutWrapper>
       <Navbar />
       <ContentSection>
-      <div className="flex justify-center"> {/* Center the container */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-2 mb-12"> {/* Adjusted gap values */}
-        <div className="col-span-1 lg:col-span-1 ">
-          <ImageWithHover src="/images/pic1.jpg  " width={360} height={200} className=" border-4 border-yellow-500 "/>
+        <div className="mb-10 lg:mb-20 lg:justify-center lg:items-center lg:text-center">
+          <p className="text-sm lg:text-xl leading-normal px-2 font-semibold text-gray-800 max-w-4xl mx-auto">
+            <span className="text-4xl lg:text-7xl text-gray-700">&ldquo;</span>{" "}
+            Wealth Management is a comprehensive and holistic investment process
+            that integrates the client long-term goals with financial solutions,
+            using a planning-based and consultative approach.{" "}
+            <span className="text-yellow-500"> Byron Moore - Founder</span>
+          </p>
         </div>
-        <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic2.jpg" width={360} height={200} />
+        <div className="flex justify-center">
+          {" "}
+          {/* Center the container */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-2 mb-12">
+            {" "}
+            {/* Adjusted gap values */}
+            <div className="col-span-1 lg:col-span-1 ">
+              <ImageWithHover
+                src="/images/pic1.jpg  "
+                width={360}
+                height={200}
+                className=" border-4 border-yellow-500 "
+              />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic2.jpg" width={360} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic3.jpg" width={360} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic4.jpg" width={360} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/pic5.jpg" width={360} height={200} />
+            </div>
+            <div className="col-span-1 lg:col-span-1">
+              <ImageWithHover src="/images/old1.jpg" width={360} height={200} />
+            </div>
+          </div>
         </div>
-        <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic3.jpg" width={360} height={200} />
+        <div className="flex justify-center">
+          <h1 className=" text-yellow-600 ">About Us</h1>
         </div>
-        <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic4.jpg" width={360} height={200} />
-        </div>
-        <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/pic5.jpg" width={360} height={200} />
-        </div>
-        <div className="col-span-1 lg:col-span-1">
-          <ImageWithHover src="/images/old1.jpg" width={360} height={200} />
-        </div>
-      </div>
-    </div>
-<div className="flex justify-center">
-    <h1 className=" text-yellow-600 ">About Us</h1>
-    </div>
         <p className="mt-5">
           Byron Moore is the CEO of Sovereign Wealth Management, an independent
           financial planning firm that serves clients in{" "}
@@ -174,51 +192,79 @@ const About = () => {
         </p>
         <br></br>
         <div className="container flex flex-col items-center lg:mb-12 mt-10 bg-[#03234d]">
-        <h1 className="text-yellow-600 text-lg lg:text-8xl font-serif italic lg:mt-8 mt-6 ">
-        My Plan of Care for You:
-      </h1>
-          <div className="container mx-auto px-4 py-2"> {/* Centered container with padding */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 gap-4"> {/* Two-column grid layout for larger screens */}
-            {/* First Column */}
-            <ul className="divide-y divide-gray-300">
-              <li className="py-4 flex items-start space-x-4"> {/* List item with vertical padding and spacing */}
-                <IoMdCheckboxOutline size={24} className="text-yellow-500" /> {/* Icon */}
-                <span className="text-sm lg:text-lg text-white font-family: 'poetsen': ['Poetsen One', 'sans-serif'] font-bold">Help you identify your financial goals and create a plan to achieve them.</span> {/* Text */}
-              </li>
-              <li className="py-4 flex items-start space-x-4">
-                <IoMdCheckboxOutline size={24} className="text-yellow-500" />
-                <span className="text-sm lg:text-lg text-white font-bold">Provide guidance on investments that align with your values.</span>
-              </li>
-              <li className="py-4 flex items-start space-x-4">
-                <IoMdCheckboxOutline size={48} className="text-yellow-500" />
-                <span className="text-sm lg:text-lg text-white font-bold">Work with you to create a budget and manage your expenses, so you can live within your means while still pursuing your financial goals.</span>
-              </li>
-              <li className="py-4 flex items-start space-x-4">
-              <IoMdCheckboxOutline size={38} className="text-yellow-500" />
-              <span className="text-sm lg:text-lg text-white font-bold">Serve as a resource for financial education and advice like estate planning, tax strategies, insurance options, etc.</span>
-            </li>
-            </ul>
-        
-            {/* Second Column */}
-            <ul className="divide-y divide-gray-300">
-              <li className="py-4 flex items-start space-x-4">
-                <IoMdCheckboxOutline size={24} className="text-yellow-500" />
-                <span className="text-sm lg:text-lg text-white font-bold ">Offer strategies to manage debt and improve your credit score, if needed.</span>
-              </li>
-              <li className="py-4 flex items-start space-x-4">
-                <IoMdCheckboxOutline size={30} className="text-yellow-500" />
-                <span className="text-sm lg:text-lg text-white font-bold">Help you plan for major life events such as retirement, college tuition, or the purchase of a home.</span>
-              </li>
-              <li className="py-4 flex items-start space-x-4">
-                <IoMdCheckboxOutline size={40} className="text-yellow-500" />
-                <span className="text-sm lg:text-lg text-white font-bold">Regularly review your financial plan and make adjustments as needed, to keep you on track to meet your goals.</span>
-              </li>
-             
-            </ul>
+          <h1 className="text-yellow-600 text-lg lg:text-8xl font-serif italic lg:mt-8 mt-6 ">
+            My Plan of Care for You:
+          </h1>
+          <div className="container mx-auto px-4 py-2">
+            {" "}
+            {/* Centered container with padding */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 gap-4">
+              {" "}
+              {/* Two-column grid layout for larger screens */}
+              {/* First Column */}
+              <ul className="divide-y divide-gray-300">
+                <li className="py-4 flex items-start space-x-4">
+                  {" "}
+                  {/* List item with vertical padding and spacing */}
+                  <IoMdCheckboxOutline
+                    size={24}
+                    className="text-yellow-500"
+                  />{" "}
+                  {/* Icon */}
+                  <span className="text-sm lg:text-lg text-white font-family: 'poetsen': ['Poetsen One', 'sans-serif'] font-bold">
+                    Help you identify your financial goals and create a plan to
+                    achieve them.
+                  </span>{" "}
+                  {/* Text */}
+                </li>
+                <li className="py-4 flex items-start space-x-4">
+                  <IoMdCheckboxOutline size={24} className="text-yellow-500" />
+                  <span className="text-sm lg:text-lg text-white font-bold">
+                    Provide guidance on investments that align with your values.
+                  </span>
+                </li>
+                <li className="py-4 flex items-start space-x-4">
+                  <IoMdCheckboxOutline size={48} className="text-yellow-500" />
+                  <span className="text-sm lg:text-lg text-white font-bold">
+                    Work with you to create a budget and manage your expenses,
+                    so you can live within your means while still pursuing your
+                    financial goals.
+                  </span>
+                </li>
+                <li className="py-4 flex items-start space-x-4">
+                  <IoMdCheckboxOutline size={38} className="text-yellow-500" />
+                  <span className="text-sm lg:text-lg text-white font-bold">
+                    Serve as a resource for financial education and advice like
+                    estate planning, tax strategies, insurance options, etc.
+                  </span>
+                </li>
+              </ul>
+              {/* Second Column */}
+              <ul className="divide-y divide-gray-300">
+                <li className="py-4 flex items-start space-x-4">
+                  <IoMdCheckboxOutline size={24} className="text-yellow-500" />
+                  <span className="text-sm lg:text-lg text-white font-bold ">
+                    Offer strategies to manage debt and improve your credit
+                    score, if needed.
+                  </span>
+                </li>
+                <li className="py-4 flex items-start space-x-4">
+                  <IoMdCheckboxOutline size={30} className="text-yellow-500" />
+                  <span className="text-sm lg:text-lg text-white font-bold">
+                    Help you plan for major life events such as retirement,
+                    college tuition, or the purchase of a home.
+                  </span>
+                </li>
+                <li className="py-4 flex items-start space-x-4">
+                  <IoMdCheckboxOutline size={40} className="text-yellow-500" />
+                  <span className="text-sm lg:text-lg text-white font-bold">
+                    Regularly review your financial plan and make adjustments as
+                    needed, to keep you on track to meet your goals.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-        
-               
         </div>
       </ContentSection>
       {/*footer*/}

@@ -11,6 +11,7 @@ const Navbar = () => {
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [scrollNav, setScrollNav] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -31,6 +32,7 @@ const Navbar = () => {
   const handleOutsideClick = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
       setIsDropdownOpen(false);
+      setIsMobileDropdownOpen(false);
     }
   };
 
@@ -40,6 +42,10 @@ const Navbar = () => {
 
   const handleMobileNavToggle = () => {
     setIsMobileNavOpen((prev) => !prev);
+  };
+
+ const toggleMobileDropdown = () => {
+    setIsMobileDropdownOpen((prev) => !prev);
   };
 
   return (
@@ -90,7 +96,7 @@ const Navbar = () => {
               className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
               onClick={toggleDropdown}
             >
-              Services <RiArrowDropDownLine />
+              Services <RiArrowDropDownLine className="text-3xl" />
             </button>
             {isDropdownOpen && (
               <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-60 shadow-lg py-4 top-14">
@@ -160,11 +166,12 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <div className={`relative mt-4 text-sm text-white py-2 rounded-xl px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full text-center flex items-center justify-center cursor-pointer`} onClick={toggleDropdown}>
-                Services <RiArrowDropDownLine />
-              </div> 
-              {isDropdownOpen && (
-                <div className="bg-[#03234d] w-full text-center">
+          {/* mobile sevices drop */}
+              <div className={`relative mt-4 text-sm text-white py-2 rounded-xl px-5  border border-yellow-300 w-full text-center flex items-center justify-center cursor-pointer`}>
+                Services <RiArrowDropDownLine className="text-2xl" onClick={toggleMobileDropdown}/>
+              </div>
+              {isMobileDropdownOpen && (
+                <div className="bg-[#03234d] w-32 text-center z-50 top-16">
                   <Link href="/overview" passHref>
                     <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
                       Services Overview

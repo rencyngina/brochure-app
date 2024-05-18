@@ -80,7 +80,7 @@ const deleteArticle = async (id) => {
   }
 };
   return (
-    <div className="w-[70vw] h-[85vh] mx-auto mt-8 p-6 bg-blue-950 text-white rounded-sm shadow-md z-50">
+    <div className="w-[70vw] h-[85vh] mx-auto mt-8 p-6  text-white rounded-sm shadow-md z-50">
     {loading ? (
             <div className="flex justify-center items-center h-40">
               <div class="three-body">
