@@ -114,7 +114,7 @@ const SoftwareRequestForm = () => {
           <DatePicker
             selected={formData.date}
             onChange={handleDateChange}
-            dateFormat="dd/MM/yyyy"
+            dateFormat="/MM/dd/yyyy"
             className="mt-1 p-3 border border-gray-300  rounded-sm w-full focus:outline-none focus:ring focus:border-blue-300 text-gray-900"
           />
         </div>
