@@ -30,33 +30,19 @@ const ArticleContent = ({ article }) => {
           />
         </div>
       )}
-
-      {/* Render title if it exists */}
       {title && (
-        <h1 className="text-3xl lg:text-5xl font-bold mt-4 overflow-hidden overflow-ellipsis">
+        <h1 className="text-3xl lg:text-5xl font-bold mt-4 overflow-hidden overflow-ellipsis"
+          style={{ WebkitLineClamp: 2, display: "-webkit-box", WebkitBoxOrient: "vertical" }}
+        >
           {title}
         </h1>
       )}
-
-      {/* Render content preview */}
-
-      {/* Render content if it exists */}
       {content && (
         <div
           className="text-gray-700 mt-4 lg:text-lg text-md"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       )}
-
-      {/* Navigation buttons */}
-      {/*<div className="lg:flex flex-col md:flex-row lg:gap-4 gap-6 mt-4">
-        <Link href="/" className="btn-primary">
-          HOME
-        </Link>
-        <Link href="/articles" className="btn-primary">
-          MORE ARTICLES
-        </Link>
-    </div>*/}
     </div>
   );
 };
