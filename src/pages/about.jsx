@@ -120,8 +120,9 @@ const About = () => {
             Wealth Management is a comprehensive and holistic investment process
             that integrates the client long-term goals with financial solutions,
             using a planning-based and consultative approach.{" "}
-            <span className="text-yellow-500"> Byron Moore - Founder</span>
-          </p>
+            {/*<span className="text-4xl lg:text-7xl text-gray-700">&rdquo;</span>*/}
+            </p>
+            <p className="text-yellow-500 font-bold text-center" style={{ color: '#EAB308'}}>Byron Moore - Founder</p>
         </div>
         <div className="flex justify-center">
           {" "}
@@ -131,7 +132,7 @@ const About = () => {
             {/* Adjusted gap values */}
             <div className="col-span-1 lg:col-span-1 ">
               <ImageWithHover
-                src="/images/pic1.jpg  "
+                src="/images/pic1.jpg"
                 width={360}
                 height={200}
                 className=" border-4 border-yellow-500 "

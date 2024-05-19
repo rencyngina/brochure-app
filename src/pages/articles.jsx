@@ -4,7 +4,8 @@ import Link from "next/link";
 import Navbar from "@/Components/Navnar";
 import Foot from "@/Components/foot";
 import Section4 from "@/Components/section4";
-import FloatingChatIcon from "@/Components/FloatingChatIcon";
+// import FloatingChatIcon from "@/Components/FloatingChatIcon";
+import { FaExclamationTriangle, FaClipboard } from 'react-icons/fa';
 
 const Articles = () => {
   const [loading, setLoading] = useState(true);
@@ -19,7 +20,7 @@ const Articles = () => {
         setLoading(true);
         const response = await fetch("/api/articles");
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setArticles(data.articles);
@@ -76,23 +77,24 @@ const Articles = () => {
     }
   };
 
-// delete Artical
-const deleteArticle = async (id) => {
-  try {
-    const response = await fetch(`/api/delete/${id}`, {
-      method: "DELETE",
-    });
-    if (response.ok) {
-      const updatedArticles = articles.filter((article) => article._id !== id);
-      setArticles(updatedArticles);
-    } else {
-      console.error("Failed to delete article:", response.statusText);
+  // delete Artical
+  const deleteArticle = async (id) => {
+    try {
+      const response = await fetch(`/api/delete/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        const updatedArticles = articles.filter(
+          (article) => article._id !== id
+        );
+        setArticles(updatedArticles);
+      } else {
+        console.error("Failed to delete article:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error deleting article:", error);
     }
-  } catch (error) {
-    console.error("Error deleting article:", error);
-  }
-};
-
+  };
 
   return (
     <>
@@ -115,13 +117,17 @@ const deleteArticle = async (id) => {
                 <div class="three-body__dot"></div>
               </div>
             </div>
-          ) : error ? ( // Display error message if error exists
-            <div className="text-center text-red-600 font-bold">
-              Network Problem: {error}
+          ) : error ? (
+            // Display error message if error exists
+            <div className="text-center text-red-600 font-bold p-4 bg-red-100 border border-red-400 rounded flex items-center justify-center space-x-2">
+              <FaExclamationTriangle className="text-red-600 text-2xl" />
+              <span>Network Problem: {error}</span>
             </div>
-          ) : articles.length === 0 ? ( // Display message if no articles exist
-            <div className="text-center text-gray-600 font-bold">
-              No articles found.
+          ) : articles.length === 0 ? (
+            // Display message if no articles exist
+            <div className="text-center text-gray-600 font-bold p-4 bg-gray-100 border border-gray-300 rounded flex items-center justify-center space-x-2">
+              <FaClipboard className="text-gray-600 text-2xl" />
+              <span>No articles found.</span>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -152,7 +158,10 @@ const deleteArticle = async (id) => {
                       READ MORE
                     </button>
                   </Link>
-                  <button onClick={() => deleteArticle(article._id)} className="hidden lg:bg-red-500 lg:text-white lg:py-3 lg:px-5 lg:text-sm lg:mt-2 lg:ml-10">
+                  <button
+                    onClick={() => deleteArticle(article._id)}
+                    className="hidden lg:bg-red-500 lg:text-white lg:py-3 lg:px-5 lg:text-sm lg:mt-2 lg:ml-10"
+                  >
                     Delete
                   </button>
                   {article.isNew && (
@@ -166,7 +175,6 @@ const deleteArticle = async (id) => {
           )}
         </div>
       </div>
-      <FloatingChatIcon />
       <Section4 />
       <Foot />
     </>
