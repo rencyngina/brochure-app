@@ -70,6 +70,7 @@ const ArticlePage = () => {
   return (
     <>
       <Navbar />
+      <div className="h-auto lg:h-[90rem]">
       <div className="container mx-auto py-8 flex flex-col items-center px-4 md:px-8">
         {article ? (
           <>
@@ -108,6 +109,7 @@ const ArticlePage = () => {
         )}
       </div>
       <Foot />
+      </div>
     </>
   );
 };
