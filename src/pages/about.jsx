@@ -132,7 +132,7 @@ const About = () => {
             {/* Adjusted gap values */}
             <div className="col-span-1 lg:col-span-1 ">
               <ImageWithHover
-                src="/images/pic1.jpg  "
+                src="/images/pic1.jpg"
                 width={360}
                 height={200}
                 className=" border-4 border-yellow-500 "
