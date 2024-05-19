@@ -70,7 +70,7 @@ const Section1 = () => {
               </p>
 
               <div className="text-white">
-                <p className="text-md lg:text-md leading-normal mb-6 subpixel-antialiased">
+                <p className="text-sm lg:text-md leading-normal mb-6 subpixel-antialiased">
                   At Sovereign Wealth Management, our name says it all. We help
                   our clients be in control of their finances, not the other way
                   around. We believe in creating strong financial foundations
