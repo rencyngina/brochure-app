@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
-import { IoLogInOutline } from "react-icons/io5";
+import { IoLogInOutline, IoClose  } from "react-icons/io5";
+
 
 const Navbar = () => {
   const router = useRouter();
@@ -66,20 +67,20 @@ const Navbar = () => {
 
       <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
         <div className="flex lg:hidden">
-          <button className="mobile-nav-toggle ml-5 mt-1 mb-4" onClick={handleMobileNavToggle}>
-            <FaBars className="h-7 w-7 text-black" />
-          </button>
-          <Link href="/" passHref>
-            <div className="cursor-pointer mt-0 ml-8">
-              <Image
-                src="/images/Logo.svg"
-                alt="logo"
-                width={150}
-                height={120}
-              />
-            </div>
-          </Link>
+      <button className="mobile-nav-toggle ml-5 mt-1 mb-4" onClick={handleMobileNavToggle}>
+        {isMobileNavOpen ? <IoClose className="h-7 w-7 text-black" /> : <FaBars className="h-7 w-7 text-black" />}
+      </button>
+      <Link href="/" passHref>
+        <div className="cursor-pointer mt-0 ml-8">
+          <Image
+            src="/images/Logo.svg"
+            alt="logo"
+            width={150}
+            height={120}
+          />
         </div>
+      </Link>
+    </div>
         <div className={`lg:flex lg:flex-grow hidden justify-center gap-10 text-lg ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
           <Link href="/" passHref>
             <div className={`relative text-xl w-fit block cursor-pointer ${router.pathname === "/" ? "text-yellow-500" : ""}`}>
