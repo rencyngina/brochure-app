@@ -188,7 +188,7 @@ const About = () => {
         </p>
         <br></br>
         <div className="container flex flex-col items-center lg:mb-12 mt-10 bg-[#03234d]">
-          <h1 className="text-yellow-600 text-2xl lg:text-3xl font-bold font-serif italic lg:mt-8 mt-6 ">
+          <h1 className="text-yellow-600 text-xl lg:text-3xl font-bold font-serif italic lg:mt-8 mt-6 ">
             My Plan of Care for You:
           </h1>
           <div className="container mx-auto px-4 py-2">
