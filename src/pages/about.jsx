@@ -73,11 +73,6 @@ const ContentSection = styled.div`
     }
   }
 
-  h1 {
-    font-size: 2rem;
-    // color: #ff4d4d;
-    margin-bottom: 20px;
-  }
 
   h2 {
     font-size: 1.5rem;
@@ -156,7 +151,7 @@ const About = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <h1 className=" text-yellow-600 ">About Us</h1>
+          <h1 className=" text-yellow-600 text-3xl lg:text-3xl ">About</h1>
         </div>
         <p className="mt-5">
           Byron Moore is the CEO of Sovereign Wealth Management, an independent
@@ -193,7 +188,7 @@ const About = () => {
         </p>
         <br></br>
         <div className="container flex flex-col items-center lg:mb-12 mt-10 bg-[#03234d]">
-          <h1 className="text-yellow-600 text-sm lg:text-8xl font-serif italic lg:mt-8 mt-6 ">
+          <h1 className="text-yellow-600 text-2xl lg:text-3xl font-bold font-serif italic lg:mt-8 mt-6 ">
             My Plan of Care for You:
           </h1>
           <div className="container mx-auto px-4 py-2">
