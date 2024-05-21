@@ -211,9 +211,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 rounded-xl transition duration-300 border border-yellow-300 w-full text-center">
-                Client Portal
-              </button>
+            <Link href="/portal">
+            <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 rounded-xl transition duration-300 border border-yellow-300 w-full text-center">
+              Client Portal
+            </button>
+            </Link>
             </li>
             <li>
               <Link href="/contact">
