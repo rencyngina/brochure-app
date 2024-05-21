@@ -138,10 +138,12 @@ const Navbar = () => {
       </div>
       <div className="hidden lg:flex lg:gap-3 gap-2 lg:mb-10 mt-6 lg:mr-8">
         <div className="flex">
-          <button className={`mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex`}>
-            <div>Client Portal</div>
-            <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px' }} />
-          </button>
+        <Link href="/portal">
+        <button className={`mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex`}>
+          <div>Client Portal</div>
+          <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px' }} />
+        </button>
+        </Link>
         </div>
         <Link href="/contact">
           <button className={`mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300`}>

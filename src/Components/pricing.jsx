@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import React from "react";
 
@@ -6,7 +7,7 @@ const Pricing = () => {
     <section className="bg-[#03234D] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="lg:text-4xl font-extrabold text-white text-2xl">
+          <h2 className="lg:placeholder:text-4xl font-extrabold text-white text-2xl">
             Fee-Only Schedule
           </h2>
           <p className="mt-4 text-sm lg:text-xl text-purple-200">
@@ -215,7 +216,7 @@ const Pricing = () => {
               Get Started
             </Link>
           </div>
-          <div className="bg-white bg-opacity-10 rounded-lg shadow-lg p-6 relative overflow-hidden">
+          <div className="bg-white bg-opacity-10 shadow-lg p-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 m-4">
               <span className="inline-flex items-center px-3 py-1 text-sm font-medium bg-yellow-100 text-yellow-800">
                 Enterprise
