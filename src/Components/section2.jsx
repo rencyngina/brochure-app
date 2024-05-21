@@ -76,7 +76,7 @@ const Section1 = () => {
                   around. We believe in creating strong financial foundations
                   and multi-generational wealth.
                 </p>
-                <p className="text-md lg:text-md leading-normal mb-6">
+                <p className="text-sm lg:text-md leading-normal mb-6">
                   Through our individualized approach, we help you focus on what
                   truly matters to you, whether that’s faith-based or
                   values-based investing, philanthropic giving, spending more
