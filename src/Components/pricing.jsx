@@ -6,10 +6,10 @@ const Pricing = () => {
     <section className="bg-[#03234D] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+          <h2 className="lg:text-4xl font-extrabold text-white text-2xl">
             Fee-Only Schedule
           </h2>
-          <p className="mt-4 text-xl text-purple-200">
+          <p className="mt-4 text-sm lg:text-xl text-purple-200">
             Sovereign Wealth Management is a fee-only, independent advisory firm
             and does not sell investment products for a commission.
           </p>
@@ -315,7 +315,7 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-      <p className="mt-8 text-xl text-purple-200 text-center">
+      <p className="mt-8 text-sm lg:text-xl text-purple-200 text-center">
         *If you proceed to open up an account that has a management fee, the
         financial plan fee will be refunded to you.
         <br />

@@ -17,10 +17,10 @@ const Footer = () => {
             <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
               <div className="col-span-2">
               <div>
-              <p className="lg:text-lg  sm:text-xl font-bold text-white">
+              <p className="lg:text-lg  sm:text-md font-bold text-white">
                 About Us
               </p>
-              <p className="sm:text-sm lg:text-sm  mt-4 text-white">
+              <p className="text-sm lg:text-sm  mt-4 text-white">
               Byron Moore is a Registered Representative of Coastal Equities, Inc. and an Investment Advisory 
               Representative of Coastal Investment Advisors, Inc. Neither Coastal Equities, Inc. nor Coastal 
               Investment Advisors, Inc. is affiliated with Sovereign Wealth Management. Investment Advisory 
