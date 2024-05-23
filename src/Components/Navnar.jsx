@@ -52,7 +52,7 @@ const Navbar = () => {
   return (
     <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between lg:w-full sticky top-0 z-20 h-[10vh] lg:h-[10vh] lg:items-center px-0 lg:py-6 py-4`}>
       <div>
-        <Link href="/" passHref>
+        <Link href="#" passHref>
           <div className="cursor-pointer">
             <Image
               className="hidden lg:flex lg:ml-20 ml-4 lg:mr-0 mr-0"
@@ -70,7 +70,7 @@ const Navbar = () => {
       <button className="mobile-nav-toggle ml-5 mt-1 mb-4" onClick={handleMobileNavToggle}>
         {isMobileNavOpen ? <IoClose className="h-7 w-7 text-black" /> : <FaBars className="h-7 w-7 text-black" />}
       </button>
-      <Link href="/" passHref>
+      <Link href="#" passHref>
         <div className="cursor-pointer mt-0 ml-8">
           <Image
             src="/images/Logo.svg"
