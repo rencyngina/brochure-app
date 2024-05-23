@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import FloatingObject from "./floating-object";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Section1 = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -95,13 +96,13 @@ const Section1 = () => {
               community.
             </p>
             <div className="flex gap-4">
-              <a href="/about">
+              <Link href="/about">
                 <button className="mt-4 font-bold text-white lg:py-5 py-3 lg:px-12 px-8 bg-[#102e56] hover:bg-yellow-500 transition duration-300">
                   <span className="text-white text-lg lg:tex-xl">
                     Learn More
                   </span>
                 </button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
