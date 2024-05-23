@@ -95,7 +95,7 @@ const Section1 = () => {
               community.
             </p>
             <div className="flex gap-4">
-              <a href="mailto:info@royfordlaw.com">
+              <a href="/about">
                 <button className="mt-4 font-bold text-white lg:py-5 py-3 lg:px-12 px-8 bg-[#102e56] hover:bg-yellow-500 transition duration-300">
                   <span className="text-white text-lg lg:tex-xl">
                     Learn More
