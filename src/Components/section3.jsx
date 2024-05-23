@@ -70,7 +70,7 @@ const Section3 = () => {
   };
 
   return (
-    <div className="bg-[#F3F4F6] min-h-screen border-t">
+    <div className="bg-[#F3F4F6] min-h-screen border-t p-4 lg:p-0">
       <div className="container mx-auto lg:py-8 py-4">
         <div className="lg:mt-10 lg:mb-8 p-3">
           <p className="text-2xl lg:text-3xl text-yellow-500 font-bold">
@@ -110,10 +110,10 @@ const Section3 = () => {
                   width={80}
                   height={40}
                 />
-                <h2 className="text-xl font-semibold text-gray-800 mt-4">{article.title}</h2>
-                <p className="text-gray-500 mt-2 text-lg" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
+                <h2 className="text-lg lg:text-xl font-semibold text-gray-800 mt-4">{article.title}</h2>
+                <p className="text-black mt-2 text-sm lg:text-lg" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>
                 <Link href={`/article/${article._id}`}>
-                  <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
+                  <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-1 lg:py-3 px-4 lg:px-4 mt-4">
                     READ MORE
                   </button>
                 </Link>
