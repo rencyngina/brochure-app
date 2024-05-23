@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import 'react-quill/dist/quill.snow.css';  // Ensure React Quill's CSS is included
+import "react-quill/dist/quill.snow.css"; // Ensure React Quill's CSS is included
 
 const ArticleContent = ({ article }) => {
   if (!article) {
@@ -26,9 +26,7 @@ const ArticleContent = ({ article }) => {
         </div>
       )}
       {title && (
-        <h1 className="text-3xl lg:text-5xl font-bold mt-4 overflow-hidden overflow-ellipsis"
-          style={{ WebkitLineClamp: 2, display: "-webkit-box", WebkitBoxOrient: "vertical" }}
-        >
+        <h1 className="text-2xl lg:text-5xl font-bold mt-4 overflow-hidden text-ellipsis line-clamp-3 break-words">
           {title}
         </h1>
       )}

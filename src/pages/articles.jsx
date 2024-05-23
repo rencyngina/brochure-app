@@ -130,7 +130,7 @@ const Articles = () => {
               <span>No articles found.</span>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2 lg:p-0">
               {displayedArticles.map((article, index) => (
                 <div
                   key={index}
@@ -144,11 +144,11 @@ const Articles = () => {
                     width={80}
                     height={40}
                   />
-                  <h2 className="text-lg font-semibold text-gray-800 mt-4">
+                  <h2 className="lg:text-xl text-lg font-semibold text-gray-800 mt-4">
                     {article.title}
                   </h2>
                   <p
-                    className="text-gray-500 mt-2"
+                    className="text-black mt-2 text-sm lg:text-lg"
                     dangerouslySetInnerHTML={{
                       __html: truncateContent(article.content, 20),
                     }}
