@@ -70,12 +70,12 @@ const ArticlePage = () => {
   return (
     <>
       <Navbar />
-      <div className="h-auto lg:h-[90rem]">
-      <div className="container mx-auto py-8 flex flex-col items-center px-4 md:px-8">
+      <div className="h-auto lg:h-auto">
+      <div className="lg:container mx-auto lg:py-8 flex flex-col items-center lg:px-4 md:px-8">
         {article ? (
           <>
             <ArticleContent article={article} />
-            <div className="mt-8 flex justify-between w-full lg:max-w-4xl lg:mr-24 mr-0">
+            <div className="mt-8 flex justify-between w-full lg:max-w-4xl lg:mr-24 mr-0 p-4 lg:p-0">
               <button
                 onClick={handlePrevious}
                 disabled={currentIndex <= 0}
@@ -108,8 +108,8 @@ const ArticlePage = () => {
           </div>
         )}
       </div>
-      <Foot />
       </div>
+      <Foot />
     </>
   );
 };

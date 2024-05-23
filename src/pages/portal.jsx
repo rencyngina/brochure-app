@@ -13,16 +13,16 @@ const Portal = () => {
       <div className="flex flex-col h-[65vh]">
         <div className="bg-[#03234D] flex-grow flex justify-center items-center w-full">
           <div className="flex flex-col justify-center items-center lg:text-center">
-            <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-4 mb-8 lg:mt-6 mt-5 font-bold">
+            <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-4 mb-8 lg:mt-2 mt-5 font-bold">
               CLIENT PORTAL
             </h1>
-            <p className="text-lg lg:text-xl font-thin text-white mt-10 mb-10 mx-6">
+            {/*<p className="text-lg lg:text-xl font-thin text-white mt-10 mb-10 mx-6">
               At the heart of any wise financial plan lies effective investment
               management. It not only prioritizes your goals but also
               <br />
               empowers you to grow your nest egg and preserve your family’s
               future.
-            </p>
+  </p>*/}
             <button className="mt-4 text-md  py-4 px-10 hover:bg-yellow-500 transition duration-300 border font-bold border-yellow-300 flex items-center justify-center text-white">
               Get Started
             </button>

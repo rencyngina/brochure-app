@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import dynamic from 'next/dynamic';
 import Image from "next/image";
 import { toast, ToastContainer } from "react-toastify";
@@ -88,12 +88,12 @@ const NewArticleForm = () => {
         <div className="mb-8">
           <div className="input-field rounded-md focus-within:border-blue-500">
             <ReactQuill
-              theme="snow" // Use Quill's snow theme
+              theme="snow"
               value={content}
               onChange={setContent}
               className="h-96 lg:h-100 w-full resize-none p-4 focus:outline-none mb-3 lg:mb-10"
-              modules={quillModules} // Pass the modules object containing toolbar options
-              formats={quillFormats} // Pass the formats array to enable text color
+              modules={quillModules}
+              formats={quillFormats}
               required
             />
           </div>
@@ -106,28 +106,21 @@ const NewArticleForm = () => {
 
 // Modules and formats for Quill editor
 const quillModules = {
-  toolbar: {
-    container: [
-      [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-      [{ size: [] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ 'color': [] }, { 'background': [] }],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-      ['link', 'image', 'video'],
-      ['clean']
-    ],
-    handlers: {
-      'color': function (value) { // Custom handler for text color
-        this.quill.format('color', value);
-      }
-    }
-  }
+  toolbar: [
+    [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+    [{ size: [] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
+    [{ 'color': [] }, { 'background': [] }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+    [{ 'align': [] }],
+    ['link', 'image', 'video'],
+    ['clean']
+  ]
 };
 
 const quillFormats = [
-  'header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote',
-  'color', 'background', 'list', 'bullet', 'link', 'image', 'video'
+  'header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
+  'color', 'background', 'list', 'bullet', 'indent', 'align', 'link', 'image', 'video'
 ];
 
 export default NewArticleForm;
-
