@@ -1,14 +1,42 @@
+// pages/_app.js
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import "@/styles/globals.css";
 import Head from "next/head";
+import Loading from '../Components/Loading';
 
 function App({ Component, pageProps }) {
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleStart = (url) => {
+      if (url !== router.asPath) {
+        setLoading(true);
+      }
+    };
+
+    const handleComplete = (url) => {
+      if (url === router.asPath) {
+        setLoading(false);
+      }
+    };
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  }, [router]);
+
   const metadata = {
-    title:
-      "Sovereign Wealth Management - Financial Planning & Investment Management",
-    description:
-      "Wealth Management is a comprehensive and holistic investment process that integrates the client long-term goals with financial solutions, using a planning-based and consultative approach.",
-    keywords:
-      "Wealth Management, Financial Planning, Investment Management, Financial Solutions, Planning-Based, Consultative Approach, Comprehensive, Holistic, Investment Process, Client Long-Term Goals, Client Goals, Financial Goals, Investment Goals, Investment Process, Financial Process, Planning Process, Consultative Process, Wealth Management Process, Wealth Management Solutions, Wealth Management Goals, Wealth Management Approach, Wealth Management Consultation, Wealth Management Planning, Wealth Management Investment, Wealth Management Financial Solutions, Wealth Management Comprehensive, Wealth Management Holistic, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment",
+    title: "Sovereign Wealth Management - Financial Planning & Investment Management",
+    description: "Wealth Management is a comprehensive and holistic investment process that integrates the client long-term goals with financial solutions, using a planning-based and consultative approach.",
+    keywords: "Wealth Management, Financial Planning, Investment Management, Financial Solutions, Planning-Based, Consultative Approach, Comprehensive, Holistic, Investment Process, Client Long-Term Goals, Client Goals, Financial Goals, Investment Goals, Investment Process, Financial Process, Planning Process, Consultative Process, Wealth Management Process, Wealth Management Solutions, Wealth Management Goals, Wealth Management Approach, Wealth Management Consultation, Wealth Management Planning, Wealth Management Investment, Wealth Management Financial Solutions, Wealth Management Comprehensive, Wealth Management Holistic, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process",
     author: "Erick Adikah",
     portfolio: {
       name: "Erick Adikah",
@@ -22,30 +50,24 @@ function App({ Component, pageProps }) {
     favicon: "/favicon.ico",
     robots: "index, follow, visit:daily",
     og: {
-      title:
-        "Sovereign Wealth Management - Financial Planning & Investment Management",
-      description:
-        "Unlock legal excellence with Royfordlaw. Highly skilled professionals from Kenya's prestigious Law School, University of Nairobi, ready to guide you. Trust in our expertise for unparalleled legal services.",
+      title: "Sovereign Wealth Management - Financial Planning & Investment Management",
+      description: "Unlock legal excellence with Royfordlaw. Highly skilled professionals from Kenya's prestigious Law School, University of Nairobi, ready to guide you. Trust in our expertise for unparalleled legal services.",
       image: "/MWENDA ROYFORD LOGO-03 (1).png",
       url: "https://www.royfordlaw.com/",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title:
-        "Sovereign Wealth Management - Financial Planning & Investment Management",
-      description:
-        "Unlock legal excellence with Royfordlaw. Highly skilled professionals from Kenya's prestigious Law School, University of Nairobi, ready to guide you. Trust in our expertise for unparalleled legal services.",
+      title: "Sovereign Wealth Management - Financial Planning & Investment Management",
+      description: "Unlock legal excellence with Royfordlaw. Highly skilled professionals from Kenya's prestigious Law School, University of Nairobi, ready to guide you. Trust in our expertise for unparalleled legal services.",
       image: "/images/favicon.ico",
       site: "@royford_law",
       url: "https://twitter.com/Royfordlaw",
     },
     linkedIn: {
       card: "summary_large_image",
-      title:
-        "Sovereign Wealth Management - Financial Planning & Investment Management",
-      description:
-        "Unlock legal excellence with Royfordlaw. Highly skilled professionals from Kenya's prestigious Law School, University of Nairobi, ready to guide you. Trust in our expertise for unparalleled legal services.",
+      title: "Sovereign Wealth Management - Financial Planning & Investment Management",
+      description: "Unlock legal excellence with Royfordlaw. Highly skilled professionals from Kenya's prestigious Law School, University of Nairobi, ready to guide you. Trust in our expertise for unparalleled legal services.",
       image: "/images/favicon.ico",
       site: "@royford_law",
       url: "https://www.linkedin.com/in/mwenda-royford-company-advocates-062a5a2b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app_share",
@@ -118,6 +140,7 @@ function App({ Component, pageProps }) {
         <meta property="og:type" content={metadata.linkedIn.type} />
         <meta property="og:site" content={metadata.linkedIn.site} />
       </Head>
+      {loading && <Loading />}
       <Component {...pageProps} />
     </>
   );
