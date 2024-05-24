@@ -40,6 +40,7 @@ const Section1 = () => {
                   src="/images/pic1.jpg"
                   width={400}
                   height={200}
+                  className="lazy-loading"
                 />
               </div>
               <div className="col-span-1 lg:col-span-2">

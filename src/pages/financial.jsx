@@ -3,31 +3,72 @@ import React from "react";
 import Foot from "@/Components/foot";
 import Navbar from "@/Components/Navnar";
 import { IoMdCheckboxOutline } from "react-icons/io";
+import Image from "next/image";
+import Link from "next/link";
 
 const Financial = () => {
   return (
     <>
       <Navbar />
       <div className="flex flex-col h-[65vh]">
-        <div className="bg-[#03234D] flex-grow flex justify-center items-center w-full">
-          <div className="flex flex-col justify-center items-center lg:text-center">
-            <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-10 mb-8 lg:mt-20 mt-5 ml-6 lg:ml-0 mr-0 lg:mr-0">
-              Financial Planning Services
-            </h1>
-            <p className="text-lg mr-2 ml-8 lg:text-5xl text-white">
-              Sovereign Wealth Management offers financial planning and
-              <br />
-              discretionary portfolio management services.
-            </p>
-            <p className="text-xs font-thin text-white lg:text-xl mt-10 mb-10 mr-0 ml-6">
-              Synchronizing your wealth with your values, values-based financial
-              planning goes further, helping you make a
-              <br />
-              meaningful impact on the things that matter most.
-            </p>
-            <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-4 px-10 hover:bg-yellow-500 transition duration-300 border font-bold border-yellow-300 flex text-white">
-              <div className="">Get Started</div>
-            </button>
+        <div className="bg-[#03234D] w-full lg:h-auto h-auto">
+          <div className="container mx-auto block lg:flex lg:items-center lg:justify-between lg:gap-8 xl:gap-10 lg:mb-0 p-6 xl:p-12 lg:p-8">
+            <div className="lg:w-1/2">
+            <Image src="/images/financial-mainicon.png" alt="financial" width={50} height={50} className="mb-2" />
+              <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-10 mb-8 lg:mt-0 mt-5 lg:ml-0 mr-0 lg:mr-0">
+                Financial Planning Services
+              </h1>
+              <p className="text-lg lg:text-5xl text-white">
+                Sovereign Wealth Management offers financial planning and
+                <br />
+                discretionary portfolio management services.
+              </p>
+              <p className="text-sm font-thin text-white lg:text-xl mt-8 mb-10">
+                Synchronizing your wealth with your values, values-based
+                financial planning goes further, helping you make a
+                <br />
+                meaningful impact on the things that matter most.
+              </p>
+              <Link href="/contact">
+                <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 lg:py-4 px-5 lg:px-10 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex text-white text-sm lg:text-lg">
+                  GET STARTED
+                </button>
+              </Link>
+            </div>
+            <div className="hidden lg:block">
+              <div className="lg:flex lg:flex-row flex flex-col gap-5 lg:gap-6">
+                <div className="flex flex-col lg:flex-col gap-5 lg:gap-6 mt-10 lg:mt-8 lg:mb-0 mb-10 lg:mr-0 mr-0 lg:ml-0 ml-0">
+                  <Image
+                    src="/images/pic4.jpg"
+                    alt="financial"
+                    width={200}
+                    height={200}
+                    className="border-2 border-yellow-500"
+                  />
+                  <Image
+                    src="/images/old3.jpg"
+                    alt="financial"
+                    width={200}
+                    height={200}
+                    className="border-2 border-yellow-500"
+                  />
+                  <Image
+                    src="/images/old1.jpg"
+                    alt="financial"
+                    width={200}
+                    height={220}
+                    className="border-2 border-yellow-500"
+                  />
+                </div>
+                <Image
+                  src="/images/financial-couple.png"
+                  alt="financial"
+                  width={400}
+                  height={200}
+                  className="border-2 border-yellow-500"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
