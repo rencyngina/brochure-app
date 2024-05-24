@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../Components/Navnar";
 import Foot from "@/Components/foot";
 import Pricing from "../Components/pricing";
+import SoftwareRequestForm   from "@/Components/SoftwareRequestForm";
+import { IoCloseCircle } from 'react-icons/io5';
 
 const features = [
   {
@@ -41,6 +43,12 @@ const features = [
 ];
 
 const Overview = () => {
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
   return (
     <>
       <Navbar />
@@ -62,11 +70,12 @@ const Overview = () => {
                 <br />
                 meaningful impact on the things that matter most.
               </p>
-              <Link href="/contact">
-                <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 lg:py-4 px-5 lg:px-10 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex text-white text-sm lg:text-lg">
+              
+                <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 lg:py-4 px-5 lg:px-10 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex text-white text-sm lg:text-lg"
+                onClick={toggleForm}
+                >
                   SCHEDULE A MEETING
                 </button>
-              </Link>
             </div>
             <div className="hidden lg:block lg:mt-10">
               <div className="grid grid-flow-col grid-rows-1 grid-cols-3 gap-8">
@@ -161,6 +170,19 @@ const Overview = () => {
         ))}
       </div>
       <Pricing />
+      {showForm && (
+        <div className="fixed top-0 left-0 w-full  lg:w-full h-full lg:h-full bg-black bg-opacity-75 z-20 flex items-center justify-center">
+          <div className="relative z-30">
+            <SoftwareRequestForm />
+            {/* Close button for the form */}
+            <button
+              onClick={toggleForm}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 mb-12">
+              <IoCloseCircle className="w-8 h-8 text-gray-500" />
+            </button>
+          </div>
+        </div>
+      )}
       <Foot />
     </>
   );
