@@ -27,7 +27,7 @@ const Dashboard = () => {
             {/*<h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-white">
               Dashboard
   </h6>*/}
-            <Image src="/images/Logo.svg" alt="logo" width={180} height={50} />
+            <Image src="/images/Logo.svg" alt="logo" width={180} height={50} loading="lazy" />
             <button
               className="middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-white hover:bg-white/10 active:bg-white/30 absolute right-0 top-0 grid rounded-br-none rounded-tl-none xl:hidden"
               type="button"

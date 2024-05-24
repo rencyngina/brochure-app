@@ -20,6 +20,7 @@ const Investment = () => {
                 width={50}
                 height={50}
                 className="mb-2"
+                loading="lazy"
               />
               <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-10 mb-8 lg:mt-0 mt-5 lg:ml-0 mr-0 lg:mr-0">
                 Investment Planning
@@ -50,6 +51,7 @@ const Investment = () => {
                     width={200}
                     height={200}
                     className="border-2 border-yellow-500"
+                    loading="lazy"
                   />
                   <Image
                     src="/images/pic5.jpg"
@@ -57,6 +59,7 @@ const Investment = () => {
                     width={200}
                     height={200}
                     className="border-2 border-yellow-500"
+                    loading="lazy"
                   />
                   <Image
                     src="/images/retirement.jpeg"
@@ -64,6 +67,7 @@ const Investment = () => {
                     width={200}
                     height={220}
                     className="border-2 border-yellow-500"
+                    loading="lazy"
                   />
                 </div>
                 <Image
@@ -72,6 +76,7 @@ const Investment = () => {
                   width={460}
                   height={200}
                   className="shadow-lg border-2 border-yellow-500"
+                  loading="lazy"
                 />
               </div>
             </div>

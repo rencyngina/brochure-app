@@ -103,6 +103,7 @@ const BlueSection = () => {
                     width={40}
                     height={20}
                     className="w-35 h-30"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6">

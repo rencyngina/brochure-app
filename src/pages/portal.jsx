@@ -38,7 +38,7 @@ const Portal = () => {
             <div className="absolute blur duration-500 group-hover:blur-none w-24 h-24 bg-sky-700 rounded-full group-hover:-translate-x-12"></div>
             <div className="z-10 flex flex-col justify-evenly w-full h-full">
             <div className="flex justify-center items-center">
-              <Image src='/images/logo-footer.svg' alt="logo" width={150} height={60} />
+              <Image src='/images/logo-footer.svg' alt="logo" width={150} height={60} loading="lazy" />
               </div>
             <span className="lg:text-xl text-lg font-bold text-center">
              DOWNLOAD
@@ -61,7 +61,7 @@ const Portal = () => {
             <div className="absolute blur duration-500 group-hover:blur-none w-24 h-24 bg-sky-700 rounded-full group-hover:-translate-x-12"></div>
             <div className="z-10 flex flex-col justify-evenly w-full h-full">
             <div className="flex justify-center items-center">
-            <Image src='/images/eMoney-logo.png' alt="logo" width={200} height={60} />
+            <Image src='/images/eMoney-logo.png' alt="logo" width={200} height={60} loading="lazy" />
             </div>
             <span className="lg:text-xl text-lg font-bold text-center">
               Log in to your

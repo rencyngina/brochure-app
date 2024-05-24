@@ -22,6 +22,7 @@ const ArticleContent = ({ article }) => {
             width={700}
             height={200}
             className="rounded-sm"
+            loading="lazy"
           />
         </div>
       )}

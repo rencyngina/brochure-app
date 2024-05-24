@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import { IoMdCheckboxOutline } from "react-icons/io";
 
-
 const Pricing = () => {
   return (
     <section className="bg-[#03234D] py-12">
@@ -60,7 +59,6 @@ const Pricing = () => {
             </Link>
           </div>
           <div className="bg-white bg-opacity-10  shadow-lg p-6 relative overflow-hidden">
-            
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white">Growth Pack</h3>
               <p className="mt-4 text-purple-200">
@@ -72,21 +70,21 @@ const Pricing = () => {
             </div>
             <ul className="mb-8 space-y-4 text-purple-200">
               <li className="flex items-center gap-4">
-<IoMdCheckboxOutline />
+                <IoMdCheckboxOutline />
                 <span>
                   One-hour financial review meetings four times a year, once
                   quarterly
                 </span>
               </li>
               <li className="flex items-center gap-4">
-              <IoMdCheckboxOutline />
+                <IoMdCheckboxOutline />
                 <span>
                   Regular review and updates to your financial plan as your
                   situation or goals change
                 </span>
               </li>
               <li className="flex items-center gap-4">
-              <IoMdCheckboxOutline />
+                <IoMdCheckboxOutline />
                 <span>Investment management</span>
               </li>
               <li className="flex items-center gap-4">
@@ -105,7 +103,6 @@ const Pricing = () => {
             </Link>
           </div>
           <div className="bg-white bg-opacity-10 shadow-lg p-6 relative overflow-hidden">
-            
             <div className="mb-8">
               <h3 className="text-2xl font-semibold text-white">
                 Comprehensive Financial Plan
@@ -123,7 +120,7 @@ const Pricing = () => {
             </div>
             <ul className="mb-8 space-y-4 text-purple-200">
               <li className="flex items-center gap-4">
-              <IoMdCheckboxOutline />
+                <IoMdCheckboxOutline />
                 <span>Retirement, Other topics as needed</span>
               </li>
               <li className="flex items-center gap-4">
@@ -151,10 +148,8 @@ const Pricing = () => {
       <p className="mt-8 text-sm lg:text-xl text-purple-200 lg:text-center p-4 lg:p-0">
         *If you proceed to open up an account that has a management fee, the
         financial plan fee will be refunded to you.
-        <br />
-         A client may choose to pay
-        fees directly rather than having them deducted from their investment
-        account.
+        <br />A client may choose to pay fees directly rather than having them
+        deducted from their investment account.
       </p>
     </section>
   );

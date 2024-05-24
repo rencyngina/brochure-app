@@ -103,6 +103,7 @@ const Section1 = () => {
                   width={850}
                   height={500}
                   className="object-cover"
+                  loading="lazy"
                 />
               </div>
             ))}

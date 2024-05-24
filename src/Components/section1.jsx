@@ -40,7 +40,7 @@ const Section1 = () => {
                   src="/images/pic1.jpg"
                   width={400}
                   height={200}
-                  className="lazy-loading"
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-1 lg:col-span-2">
@@ -48,6 +48,7 @@ const Section1 = () => {
                   src="/images/pic2.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-1">
@@ -55,6 +56,7 @@ const Section1 = () => {
                   src="/images/pic5.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-1">
@@ -62,6 +64,7 @@ const Section1 = () => {
                   src="/images/pic4.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-1">
@@ -69,6 +72,7 @@ const Section1 = () => {
                   src="/images/pic3.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -111,6 +111,7 @@ const deleteArticle = async (id) => {
                     layout="responsive"
                     width={80}
                     height={40}
+                    loading="lazy"
                   />
                   <h2 className="text-lg font-semibold text-gray-800 mt-4">
                     {article.title}

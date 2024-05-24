@@ -40,6 +40,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="rounded-lg ">
@@ -49,6 +50,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="rounded-lg overflow-hidden">
@@ -58,6 +60,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="">
@@ -67,6 +70,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="rounded-lg overflow-hidden">
@@ -76,6 +80,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="rounded-lg overflow-hidden">
@@ -85,6 +90,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="rounded-lg overflow-hidden">
@@ -94,6 +100,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
               />
             </div>
             <div className="rounded-lg overflow-hidden">
@@ -103,6 +110,7 @@ const Section4 = () => {
                 width={350}
                 height={200}
                 className="rounded-lg shadow-lg"
+                loading="lazy"
 
               />
             </div>
