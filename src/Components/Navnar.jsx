@@ -60,6 +60,7 @@ const Navbar = () => {
               alt="logo"
               width={160}
               height={150}
+              loading="lazy"
             />
           </div>
         </Link>
@@ -77,6 +78,7 @@ const Navbar = () => {
             alt="logo"
             width={150}
             height={120}
+            loading="lazy"
           />
         </div>
       </Link>

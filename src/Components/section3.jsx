@@ -109,6 +109,7 @@ const Section3 = () => {
                   layout="responsive"
                   width={80}
                   height={40}
+                  loading="lazy"
                 />
                 <h2 className="text-lg lg:text-xl font-semibold text-gray-800 mt-4">{article.title}</h2>
                 <p className="text-black mt-2 text-sm lg:text-lg" dangerouslySetInnerHTML={{ __html: truncateContent(article.content, 20) }}></p>

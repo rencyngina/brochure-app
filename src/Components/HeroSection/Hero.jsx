@@ -76,6 +76,7 @@ const Hero = () => {
               alt="logo"
               width={700}
               height={200}
+              loading="lazy"
               className="rounded-tr-2xl rounded-bl-2xl rounded-br-2xl bg-white rounded-tl-2xl border lg:border-4 border-blue-950 shadow-lg lg:h-90 lg:w-full w-full h-90 lazy-loading"
             />
             <div className="absolute top-[-90px] lg:top-[-90px] right-[-28px] lg:right-[-80px]">
@@ -84,6 +85,7 @@ const Hero = () => {
                 alt="Second image"
                 width={200}
                 height={100}
+                loading="lazy"
                 className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl bg-white border lg:border-4 border-yellow-500 lg:h-40 h-28 w-full object-cover lazy-loading"
               />
             </div>
@@ -93,6 +95,7 @@ const Hero = () => {
                 alt="Third image"
                 width={180}
                 height={150}
+                loading="lazy"
                 className="shadow-md rounded-tl-2xl rounded-br-2xl bg-white border lg:border-4 border-orange-400 lg:h-32  h-24 w-full object-cover lazy-loading"
               />
             </div>

@@ -14,7 +14,7 @@ const Retirement = () => {
         <div className="bg-[#03234D] w-full lg:h-auto h-auto">
           <div className="container mx-auto block lg:flex lg:items-center lg:justify-between lg:gap-8 xl:gap-10 lg:mb-0 p-6 xl:p-12 lg:p-8">
             <div className="lg:w-1/2">
-            <Image src="/images/retirement-mainicon.png" alt="financial" width={50} height={50} className="mb-2" />
+            <Image src="/images/retirement-mainicon.png" alt="financial" width={50} height={50} className="mb-2" loading="lazy" />
               <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-10 mb-8 lg:mt-0 mt-5 lg:ml-0 mr-0 lg:mr-0">
               Retirement Planning
             </h1>
@@ -43,6 +43,7 @@ const Retirement = () => {
                     width={200}
                     height={200}
                     className="border-2 border-yellow-500"
+                    loading="lazy"
                   />
                   <Image
                     src="/images/old1.jpg"
@@ -50,6 +51,7 @@ const Retirement = () => {
                     width={200}
                     height={200}
                     className="border-2 border-yellow-500"
+                    loading="lazy"
                   />
                   <Image
                     src="/images/old2.webp"
@@ -57,6 +59,7 @@ const Retirement = () => {
                     width={200}
                     height={220}
                     className="border-2 border-yellow-500"
+                    loading="lazy"
                   />
                 </div>
                 <Image
@@ -65,6 +68,7 @@ const Retirement = () => {
                   width={400}
                   height={200}
                   className="border-2 border-yellow-500"
+                  loading="lazy"
                 />
               </div>
             </div>

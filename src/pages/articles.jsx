@@ -143,6 +143,7 @@ const Articles = () => {
                     layout="responsive"
                     width={80}
                     height={40}
+                    loading="lazy"
                   />
                   <h2 className="lg:text-xl text-lg font-semibold text-gray-800 mt-4">
                     {article.title}

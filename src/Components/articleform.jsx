@@ -71,7 +71,7 @@ const Articleform = () => {
          {imagePreview && (
            <div className="mt-2">
              <p className="text-gray-700">Selected Image:</p>
-             <Image src={imagePreview} alt="Selected" className="mt-2 rounded-md" width={200} height={200} />
+             <Image src={imagePreview} alt="Selected" className="mt-2 rounded-md" width={200} height={200} loading="lazy" />
            </div>
          )}
        </div>
