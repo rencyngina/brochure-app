@@ -2,27 +2,74 @@
 import React from 'react';
 import Foot from '@/Components/foot';
 import Navbar from '@/Components/Navnar';
+import Image from 'next/image';
 import { IoMdCheckboxOutline } from "react-icons/io";
 
 const Retirement = () => {
     return (
         <>
         <Navbar />
-          <div className="flex flex-col h-[65vh]">
-            <div className="bg-[#03234D] flex-grow flex justify-center items-center w-full">
-              <div className="flex flex-col justify-center items-center lg:text-center p-2 lg:p-0">
-                <h1 className='text-3xl text-yellow-600 mb-10'>Retirement Planning</h1>
-                <p className='text-3xl lg:text-5xl mb-3 lg:mb-2 font-bold text-white'>Transition into retirement with ease.</p>
-                <p className='text-sm lg:text-lg mb-5 lg:mb-10 lg:mt-10 mt-10 text-white'>Whether retirement is just around the corner or several years away, partnering with a financial advisor can assist you
-                <br /> 
-                in establishing realistic financial goals as you prepare for this beautiful new life chapter.
-                </p>
-                <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-4 px-10 hover:bg-yellow-500 transition duration-300 border font-bold border-yellow-300 flex text-white">
-              <div className="">Get Started</div>
-            </button>
+        <div className="flex flex-col lg:flex-row bg-[#03234D] lg:justify-center lg:items-center lg:h-[75vh] h-[75vh] min-h-[75vh]">
+        <div className="lg:w-1/2 flex justify-center lg:z-0 z-0 mt-4 lg:mb-18 lg:p-0 p-2">
+          <div className="relative w-full lg:max-w-[600px]">
+            <div className="relative lg:left-[-20px]">
+              <div className="grid grid-cols-2 gap-0 lg:mb-10 mb-0 mt-4 p-2">
+                <div className="relative -top-8">
+                  <Image
+                    src="/images/old2.webp"
+                    alt="logo"
+                    width={300}
+                    height={100}
+                    className="border lg:border-4 border-yellow-600 shadow-xl rounded-3xl"
+                  />
+                </div>
+                <div className="relative lg:-bottom-14">
+                  <Image
+                    src="/images/old2.webp"
+                    alt="logo"
+                    width={300}
+                    height={100}
+                    className="border lg:border-4 border-orange-400 shadow-lg lg:mb-0 rounded-3xl"
+                  />
+                </div>
+                <div className="relative lg:-top-6 -top-6">
+                  <Image
+                    src="/images/old2.webp"
+                    alt="logo"
+                    width={300}
+                    height={100}
+                    className="border lg:border-4 border-yellow-800 shadow-lg rounded-3xl"
+                  />
+                </div>
+                <div className="relative lg:-bottom-16 -bottom-2">
+                  <Image
+                    src="/images/old2.webp"
+                    alt="logo"
+                    width={300}
+                    height={100}
+                    className="border lg:border-4 border-gray-500 shadow-lg rounded-3xl"
+                  />
+                </div>
               </div>
             </div>
           </div>
+        </div>
+        <div className="lg:w-1/2 p-2 lg:p-10 lg:mb-16 lg:mt-6 mb-12 min-16">
+          
+            <h1 className="text-xl lg:text-3xl text-yellow-300 lg:mb-4 lg:mt-6">
+            Retirement Planning
+            </h1>
+            <p className="text-md lg:text-2xl text-yellow-600 lg:mt-6">
+            Transition into retirement with ease.
+            </p>
+            <p className="text-sm lg:text-lg mt-4 lg:mt-6 mb-6  text-white">
+            Whether retirement is just around the corner or several years away, partnering with a financial advisor can assist you in establishing realistic financial goals as you prepare for this beautiful new life chapter.
+            </p>
+            <button className="font-bold text-white py-2 lg:py-3 px-10 lg:px-16 bg-transparent border border-yellow-500 hover:bg-yellow-600 transition duration-300 rounded-full text-sm lg:text-base">
+            Get Started
+          </button>
+          </div>
+        </div>
           
           <div className="lg:container lg:mx-auto item-center pl-5 lg:pl-20 flex lg:flex-row flex-col justify-center gap-5 lg:gap-20 lg:mb-20 mb-10">
         <div className="h-auto lg:w-1/2">

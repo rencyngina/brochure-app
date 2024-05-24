@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { IoCloseCircle } from "react-icons/io5";
-import Navbar from "@/Components/Navnar";
-import Foot from "@/Components/foot";
+import Navbar from "../Components/Navnar"; // Adjust the path if necessary
+import Foot from "../Components/Foot"; // Adjust the path if necessary
 
 const features = [
   {
@@ -45,62 +44,101 @@ const Overview = () => {
   return (
     <>
       <Navbar />
-      <div
-        className="flex flex-col items-center justify-center  bg-[#F3F5F8] "
-        id="features"
-      >
-        <div className="lg:justify-center lg:items-center bg-[#03234D]  w-full lg:p-0 p-4">
-          <h1 className="text-4xl lg:text-3xl text-yellow-600 mb-10 text-center mt-20">
-            Financial Planning Services
-          </h1>
-          <p className="text-lg lg:text-5xl lg:text-center text-white">
-            Sovereign Wealth Management offers financial planning and
-            <br />
-            discretionary portfolio management services.
-          </p>
-          <p className="text-sm lg:text-xl mt-10 mb-10 lg:text-center text-white">
-            Synchronizing your wealth with your values, values-based financial
-            planning goes further, helping you make a
-            <br />
-            meaningful impact on the things that matter most.
-          </p>
-          <div className="flex lg:justify-center items-center justify-center lg:items-center mb-10 ">
-            <button className="font-bold text-white py-4 px-20 bg-yellow-500 hover:bg-yellow-600 transition duration-300">
-              Get Started
-            </button>
+      <div className="lg:justify-center lg:items-center bg-[#03234D] flex flex-col lg:flex-row lg:w-full lg:p-0 p-4 lg:h-[75vh] h-[100vh] min-h-[75vh]">
+        <div className="lg:w-1/2 flex justify-center lg:z-0 z-0 mt-4 lg:mb-18 lg:p-0 p-2">
+          <div className="relative w-full lg:max-w-[600px]">
+            <div className="relative lg:left-[-20px]">
+              <div className="grid grid-cols-2 gap-0 lg:mb-10 mb-0 mt-0 p-2"> {/* Removed gap between images */}
+                <div className="relative -top-8"> {/* Adjusted position */}
+                  <Image 
+                    src="/images/old2.webp"
+                    alt="logo"
+                    width={300} // Adjusted width
+                    height={100} // Adjusted height
+                    className="border lg:border-4 border-yellow-600 shadow-xl rounded-3xl"
+                  />
+                </div>
+                <div className="relative lg:-bottom-14"> {/* Adjusted position */}
+                  <Image 
+                    src="/images/old2.webp"
+                    alt="logo"
+                    width={300} // Adjusted width
+                    height={100} // Adjusted height
+                    className="border lg:border-4 border-orange-400 shadow-lg lg:mb-0 rounded-3xl"
+                  />
+                </div>
+                <div className="relative lg:-top-6 -top-6"> {/* Adjusted position */}
+                  <Image 
+                    src="/images/old2.webp"
+                    alt="logo"
+                    width={300} // Adjusted width
+                    height={100} // Adjusted height
+                    className="border lg:border-4 border-yellow-800 shadow-lg rounded-3xl"
+                  />
+                </div>
+                <div className="relative lg:-bottom-16 -bottom-2"> {/* Adjusted position */}
+                  <Image 
+                    src="/images/old2.webp"
+                    alt="logo"
+                    width={300} // Adjusted width
+                    height={100} // Adjusted height
+                    className="border lg:border-4 border-gray-500 shadow-lg rounded-3xl"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        {features.map((feature, index) => (
-          <div
-            key={feature.id}
-            className={`flex flex-col lg:container md:flex-row items-center lg:gap-16 gap-4 lg:mt-20 mt-10 lg:mb-20 mb-10 lg:p-0 p-4 ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
-            data-aos-duration="1000"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div className="md:w-1/2">
-              <h1 className="text-2xl md:text-2xl font-extrabold text-gray-900 leading-tight mb-4">
-                {feature.title}
-              </h1>
-              <p className="text-sm lg:text-lg text-gray-700 mb-4 lg:mt-10">
-                {feature.description}
-              </p>
-            </div>
-            <div className="md:w-1/2 mb-10">
-              <Image
-                src={feature.imageUrl}
-                alt="feature-image"
-                className="object-cover object-center rounded-lg shadow-xl "
-                width={600}
-                height={400}
-              />
-            </div>
-          </div>
-        ))}
+        <div className="lg:w-1/2 p-2 lg:p-10 lg:mb-16 lg:mt-6 mb-12 min-16">
+        <h1 className="text-lg lg:text-3xl text-yellow-300 lg:mb-4 lg:mt-6 ">
+          Services
+        </h1>
+        <p className="text-md lg:text-2xl text-yellow-600 lg:mt-6">
+        Empowering Your Financial Future with Values-Based Planning
+        </p>
+        <p className="text-sm lg:text-lg mt-4 lg:mt-6 mb-6  text-white">
+          Money should serve as a tool to support the things that matter most to you. That’s why we offer a highly personalized approach to building ideas, suggestions, and plans that are tailored to your specific financial goals and objectives. With our customized services, we prioritize and adapt to your changing situation over time to help you work toward financial stability with confidence. Our team is committed to informing and supporting you through each and every meeting.
+        </p>
+        <p className="text-sm lg:text-lg mt-4 lg:mt-6 mb-6  text-white">
+          Whether you’re a pre-retiree, retiree, federal employee, small to midsize business owner, or in the wealth accumulation phase, we have the expertise to help you work toward your financial objectives.
+        </p>
+        <div className="lg:mb-10 ">
+          <button className="font-bold text-white py-2 lg:py-3 px-10 lg:px-16 bg-transparent border border-yellow-500 hover:bg-yellow-600 transition duration-300 rounded-full text-sm lg:text-base">
+            Get Started
+          </button>
+        </div>
       </div>
+      </div>
+
+      {features.map((feature, index) => (
+        <div
+          key={feature.id}
+          className={`flex flex-col lg:container md:flex-row items-center lg:gap-16 gap-4 lg:mt-20 mt-10 lg:mb-20 mb-10 lg:p-0 p-4 ${
+            index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+          }`}
+          data-aos-duration="1000"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div className="md:w-1/2">
+            <h1 className="text-2xl md:text-2xl font-extrabold text-gray-900 leading-tight mb-4">
+              {feature.title}
+            </h1>
+            <p className="text-sm lg:text-lg text-gray-700 mb-4 lg:mt-10">
+              {feature.description}
+            </p>
+          </div>
+          <div className="md:w-1/2 mb-10">
+            <Image
+              src={feature.imageUrl}
+              alt="feature-image"
+              className="object-cover object-center rounded-lg shadow-xl"
+              width={600}
+              height={400}
+            />
+          </div>
+        </div>
+      ))}
       <Foot />
     </>
   );

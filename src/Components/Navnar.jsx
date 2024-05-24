@@ -158,40 +158,44 @@ const Navbar = () => {
                 </div>
               </Link>
             </li>
-            <li>
-              <div className={`relative mt-4 text-sm text-white py-2 rounded-xl px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 w-full text-center flex items-center justify-center cursor-pointer`} onClick={toggleDropdown}>
-                Services <RiArrowDropDownLine />
-              </div> 
-              {isDropdownOpen && (
-                <div className="bg-[#03234d] w-full text-center">
-                  <Link href="/overview" passHref>
-                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
-                      Services Overview
-                    </div>
-                  </Link>
-                  <Link href="/financial" passHref>
-                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
-                      Financial Planning
-                    </div>
-                  </Link>
-                  <Link href="/risk" passHref>
-                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
-                      Risk Management
-                    </div>
-                  </Link>
-                  <Link href="/investment" passHref>
-                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
-                      Investment Planning
-                    </div>
-                  </Link>
-                  <Link href="/retirement" passHref>
-                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
-                      Retirement Planning
-                    </div>
-                  </Link>
-                </div>
-              )}
-            </li>
+            
+            <div ref={dropdownRef} className={`relative flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
+            <button
+              className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
+              onClick={toggleDropdown}
+            >
+              Services <RiArrowDropDownLine />
+            </button>
+            {isDropdownOpen && (
+              <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-60 shadow-lg py-4 top-14">
+                <Link href="/overview" passHref>
+                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
+                    Services Overview
+                  </div>
+                </Link>
+                <Link href="/financial" passHref>
+                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
+                    Financial Planning
+                  </div>
+                </Link>
+                <Link href="/risk" passHref>
+                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
+                    Risk Management
+                  </div>
+                </Link>
+                <Link href="/investment" passHref>
+                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
+                    Investment Planning
+                  </div>
+                </Link>
+                <Link href="/retirement" passHref>
+                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
+                    Retirement Planning
+                  </div>
+                </Link>
+              </div>
+            )}
+          </div>
             <li>
               <Link href="/articles">
                 <div className={`mt-4 text-sm text-white py-2 px-8 hover:bg-yellow-500 rounded-xl stransition duration-300 border border-yellow-300 w-full text-center ${router.pathname === "/articles" ? "text-yellow-500" : ""}`}>
@@ -213,6 +217,10 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
+      </div>
+      <div> 
+        <ul> 
+      </ul>
       </div>
     </nav>
   );
