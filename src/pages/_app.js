@@ -11,12 +11,14 @@ function App({ Component, pageProps }) {
 
   useEffect(() => {
     const handleStart = (url) => {
+      console.log(`Loading: Start route change to ${url}`);
       if (url !== router.asPath) {
         setLoading(true);
       }
     };
 
     const handleComplete = (url) => {
+      console.log(`Loading: Complete route change to ${url}`);
       if (url === router.asPath) {
         setLoading(false);
       }
@@ -36,7 +38,7 @@ function App({ Component, pageProps }) {
   const metadata = {
     title: "Sovereign Wealth Management - Financial Planning & Investment Management",
     description: "Wealth Management is a comprehensive and holistic investment process that integrates the client long-term goals with financial solutions, using a planning-based and consultative approach.",
-    keywords: "Wealth Management, Financial Planning, Investment Management, Financial Solutions, Planning-Based, Consultative Approach, Comprehensive, Holistic, Investment Process, Client Long-Term Goals, Client Goals, Financial Goals, Investment Goals, Investment Process, Financial Process, Planning Process, Consultative Process, Wealth Management Process, Wealth Management Solutions, Wealth Management Goals, Wealth Management Approach, Wealth Management Consultation, Wealth Management Planning, Wealth Management Investment, Wealth Management Financial Solutions, Wealth Management Comprehensive, Wealth Management Holistic, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process",
+    keywords: "Wealth Management, Financial Planning, Investment Management, Financial Solutions, Planning-Based, Consultative Approach, Comprehensive, Holistic, Investment Process, Client Long-Term Goals, Client Goals, Financial Goals, Investment Goals, Investment Process, Financial Process, Planning Process, Consultative Process, Wealth Management Process, Wealth Management Solutions, Wealth Management Goals, Wealth Management Approach, Wealth Management Consultation, Wealth Management Planning, Wealth Management Investment, Wealth Management Financial Solutions, Wealth Management Comprehensive, Wealth Management Holistic, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process, Wealth Management Client Long-Term Goals, Wealth Management Client Goals, Wealth Management Financial Goals, Wealth Management Investment Goals, Wealth Management Investment Process, Wealth Management Financial Process, Wealth Management Planning Process, Wealth Management Consultative Process, Wealth Management Financial Planning, Wealth Management Investment Management, Wealth Management Financial Solutions, Wealth Management Planning-Based, Wealth Management Consultative Approach, Wealth Management Comprehensive Investment Process, Wealth Management Holistic Investment Process",
     author: "Erick Adikah",
     portfolio: {
       name: "Erick Adikah",
@@ -78,25 +80,12 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        {/* Viewport Meta Tag */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* Title Tag */}
         <title>{metadata.title}</title>
-
-        {/* Meta Description */}
         <meta name="description" content={metadata.description} />
-
-        {/* Keywords Meta Tag */}
         <meta name="keywords" content={metadata.keywords} />
-
-        {/* Favicon Link */}
         <link rel="icon" sizes="48x48" href={metadata.favicon} />
-
-        {/* Author Meta Tag */}
         <meta name="author" content={metadata.author} />
-
-        {/* Schema.org Markup for Portfolio */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -105,42 +94,26 @@ function App({ Component, pageProps }) {
             sameAs: metadata.portfolio.sameAs,
           })}
         </script>
-
-        {/* Robots Meta Tag */}
         <meta name="robots" content={metadata.robots} />
-
-        {/* Theme Color Meta Tag */}
         <meta name="theme-color" content={metadata.themeColor} />
-
-        {/* Open Graph Meta Tags for Social Media */}
         <meta property="og:title" content={metadata.og.title} />
         <meta property="og:description" content={metadata.og.description} />
         <meta property="og:image" content={metadata.og.image} />
         <meta property="og:url" content={metadata.og.url} />
         <meta property="og:type" content={metadata.og.type} />
-
-        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content={metadata.twitter.card} />
         <meta name="twitter:title" content={metadata.twitter.title} />
-        <meta
-          name="twitter:description"
-          content={metadata.twitter.description}
-        />
+        <meta name="twitter:description" content={metadata.twitter.description} />
         <meta name="twitter:image" content={metadata.twitter.image} />
         <meta name="twitter:site" content={metadata.twitter.site} />
-
-        {/* LinkedIn Meta Tags */}
         <meta property="og:title" content={metadata.linkedIn.title} />
-        <meta
-          property="og:description"
-          content={metadata.linkedIn.description}
-        />
+        <meta property="og:description" content={metadata.linkedIn.description} />
         <meta property="og:image" content={metadata.linkedIn.image} />
         <meta property="og:url" content={metadata.linkedIn.url} />
         <meta property="og:type" content={metadata.linkedIn.type} />
         <meta property="og:site" content={metadata.linkedIn.site} />
       </Head>
-      {loading && <Loading />}
+      {/*{loading && <Loading />}*/}
       <Component {...pageProps} />
     </>
   );
