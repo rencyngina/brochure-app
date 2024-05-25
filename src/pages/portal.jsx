@@ -74,6 +74,11 @@ const Portal = () => {
         </div>
       </div>
       <div className="lg:container lg:mx-auto px-5 lg:px-20 lg:mb-20 mb-10">
+      <p className="text-sm lg:text-lg text-black">
+          Download the client intake form and fill it out before your first meeting.
+          This will help us better understand your financial goals and needs.
+      </p>
+      <br />
         <p className="text-sm lg:text-lg text-black">
           PLEASE NOTE: The information being provided is strictly as a courtesy.
           When you link to any of the websites provided here, you are leaving
