@@ -54,11 +54,11 @@ const Overview = () => {
       <Navbar />
       <div className="flex flex-col items-center justify-center">
         <div className="lg:justify-center lg:items-center bg-[#03234D]  w-full lg:p-0 p-4 h-auto">
-          <div className="lg:container mx-auto block lg:flex lg:items-center lg:justify-between lg:gap-8 xl:gap-10 lg:mb-0 p-6 xl:p-12 lg:p-8">
-            <div className="lg:w-1/2">
-              <h1 className="text-4xl lg:text-3xl text-yellow-600 mb-10">
+          <div className="lg:container mx-auto lg:flex lg:items-center lg:justify-between lg:gap-8 xl:gap-10 lg:mb-0 p-6 xl:p-12 lg:p-8">
+            <div className="block lg:w-1/2">
+              <p className="text-2xl lg:text-4xl text-yellow-600 mb-10">
                 Financial Planning Services
-              </h1>
+              </p>
               <p className="text-lg lg:text-5xl text-white">
                 Sovereign Wealth Management offers financial planning and
                 <br />
@@ -101,7 +101,7 @@ const Overview = () => {
                 </div>
                 <div className="">
                   <Image
-                    src="/images/old2.webp"
+                    src="/images/old3.jpg"
                     alt=""
                     loading="lazy"
                     width={200}
@@ -111,7 +111,7 @@ const Overview = () => {
                 </div>
                 <div className="">
                   <Image
-                    src="/images/old2.webp"
+                    src="/images/old4.jpg"
                     alt=""
                     loading="lazy"
                     width={200}

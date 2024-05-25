@@ -5,8 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
-import { IoLogInOutline, IoClose  } from "react-icons/io5";
-
+import { IoLogInOutline, IoClose } from "react-icons/io5";
 
 const Navbar = () => {
   const router = useRouter();
@@ -45,8 +44,9 @@ const Navbar = () => {
     setIsMobileNavOpen((prev) => !prev);
   };
 
- const toggleMobileDropdown = () => {
-    setIsMobileDropdownOpen((prev) => !prev);
+  const toggleMobileDropdown = () => {
+    console.log('Toggling Mobile Dropdown:', !isMobileDropdownOpen);
+    setIsMobileDropdownOpen(!isMobileDropdownOpen);
   };
 
   return (
@@ -68,21 +68,21 @@ const Navbar = () => {
 
       <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
         <div className="flex lg:hidden">
-      <button className="mobile-nav-toggle ml-5 mt-1 mb-4" onClick={handleMobileNavToggle}>
-        {isMobileNavOpen ? <IoClose className="h-7 w-7 text-black" /> : <FaBars className="h-7 w-7 text-black" />}
-      </button>
-      <Link href="#" passHref>
-        <div className="cursor-pointer mt-0 ml-8">
-          <Image
-            src="/images/Logo.svg"
-            alt="logo"
-            width={150}
-            height={120}
-            loading="lazy"
-          />
+          <button className="mobile-nav-toggle ml-5 mt-1 mb-4" onClick={handleMobileNavToggle}>
+            {isMobileNavOpen ? <IoClose className="h-7 w-7 text-black" /> : <FaBars className="h-7 w-7 text-black" />}
+          </button>
+          <Link href="#" passHref>
+            <div className="cursor-pointer mt-0 ml-8">
+              <Image
+                src="/images/Logo.svg"
+                alt="logo"
+                width={150}
+                height={120}
+                loading="lazy"
+              />
+            </div>
+          </Link>
         </div>
-      </Link>
-    </div>
         <div className={`lg:flex lg:flex-grow hidden justify-center gap-10 text-lg ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
           <Link href="/" passHref>
             <div className={`relative text-xl w-fit block cursor-pointer ${router.pathname === "/" ? "text-yellow-500" : ""}`}>
@@ -99,7 +99,7 @@ const Navbar = () => {
               className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
               onClick={toggleDropdown}
             >
-              Services <RiArrowDropDownLine className="text-3xl" />
+              Services <RiArrowDropDownLine className="text-2xl" />
             </button>
             {isDropdownOpen && (
               <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-60 shadow-lg py-4 top-14">
@@ -140,12 +140,12 @@ const Navbar = () => {
       </div>
       <div className="hidden lg:flex lg:gap-3 gap-2 lg:mb-10 mt-6 lg:mr-8">
         <div className="flex">
-        <Link href="/portal">
-        <button className={`mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex`}>
-          <div>Client Portal</div>
-          <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px' }} />
-        </button>
-        </Link>
+          <Link href="/portal">
+            <button className={`mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex`}>
+              <div>Client Portal</div>
+              <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px' }} />
+            </button>
+          </Link>
         </div>
         <Link href="/contact">
           <button className={`mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300`}>
@@ -170,13 +170,17 @@ const Navbar = () => {
                 </div>
               </Link>
             </li>
-            <li>
-          {/* mobile sevices drop */}
-              <div className={`relative mt-4 text-sm text-white py-2 rounded-xl px-5  border border-yellow-300 w-full text-center flex items-center justify-center cursor-pointer`}>
-                Services <RiArrowDropDownLine className="text-2xl" onClick={toggleMobileDropdown}/>
-              </div>
+            <li className="relative"> {/* Add relative position here */}
+              {/* mobile Services Dropdown */}
+              <Link href='/overview'>
+              <button
+                className="relative mt-4 text-sm text-white py-2 rounded-xl px-6 border border-yellow-300 w-full text-center flex items-center justify-center cursor-pointer"
+              >
+                Services
+              </button>
+              </Link>
               {isMobileDropdownOpen && (
-                <div className="bg-[#03234d] w-32 text-center z-50 top-16">
+                <div className="absolute bg-[#03234d] w-48 text-center z-50 top-full mt-2"> {/* Adjusted classes */}
                   <Link href="/overview" passHref>
                     <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
                       Services Overview
@@ -207,17 +211,17 @@ const Navbar = () => {
             </li>
             <li>
               <Link href="/articles">
-                <div className={`mt-4 text-sm text-white py-2 px-8 hover:bg-yellow-500 rounded-xl stransition duration-300 border border-yellow-300 w-full text-center ${router.pathname === "/articles" ? "text-yellow-500" : ""}`}>
+                <div className={`mt-4 text-sm text-white py-2 px-8 hover:bg-yellow-500 rounded-xl transition duration-300 border border-yellow-300 w-full text-center ${router.pathname === "/articles" ? "text-yellow-500" : ""}`}>
                   Articles
                 </div>
               </Link>
             </li>
             <li>
-            <Link href="/portal">
-            <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 rounded-xl transition duration-300 border border-yellow-300 w-full text-center">
-              Client Portal
-            </button>
-            </Link>
+              <Link href="/portal">
+                <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 rounded-xl transition duration-300 border border-yellow-300 w-full text-center">
+                  Client Portal
+                </button>
+              </Link>
             </li>
             <li>
               <Link href="/contact">

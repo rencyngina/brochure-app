@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -278,8 +279,10 @@ const Contact = () => {
         </div>
       </HeroSection>
       <FormSection>
-        <h1 style={{ fontSize: "2rem", marginBottom: "20px", color: "#333" }}>
-          Send Us a Message
+        <h1 style={{ fontSize: "1.8rem", marginBottom: "20px", color: "#333" }}>
+          Send us a message and
+          <br />
+          let's get you started
         </h1>
         <form onSubmit={handleSubmit}>
           <StyledInput
