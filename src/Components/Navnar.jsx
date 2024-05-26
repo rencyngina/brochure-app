@@ -1,15 +1,17 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
-import { IoLogInOutline } from "react-icons/io5";
+import { IoLogInOutline, IoClose } from "react-icons/io5";
 
 const Navbar = () => {
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [scrollNav, setScrollNav] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -30,6 +32,7 @@ const Navbar = () => {
   const handleOutsideClick = (e) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
       setIsDropdownOpen(false);
+      setIsMobileDropdownOpen(false);
     }
   };
 
@@ -41,10 +44,15 @@ const Navbar = () => {
     setIsMobileNavOpen((prev) => !prev);
   };
 
+  const toggleMobileDropdown = () => {
+    console.log('Toggling Mobile Dropdown:', !isMobileDropdownOpen);
+    setIsMobileDropdownOpen(!isMobileDropdownOpen);
+  };
+
   return (
     <nav className={`${scrollNav ? 'backdrop-blur-xl text-black bg-white/20' : 'text-white bg-[#03234D]'} lg:flex lg:justify-between lg:w-full sticky top-0 z-20 h-[10vh] lg:h-[10vh] lg:items-center px-0 lg:py-6 py-4`}>
       <div>
-        <Link href="/" passHref>
+        <Link href="#" passHref>
           <div className="cursor-pointer">
             <Image
               className="hidden lg:flex lg:ml-20 ml-4 lg:mr-0 mr-0"
@@ -52,6 +60,7 @@ const Navbar = () => {
               alt="logo"
               width={160}
               height={150}
+              loading="lazy"
             />
           </div>
         </Link>
@@ -59,16 +68,17 @@ const Navbar = () => {
 
       <div className={`lg:flex ${isMobileNavOpen ? "flex" : ""} flex-col lg:flex-row lg:flex-grow lg:items-center lg:gap-10 ${scrollNav ? 'text-black' : 'text-yellow-300'} text-lg`}>
         <div className="flex lg:hidden">
-          <button className="mobile-nav-toggle ml-5 mt-1 mb-8" onClick={handleMobileNavToggle}>
-            <FaBars className="h-7 w-7 text-black" />
+          <button className="mobile-nav-toggle ml-5 mt-1 mb-4" onClick={handleMobileNavToggle}>
+            {isMobileNavOpen ? <IoClose className="h-7 w-7 text-black" /> : <FaBars className="h-7 w-7 text-black" />}
           </button>
-          <Link href="/" passHref>
+          <Link href="#" passHref>
             <div className="cursor-pointer mt-0 ml-8">
               <Image
                 src="/images/Logo.svg"
                 alt="logo"
                 width={150}
                 height={120}
+                loading="lazy"
               />
             </div>
           </Link>
@@ -89,7 +99,7 @@ const Navbar = () => {
               className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
               onClick={toggleDropdown}
             >
-              Services <RiArrowDropDownLine />
+              Services <RiArrowDropDownLine className="text-2xl" />
             </button>
             {isDropdownOpen && (
               <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-60 shadow-lg py-4 top-14">
@@ -130,10 +140,12 @@ const Navbar = () => {
       </div>
       <div className="hidden lg:flex lg:gap-3 gap-2 lg:mb-10 mt-6 lg:mr-8">
         <div className="flex">
-          <button className={`mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex`}>
-            <div>Client Portal</div>
-            <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px' }} />
-          </button>
+          <Link href="/portal">
+            <button className={`mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex`}>
+              <div>Client Portal</div>
+              <IoLogInOutline style={{ fontSize: '24px', marginLeft: '5px' }} />
+            </button>
+          </Link>
         </div>
         <Link href="/contact">
           <button className={`mt-4 ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 px-5 hover:bg-[#03234d] bg-yellow-500 transition duration-300 border border-yellow-300`}>
@@ -158,55 +170,58 @@ const Navbar = () => {
                 </div>
               </Link>
             </li>
-            
-            <div ref={dropdownRef} className={`relative flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}>
-            <button
-              className={`dropdown-button relative text-xl flex items-center ${scrollNav ? 'text-black' : 'text-yellow-300'}`}
-              onClick={toggleDropdown}
-            >
-              Services <RiArrowDropDownLine />
-            </button>
-            {isDropdownOpen && (
-              <div className="dropdown-content absolute text-yellow-300 bg-[#03234d] w-60 shadow-lg py-4 top-14">
-                <Link href="/overview" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Services Overview
-                  </div>
-                </Link>
-                <Link href="/financial" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Financial Planning
-                  </div>
-                </Link>
-                <Link href="/risk" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Risk Management
-                  </div>
-                </Link>
-                <Link href="/investment" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Investment Planning
-                  </div>
-                </Link>
-                <Link href="/retirement" passHref>
-                  <div className="cursor-pointer px-4 py-2 hover:bg-gray-600 hover:text-white">
-                    Retirement Planning
-                  </div>
-                </Link>
-              </div>
-            )}
-          </div>
+            <li className="relative"> {/* Add relative position here */}
+              {/* mobile Services Dropdown */}
+              <Link href='/overview'>
+              <button
+                className="relative mt-4 text-sm text-white py-2 rounded-xl px-6 border border-yellow-300 w-full text-center flex items-center justify-center cursor-pointer"
+              >
+                Services
+              </button>
+              </Link>
+              {isMobileDropdownOpen && (
+                <div className="absolute bg-[#03234d] w-48 text-center z-50 top-full mt-2"> {/* Adjusted classes */}
+                  <Link href="/overview" passHref>
+                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
+                      Services Overview
+                    </div>
+                  </Link>
+                  <Link href="/financial" passHref>
+                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
+                      Financial Planning
+                    </div>
+                  </Link>
+                  <Link href="/risk" passHref>
+                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
+                      Risk Management
+                    </div>
+                  </Link>
+                  <Link href="/investment" passHref>
+                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
+                      Investment Planning
+                    </div>
+                  </Link>
+                  <Link href="/retirement" passHref>
+                    <div className="cursor-pointer py-2 hover:bg-gray-600 hover:text-white">
+                      Retirement Planning
+                    </div>
+                  </Link>
+                </div>
+              )}
+            </li>
             <li>
               <Link href="/articles">
-                <div className={`mt-4 text-sm text-white py-2 px-8 hover:bg-yellow-500 rounded-xl stransition duration-300 border border-yellow-300 w-full text-center ${router.pathname === "/articles" ? "text-yellow-500" : ""}`}>
+                <div className={`mt-4 text-sm text-white py-2 px-8 hover:bg-yellow-500 rounded-xl transition duration-300 border border-yellow-300 w-full text-center ${router.pathname === "/articles" ? "text-yellow-500" : ""}`}>
                   Articles
                 </div>
               </Link>
             </li>
             <li>
-              <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 rounded-xl transition duration-300 border border-yellow-300 w-full text-center">
-                Client Portal
-              </button>
+              <Link href="/portal">
+                <button className="mt-4 text-sm text-white py-2 px-5 hover:bg-yellow-500 rounded-xl transition duration-300 border border-yellow-300 w-full text-center">
+                  Client Portal
+                </button>
+              </Link>
             </li>
             <li>
               <Link href="/contact">
@@ -217,10 +232,6 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-      </div>
-      <div> 
-        <ul> 
-      </ul>
       </div>
     </nav>
   );
