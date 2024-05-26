@@ -10,13 +10,16 @@ export default NextAuth({
         password: { label: "Password", type: "password" }
       },
       authorize: async (credentials) => {
-        if (credentials.username === 'admin@thesovereignwealth.com' && credentials.password === 'password3030') {
+        const adminUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+        const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+
+        if (credentials.username === adminUsername && credentials.password === adminPassword) {
           return { id: 1, name: 'User' };
         }
         return null;
       }
     }),
-    // add other providers here
+    //other providers here
   ],
   pages: {
     signIn: '/signin', 

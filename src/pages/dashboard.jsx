@@ -7,7 +7,7 @@ import { IoCloseCircle } from "react-icons/io5";
 import Articleform from "../Components/articleform";
 import { LuPencilLine } from "react-icons/lu";
 import Image from "next/image";
-import { useSession } from 'next-auth/react';  
+import { useSession } from "next-auth/react";
 
 const Dashboard = () => {
   const [showArticles, setShowArticles] = useState(false);
@@ -24,19 +24,20 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    if (status === 'loading') return;
-    if (!session) router.push('/signin');
+    if (status === "loading") return;
+    if (!session) router.push("/signin");
   }, [session, status, router]);
 
-
-  if (status === 'loading') {
-    return <div className="flex justify-center items-center h-40">
-              <div class="three-body">
-                <div class="three-body__dot"></div>
-                <div class="three-body__dot"></div>
-                <div class="three-body__dot"></div>
-              </div>
-            </div> ;
+  if (status === "loading") {
+    return (
+      <div className="flex justify-center items-center h-40">
+        <div class="three-body">
+          <div class="three-body__dot"></div>
+          <div class="three-body__dot"></div>
+          <div class="three-body__dot"></div>
+        </div>
+      </div>
+    );
   }
 
   if (!session) {
@@ -47,7 +48,13 @@ const Dashboard = () => {
       <aside className="bg-gradient-to-br from-gray-800 to-gray-900 -translate-x-80 fixed inset-0 z-20 my-2 ml-4 h-[calc(100vh-50px)] w-72 transition-transform duration-300 xl:translate-x-0">
         <div className="relative border-b border-white/20">
           <Link className="flex items-center gap-4 py-6 px-8" href="#">
-            <Image src="/images/Logo.svg" alt="logo" width={180} height={50} loading="lazy" />
+            <Image
+              src="/images/Logo.svg"
+              alt="logo"
+              width={180}
+              height={50}
+              loading="lazy"
+            />
             <button
               className="middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-white hover:bg-white/10 active:bg-white/30 absolute right-0 top-0 grid rounded-br-none rounded-tl-none xl:hidden"
               type="button"
@@ -192,8 +199,11 @@ const Dashboard = () => {
                 </div>
                 <div className="ml-auto text-right">
                   <div className="p-1.5 block antialiased font-sans text-sm leading-normal font-normal text-gray-900">
-                    <a href="#" className="material-icons block w-5 h-5 text-white">
-                      <LuPencilLine className="text-2xl"/>
+                    <a
+                      href="#"
+                      className="material-icons block w-5 h-5 text-white"
+                    >
+                      <LuPencilLine className="text-2xl" />
                     </a>
                   </div>
                 </div>
