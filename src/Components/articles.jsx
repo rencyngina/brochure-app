@@ -20,7 +20,7 @@ const Article = () => {
         const data = await response.json();
         setArticles(data.articles);
         setLoading(false);
-        setError(null); // Reset error state if successful
+        setError(null); // Reseting error state if successful
       } catch (error) {
         console.error("Error fetching articles:", error);
         setLoading(false);
@@ -80,7 +80,7 @@ const deleteArticle = async (id) => {
   }
 };
   return (
-    <div className="w-[70vw] h-[85vh] mx-auto mt-8 p-6  text-white rounded-sm shadow-md z-50">
+    <div className="mt-8 text-white z-50">
     {loading ? (
             <div className="flex justify-center items-center h-40">
               <div class="three-body">
@@ -124,7 +124,7 @@ const deleteArticle = async (id) => {
                   ></p>
                   <Link href={`/article/${article._id}`}>
                     <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
-                      READ MORE
+                      READ
                     </button>
                   </Link>
                   <button onClick={() => deleteArticle(article._id)} className="lg:bg-red-500 lg:text-white lg:py-3 lg:px-5 lg:text-sm lg:mt-2 lg:ml-8">
