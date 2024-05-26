@@ -44,7 +44,7 @@ const Retirement = () => {
                     width={150}
                     height={220}
                     style={{ borderRadius: "0 60px  60px 60px  " }}
-                    className="relative right-[-50px] z-10"
+                    className="relative right-[-50px] z-5"
                     loading="lazy"
                   />
 
@@ -54,7 +54,7 @@ const Retirement = () => {
                   width={120}
                   height={220}
                   style={{ borderRadius: "60px  60px 60px 0 " }}
-                  className="relative top-[-50px] lg:right-[-80px] z-20"
+                  className="relative top-[-50px] lg:right-[-80px] z-19"
                   loading="lazy"
                 />
 
