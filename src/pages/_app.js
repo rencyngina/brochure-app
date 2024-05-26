@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import "@/styles/globals.css";
 import Head from "next/head";
 import Loading from '../Components/Loading';
+import { SessionProvider } from 'next-auth/react';
 
 function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
@@ -79,6 +80,7 @@ function App({ Component, pageProps }) {
 
   return (
     <>
+    <SessionProvider session={pageProps.session}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{metadata.title}</title>
@@ -115,6 +117,7 @@ function App({ Component, pageProps }) {
       </Head>
       {/*{loading && <Loading />}*/}
       <Component {...pageProps} />
+      </SessionProvider>
     </>
   );
 }
