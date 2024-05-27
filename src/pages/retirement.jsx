@@ -14,7 +14,7 @@ const Retirement = () => {
         <div className="bg-[#03234D] w-full lg:h-auto h-auto">
           <div className="container mx-auto block lg:flex lg:items-center lg:justify-between lg:gap-8 xl:gap-10 lg:mb-0 p-6 xl:p-12 lg:p-8">
             <div className="lg:w-1/2">
-            <Image src="/images/retirement-mainicon.png" alt="financial" width={50} height={50} className="mb-2" loading="lazy" />
+            <Image src="/images/risk-mainicon.png" alt="retirement" width={50} height={50} className="mb-2" loading="lazy" />
               <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-10 mb-8 lg:mt-0 mt-5 lg:ml-0 mr-0 lg:mr-0">
               Retirement Planning
             </h1>
@@ -37,37 +37,34 @@ const Retirement = () => {
           <div className="hidden lg:block">
               <div className="lg:flex lg:flex-row flex flex-col gap-5 lg:gap-6">
                 <div className="flex flex-col lg:flex-col gap-5 lg:gap-6 mt-10 lg:mt-8 lg:mb-0 mb-10 lg:mr-0 mr-0 lg:ml-0 ml-0">
+                  
                   <Image
-                    src="/images/old4.jpg"
+                    src="/images/smile3.jpg"
                     alt="financial"
-                    width={200}
-                    height={200}
-                    className="border-2 border-yellow-500"
-                    loading="lazy"
-                  />
-                  <Image
-                    src="/images/old1.jpg"
-                    alt="financial"
-                    width={200}
-                    height={200}
-                    className="border-2 border-yellow-500"
-                    loading="lazy"
-                  />
-                  <Image
-                    src="/images/old2.webp"
-                    alt="financial"
-                    width={200}
+                    width={150}
                     height={220}
-                    className="border-2 border-yellow-500"
+                    style={{ borderRadius: "0 60px  60px 60px  " }}
+                    className="relative right-[-10px] z-5 border border-yellow-500"
                     loading="lazy"
                   />
+
+                  <Image
+                  src="/images/smile2.jpg"
+                  alt="financial"
+                  width={120}
+                  height={220}
+                  style={{ borderRadius: "60px  60px 60px 0 " }}
+                  className="relative top-[-50px] lg:right-[-20px] z-19 border border-yellow-500"
+                  loading="lazy"
+                />
                 </div>
                 <Image
-                  src="/images/retirement-serv-img.png"
+                  src="/images/happy5.webp"
                   alt="financial"
-                  width={400}
+                  width={340}
                   height={200}
-                  className="border-2 border-yellow-500"
+                  style={{ borderRadius: "40px 40px 0 100px " }}
+                  className="border border-yellow-500"
                   loading="lazy"
                 />
               </div>
