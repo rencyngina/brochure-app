@@ -37,40 +37,35 @@ const Risk = () => {
           </div>
           <div className="hidden lg:block">
               <div className="lg:flex lg:flex-row flex flex-col gap-5 lg:gap-6">
-                <div className="flex flex-col lg:flex-col gap-5 lg:gap-6 mt-10 lg:mt-0 lg:mb-0 mb-10 lg:mr-0 mr-0 lg:ml-0 ml-0">
-                  <Image
-                    src="/images/pic4.jpg"
-                    alt="financial"
-                    width={200}
-                    height={200}
-                    className="border-2 border-yellow-500"
-                    loading="lazy"
-                  />
-                  <Image
-                    src="/images/pic3.jpg"
-                    alt="financial"
-                    width={200}
-                    height={200}
-                    className="border-2 border-yellow-500"
-                    loading="lazy"
-                  />
-                  <Image
-                    src="/images/pic2.jpg"
-                    alt="financial"
-                    width={200}
-                    height={220}
-                    className="border-2 border-yellow-500"
-                    loading="lazy"
-                  />
-                </div>
-                <Image
-                  src="/images/risk.jpeg"
-                  alt="financial"
-                  width={460}
-                  height={200}
-                  className="border-2 border-yellow-500"
-                  loading="lazy"
-                />
+              <div className="flex flex-row gap-5 mt-10">
+              <Image
+                src="/images/smile1.jpg"
+                alt="financial"
+                width={220}
+                height={200}
+                className="border-2 border-[#03234D]"
+                style={{ borderRadius: "80px 80px 60px 0" }}
+                loading="lazy"
+              />
+              <Image
+                src="/images/smile2.jpg"
+                alt="financial"
+                width={220}
+                height={200}
+                className="border-2 border-[#03234D]"
+                style={{ borderRadius: "80px 0 80px 60px" }}
+                loading="lazy"
+              />
+              <Image
+                src="/images/smile3.jpg"
+                alt="financial"
+                width={220}
+                height={220}
+                className="border-2 border-[#03234D]"
+                style={{ borderRadius: "80px 80px 0 60px " }}
+                loading="lazy"
+              />
+            </div>
               </div>
             </div>
           </div>
@@ -93,10 +88,10 @@ const Risk = () => {
             safeguard your financial future and keep you on track toward your
             long-term financial goals.
           </p>
-          <h1 className="text-lg lg:text-2xl mb-3 lg:mb-5 font-bold">
+          <h1 className="text-lg lg:text-2xl mt-3 lg:mt-5 font-bold">
             Navigate financial challenges with confidence.
           </h1>
-          <p className="text-sm lg:text-lg">
+          <p className="text-sm lg:text-lg lg:mt-5 mt-2">
             Take control of your financial future with our proven risk
             management process. Our four-step approach involves clarifying your
             objectives, identifying potential risks, evaluating and selecting
@@ -105,10 +100,10 @@ const Risk = () => {
             guidance, you can confidently navigate any financial challenge and
             safeguard your long-term financial stability.
           </p>
-          <h1 className="text-lg lg:text-2xl mb-3 lg:mb-5 font-bold">
+          <h1 className="text-lg lg:text-2xl mt-3 lg:mt-5 font-bold">
             Partner with a guide to navigate the process.
           </h1>
-          <p className="text-sm lg:text-lg">
+          <p className="text-sm lg:text-lg lg:mt-5 mt-2">
             Managing risk can be a complex and ever-changing process, but you
             don’t have to navigate it alone. Our team is here every step of the
             way, providing the necessary tools and knowledge to guide you and
