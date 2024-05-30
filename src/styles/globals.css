@@ -382,3 +382,138 @@ ul {
   opacity: 0.8;
  }
 }
+
+/* react-burger */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%); /* Initially hide the menu by translating it to the left */
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Push page content when menu is open */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.bm-menu-wrap.menu-open {
+  transform: translateX(-200px);
+}
+
+.submenu {
+  display: none;
+}
+
+.bm-menu a {
+  color: white;
+}
+
+.bm-menu Link {
+  color: white;
+  display: block;
+  margin-bottom: 20px; /* Adjust as needed */
+  text-decoration: none;
+}
+
+.menu-item:hover .submenu {
+  display: block;
+}
+
+.menu-push {
+  position: fixed;
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: width 0.3s ease; /* Ensure the transition property is correctly applied */
+  z-index: 99;
+}
+
+.menu-push-open {
+  width: 500px; /* Adjust this value according to your menu width */
+}
+
+/* article list */
+
+.article-content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    
+  }
+}
+
+.article-content ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    
+  }
+}
+
+.article-content ul ul {
+  list-style-type: circle;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    
+  }
+}
+
+.article-content ul ul ul {
+  list-style-type: square;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    
+  }
+}
+

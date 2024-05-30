@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import dynamic from 'next/dynamic'; // Import dynamic from next/dynamic
-
+import React, { useState } from "react";
+import dynamic from 'next/dynamic';
 import Image from "next/image";
-import { IoIosAddCircleOutline } from "react-icons/io";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Nav from "../Components/Nav";
@@ -16,10 +14,12 @@ const NewArticleForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
     setImage(selectedImage);
+    setImagePreview(URL.createObjectURL(selectedImage));
   };
 
   const handleSubmit = async (e) => {
@@ -54,9 +54,9 @@ const NewArticleForm = () => {
 
   return (
     <>
-    <Nav />
+      <Nav />
       <ToastContainer />
-      <form onSubmit={handleSubmit} className="max-w-5xl mx-auto p-4 lg:p-8  mt-20 bg-white shadow-lg border border-yellow-500">
+      <form onSubmit={handleSubmit} className="max-w-5xl mx-auto p-4 lg:p-8 mt-20 bg-white shadow-lg border border-yellow-500">
         <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-4">Create New Article</h2>
         <div className="mb-4">
           <label htmlFor="image" className="block text-sm lg:text-2xl font-medium text-gray-700 mb-4">Image</label>
@@ -66,10 +66,10 @@ const NewArticleForm = () => {
             onChange={handleImageChange}
             className="input-field"
           />
-          {image && (
+          {imagePreview && (
             <div className="mt-2">
               <p className="text-gray-700">Selected Image:</p>
-              <image src={URL.createObjectURL(image)} alt="Selected" className="mt-2 rounded-md" style={{ maxWidth: '100%' }} />
+              <Image src={imagePreview} alt="Selected" className="mt-2 rounded-md" width={500} height={300} />
             </div>
           )}
         </div>
@@ -88,12 +88,12 @@ const NewArticleForm = () => {
         <div className="mb-8">
           <div className="input-field rounded-md focus-within:border-blue-500">
             <ReactQuill
-              theme="snow" // Use Quill's snow theme
+              theme="snow"
               value={content}
               onChange={setContent}
               className="h-96 lg:h-100 w-full resize-none p-4 focus:outline-none mb-3 lg:mb-10"
-              modules={quillModules} // Pass the modules object containing toolbar options
-              formats={quillFormats} // Pass the formats array to enable text color
+              modules={quillModules}
+              formats={quillFormats}
               required
             />
           </div>
@@ -104,30 +104,23 @@ const NewArticleForm = () => {
   );
 };
 
-{/*modules and formats for Quill editor */}
+// Modules and formats for Quill editor
 const quillModules = {
-  toolbar: {
-    container: [
-      [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-      [{ size: [] }],
-      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-      [{ 'color': [] }, { 'background': [] }],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-      ['link', 'image', 'video'],
-      ['clean']
-    ],
-    handlers: {
-      'color': function (value) { // Custom handler for text color
-        this.quill.format('color', value);
-      }
-    }
-  }
+  toolbar: [
+    [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+    [{ size: [] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
+    [{ 'color': [] }, { 'background': [] }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+    [{ 'align': [] }],
+    ['link', 'image', 'video'],
+    ['clean']
+  ]
 };
 
 const quillFormats = [
-  'header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote',
-  'color', 'background', 'list', 'bullet', 'link', 'image', 'video'
+  'header', 'font', 'size', 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
+  'color', 'background', 'list', 'bullet', 'indent', 'align', 'link', 'image', 'video'
 ];
 
 export default NewArticleForm;
-

@@ -3,6 +3,7 @@ import Image from "next/image";
 import FloatingObject2 from "./floating-object2";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const BlueSection = () => {
   const cardsData = [
@@ -102,6 +103,7 @@ const BlueSection = () => {
                     width={40}
                     height={20}
                     className="w-35 h-30"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6">
@@ -112,7 +114,7 @@ const BlueSection = () => {
                     {card.description}
                   </p>
                 </div>
-                <div className="p-8 pt-2 opacity-0 absolute top-2 left-0 w-full h-full flex items-center justify-center hover:opacity-100">
+                <Link href='/overview' className="p-8 pt-2 opacity-0 absolute top-2 left-0 w-full h-full flex items-center justify-center hover:opacity-100">
                   <button
                     data-ripple-light="true"
                     type="button"
@@ -120,7 +122,7 @@ const BlueSection = () => {
                   >
                     Learn More
                   </button>
-                </div>
+                </Link>
               </motion.div>
             </div>
           ))}

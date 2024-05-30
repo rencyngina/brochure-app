@@ -14,7 +14,7 @@ const Retirement = () => {
         <div className="bg-[#03234D] w-full lg:h-auto h-auto">
           <div className="container mx-auto block lg:flex lg:items-center lg:justify-between lg:gap-8 xl:gap-10 lg:mb-0 p-6 xl:p-12 lg:p-8">
             <div className="lg:w-1/2">
-            <Image src="/images/retirement1.webp" alt="financial" width={50} height={50} className="mb-2" loading="lazy" />
+            <Image src="/images/risk-mainicon.png" alt="retirement" width={50} height={50} className="mb-2" loading="lazy" />
               <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-10 mb-8 lg:mt-0 mt-5 lg:ml-0 mr-0 lg:mr-0">
               Retirement Planning
             </h1>
@@ -44,7 +44,7 @@ const Retirement = () => {
                     width={150}
                     height={220}
                     style={{ borderRadius: "0 60px  60px 60px  " }}
-                    className="relative right-[-50px] z-5"
+                    className="relative right-[-10px] z-5 border border-yellow-500"
                     loading="lazy"
                   />
 
@@ -54,10 +54,9 @@ const Retirement = () => {
                   width={120}
                   height={220}
                   style={{ borderRadius: "60px  60px 60px 0 " }}
-                  className="relative top-[-50px] lg:right-[-80px] z-19"
+                  className="relative top-[-50px] lg:right-[-20px] z-19 border border-yellow-500"
                   loading="lazy"
                 />
-
                 </div>
                 <Image
                   src="/images/happy5.webp"
@@ -65,7 +64,7 @@ const Retirement = () => {
                   width={340}
                   height={200}
                   style={{ borderRadius: "40px 40px 0 100px " }}
-                  className=""
+                  className="border border-yellow-500"
                   loading="lazy"
                 />
               </div>

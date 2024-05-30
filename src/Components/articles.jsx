@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/Components/Navnar";
-import Foot from "@/Components/foot";
-import Section4 from "@/Components/section4";
-// import FloatingChatIcon from "@/Components/FloatingChatIcon";
-import { FaExclamationTriangle, FaClipboard } from 'react-icons/fa';
 
-const Articles = () => {
+const Article = () => {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [articles, setArticles] = useState([]);
@@ -20,12 +15,12 @@ const Articles = () => {
         setLoading(true);
         const response = await fetch("/api/articles");
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error('Network response was not ok');
         }
         const data = await response.json();
         setArticles(data.articles);
         setLoading(false);
-        setError(null); // Reset error state if successful
+        setError(null); // Reseting error state if successful
       } catch (error) {
         console.error("Error fetching articles:", error);
         setLoading(false);
@@ -58,15 +53,6 @@ const Articles = () => {
     setDisplayedArticles(displayedArticles);
   }, [articles]);
 
-  const handleInputChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Email submitted:", email);
-    setEmail("");
-  };
 
   const truncateContent = (content, numWords) => {
     const words = content.split(" ");
@@ -77,39 +63,25 @@ const Articles = () => {
     }
   };
 
-  // delete Artical
-  const deleteArticle = async (id) => {
-    try {
-      const response = await fetch(`/api/delete/${id}`, {
-        method: "DELETE",
-      });
-      if (response.ok) {
-        const updatedArticles = articles.filter(
-          (article) => article._id !== id
-        );
-        setArticles(updatedArticles);
-      } else {
-        console.error("Failed to delete article:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error deleting article:", error);
+// delete Artical
+const deleteArticle = async (id) => {
+  try {
+    const response = await fetch(`/api/delete/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      const updatedArticles = articles.filter((article) => article._id !== id);
+      setArticles(updatedArticles);
+    } else {
+      console.error("Failed to delete article:", response.statusText);
     }
-  };
-
+  } catch (error) {
+    console.error("Error deleting article:", error);
+  }
+};
   return (
-    <>
-      <Navbar />
-      <div className="bg-[#F3F4F6] min-h-screen border-t">
-        <div className="container mx-auto lg:py-8 py-4">
-          <div className="lg:mt-10 lg:mb-8 p-3 lg:text-center">
-            <p className="text-2xl lg:text-3xl  text-yellow-500 font-bold">
-              Articles
-            </p>
-            <h1 className="mt-10 text-3xl lg:text-4xl leading-tight">
-              Articles that might help you, In your journey
-            </h1>
-          </div>
-          {loading ? (
+    <div className="mt-8 text-white z-50">
+    {loading ? (
             <div className="flex justify-center items-center h-40">
               <div class="three-body">
                 <div class="three-body__dot"></div>
@@ -117,20 +89,16 @@ const Articles = () => {
                 <div class="three-body__dot"></div>
               </div>
             </div>
-          ) : error ? (
-            // Display error message if error exists
-            <div className="text-center text-red-600 font-bold p-4 bg-red-100 border border-red-400 rounded flex items-center justify-center space-x-2">
-              <FaExclamationTriangle className="text-red-600 text-2xl" />
-              <span>Network Problem: {error}</span>
+          ) : error ? ( // Display error message if error exists
+            <div className="text-center text-red-600 font-bold">
+              Network Problem: {error}
             </div>
-          ) : articles.length === 0 ? (
-            // Display message if no articles exist
-            <div className="text-center text-gray-600 font-bold p-4 bg-gray-100 border border-gray-300 rounded flex items-center justify-center space-x-2">
-              <FaClipboard className="text-gray-600 text-2xl" />
-              <span>No articles found.</span>
+          ) : articles.length === 0 ? ( // Display message if no articles exist
+            <div className="text-center text-gray-600 font-bold">
+              No articles found.
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2 lg:p-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {displayedArticles.map((article, index) => (
                 <div
                   key={index}
@@ -145,24 +113,21 @@ const Articles = () => {
                     height={40}
                     loading="lazy"
                   />
-                  <h2 className="lg:text-xl text-lg font-semibold text-gray-800 mt-4">
+                  <h2 className="text-lg font-semibold text-gray-800 mt-4">
                     {article.title}
                   </h2>
                   <p
-                    className="text-black mt-2 text-sm lg:text-lg"
+                    className="text-gray-500 mt-2"
                     dangerouslySetInnerHTML={{
                       __html: truncateContent(article.content, 20),
                     }}
                   ></p>
                   <Link href={`/article/${article._id}`}>
                     <button className="bg-[#03234D] hover:bg-yellow-500 text-white  py-3 px-4 mt-4">
-                      READ MORE
+                      READ
                     </button>
                   </Link>
-                  <button
-                    onClick={() => deleteArticle(article._id)}
-                    className="hidden lg:bg-red-500 lg:text-white lg:py-3 lg:px-5 lg:text-sm lg:mt-2 lg:ml-10"
-                  >
+                  <button onClick={() => deleteArticle(article._id)} className="lg:bg-red-500 lg:text-white lg:py-3 lg:px-5 lg:text-sm lg:mt-2 lg:ml-8">
                     Delete
                   </button>
                   {article.isNew && (
@@ -174,12 +139,8 @@ const Articles = () => {
               ))}
             </div>
           )}
-        </div>
-      </div>
-      <Section4 />
-      <Foot />
-    </>
+    </div>
   );
-};
+}
 
-export default Articles;
+export default Article;

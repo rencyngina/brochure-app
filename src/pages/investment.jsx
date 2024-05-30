@@ -43,61 +43,57 @@ const Investment = () => {
               </Link>
             </div>
             <div className="hidden lg:block">
-            <div className="grid grid-cols-2 gap-4 lg:mb-10 mb-0 mt-4 p-2">
-  <div className="relative">
-    <Image
-      src="/images/one.jpg"
-      alt="logo"
-      width={200}
-      height={100}
-      style={{ borderRadius: "0 80px 80px 60px" }}
-      className="shadow-xl rounded-3xl"
-    />
-  </div>
-  <div className="relative">
-    <Image
-      src="/images/two.jpg"
-      alt="logo"
-      width={200}
-      height={100}
-      style={{ borderRadius: "80px 0 80px 60px" }}
-      className="shadow-lg lg:mb-0 rounded-3xl"
-    />
-  </div>
-  <div className="relative">
-    <Image
-      src="/images/three.jpg"
-      alt="logo"
-      width={200}
-      height={100}
-      style={{ borderRadius: "80px 80px 60px 0" }}
-      className="shadow-lg rounded-3xl"
-    />
-  </div>
-  <div className="relative">
-    <Image
-      src="/images/four.jpg"
-      alt="logo"
-      width={200}
-      height={100}
-      style={{ borderRadius: "80px 80px 0 60px" }}
-      className="shadow-lg rounded-3xl"
-    />
-  </div>
-</div>
-
-          
+              <div className="grid grid-cols-2 gap-4 lg:mb-10 mb-0 mt-4 p-2">
+                <div className="relative">
+                  <Image
+                    src="/images/one.jpg"
+                    alt="logo"
+                    width={300}
+                    height={100}
+                    style={{ borderRadius: "0 80px 80px 60px" }}
+                    className="shadow-xl rounded-3xl"
+                  />
+                </div>
+                <div className="relative">
+                  <Image
+                    src="/images/two.jpg"
+                    alt="logo"
+                    width={250}
+                    height={100}
+                    style={{ borderRadius: "80px 0 80px 60px" }}
+                    className="shadow-lg lg:mb-0 rounded-3xl"
+                  />
+                </div>
+                <div className="relative">
+                  <Image
+                    src="/images/three.jpg"
+                    alt="logo"
+                    width={250}
+                    height={100}
+                    style={{ borderRadius: "80px 80px 60px 0" }}
+                    className="shadow-lg rounded-3xl"
+                  />
+                </div>
+                <div className="relative">
+                  <Image
+                    src="/images/four.jpg"
+                    alt="logo"
+                    width={250}
+                    height={100}
+                    style={{ borderRadius: "80px 80px 0 60px" }}
+                    className="shadow-lg rounded-3xl"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
       <div className="lg:container lg:mx-auto item-center pl-5 lg:pl-20 flex lg:flex-row flex-col justify-center gap-5 lg:gap-20 lg:mb-20 mb-10">
         <div className="h-auto lg:w-1/2">
           <h4 className="mt-10 lg:mt-40 mb-2 lg:mb-10 text-yellow-600 text-xl lg:text-3xl">
             How it working
           </h4>
-
           <h1 className="text-lg lg:text-2xl mb-3 lg:mb-5 font-bold">
             Values-based investing made simple.
           </h1>

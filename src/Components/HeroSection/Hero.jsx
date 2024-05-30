@@ -14,9 +14,8 @@ const Hero = () => {
 
   window.addEventListener("scroll", handleScroll);
 
-  // Check if animation has not occurred yet
   if (!animateHero) {
-    setAnimateHero(true); // Trigger animation
+    setAnimateHero(true);
   }
 
   return () => {
@@ -30,7 +29,7 @@ const Hero = () => {
 
   return (
     <div
-      className="h-[110vh] lg:p-0 p-4 top-0 mt-0  lg:h-[96vh] w-full lg:w-full md:h-[85vh] z-0 relative lg:flex block lg:flex-row justify-center items-center"
+      className="h-[110vh] lg:p-0 p-4 top-0 mt-0  lg:h-[96vh] w-full lg:w-full md:h-[85vh] z-0 relative lg:flex block lg:flex-row justify-center items-center "
       style={{
         backgroundImage: 'url("/images/nature.jpg")',
         backgroundSize: "cover",
@@ -77,7 +76,8 @@ const Hero = () => {
               alt="logo"
               width={700}
               height={200}
-              className="rounded-tr-2xl rounded-bl-2xl rounded-br-2xl rounded-tl-2xl border lg:border-4 border-blue-950 shadow-lg lg:h-90 lg:w-full w-full h-90"
+              loading="lazy"
+              className="rounded-tr-2xl rounded-bl-2xl rounded-br-2xl bg-white rounded-tl-2xl border lg:border-4 border-blue-950 shadow-lg lg:h-90 lg:w-full w-full h-90 lazy-loading"
             />
             <div className="absolute top-[-90px] lg:top-[-90px] right-[-28px] lg:right-[-80px]">
               <Image
@@ -85,7 +85,8 @@ const Hero = () => {
                 alt="Second image"
                 width={200}
                 height={100}
-                className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl border lg:border-4 border-yellow-500 lg:h-40 h-28 w-full object-cover"
+                loading="lazy"
+                className="shadow-xl z-20 rounded-tr-3xl rounded-bl-3xl bg-white border lg:border-4 border-yellow-500 lg:h-40 h-28 w-full object-cover lazy-loading"
               />
             </div>
             <div className="absolute bottom-[-80px] lg:bottom-[-90px] left-[-28px] lg:left-[-110px] ">
@@ -94,7 +95,8 @@ const Hero = () => {
                 alt="Third image"
                 width={180}
                 height={150}
-                className="shadow-md rounded-tl-2xl rounded-br-2xl border lg:border-4 border-orange-400 lg:h-32  h-24 w-full object-cover "
+                loading="lazy"
+                className="shadow-md rounded-tl-2xl rounded-br-2xl bg-white border lg:border-4 border-orange-400 lg:h-32  h-24 w-full object-cover lazy-loading"
               />
             </div>
           </div>

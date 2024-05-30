@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import FloatingObject from "./floating-object";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Section1 = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -39,6 +40,7 @@ const Section1 = () => {
                   src="/images/pic1.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-1 lg:col-span-2">
@@ -46,6 +48,7 @@ const Section1 = () => {
                   src="/images/pic2.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-1">
@@ -53,6 +56,7 @@ const Section1 = () => {
                   src="/images/pic5.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-1">
@@ -60,6 +64,7 @@ const Section1 = () => {
                   src="/images/pic4.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-1">
@@ -67,6 +72,7 @@ const Section1 = () => {
                   src="/images/pic3.jpg"
                   width={400}
                   height={200}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -95,13 +101,13 @@ const Section1 = () => {
               community.
             </p>
             <div className="flex gap-4">
-              <a href="mailto:info@royfordlaw.com">
+              <Link href="/about">
                 <button className="mt-4 font-bold text-white lg:py-5 py-3 lg:px-12 px-8 bg-[#102e56] hover:bg-yellow-500 transition duration-300">
                   <span className="text-white text-lg lg:tex-xl">
                     Learn More
                   </span>
                 </button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
