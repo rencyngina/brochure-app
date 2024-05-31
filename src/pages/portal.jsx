@@ -11,23 +11,67 @@ const Portal = () => {
     <>
       <Navbar />
       <div className="flex flex-col h-[65vh]">
-        <div className="bg-[#03234D] flex-grow flex justify-center items-center w-full">
-          <div className="flex flex-col justify-center items-center lg:text-center">
-            <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-4 mb-8 lg:mt-2 mt-5 font-bold">
-              CLIENT PORTAL
-            </h1>
-            {/*<p className="text-lg lg:text-xl font-thin text-white mt-10 mb-10 mx-6">
-              At the heart of any wise financial plan lies effective investment
-              management. It not only prioritizes your goals but also
-              <br />
-              empowers you to grow your nest egg and preserve your family’s
-              future.
-  </p>*/}
-            <button className="mt-4 text-md  py-4 px-10 hover:bg-yellow-500 transition duration-300 border font-bold border-yellow-300 flex items-center justify-center text-white">
-              Get Started
+      <div className="bg-[#03234D] w-full lg:h-auto h-auto">
+      <div className="container mx-auto block lg:flex lg:items-center lg:justify-between lg:gap-8 xl:gap-10 lg:mb-0 p-6 xl:p-12 lg:p-8">
+        <div className="lg:w-1/2">
+        <Image src="/images/customer.png" alt="financial" width={50} height={50} className="mb-2" loading="lazy" />
+          <h1 className="text-2xl lg:text-3xl text-yellow-600 lg:mb-10 mb-8 lg:mt-0 mt-5 lg:ml-0 mr-0 lg:mr-0">
+          Client Portal
+        </h1>
+        <p className="text-lg lg:text-5xl text-white">
+        Welcome to Your Project Hub.
+        </p>
+        <p className="text-sm lg:text-xl mt-10 mb-10 text-white">
+        Hello and welcome to your client portal! This page contains everything 
+        you need to kick off your project with us. From important documents to 
+        
+        helpful resources, you’ll find it all here. We’re committed to making your 
+        experience seamless, so please let us know if you need any help along the way.
+          
+        
+        </p>
+        <Link href="/contact">
+            <button className="mt-4 text-md ${scrollNav ? 'text-black' : 'text-yellow-300'} py-2 lg:py-4 px-5 lg:px-10 hover:bg-yellow-500 transition duration-300 border border-yellow-300 flex text-white text-sm lg:text-lg">
+              GET STARTED
             </button>
+          </Link>
+      </div>
+      <div className="hidden lg:block">
+          <div className="lg:flex lg:flex-row flex flex-col gap-5 lg:gap-6">
+          <div className="flex flex-row gap-5 mt-10">
+          <Image
+            src="/images/smile1.jpg"
+            alt="financial"
+            width={220}
+            height={200}
+            className="border-2 border-[#03234D]"
+            style={{ borderRadius: "80px 80px 60px 0" }}
+            loading="lazy"
+          />
+          <Image
+            src="/images/smile2.jpg"
+            alt="financial"
+            width={220}
+            height={200}
+            className="border-2 border-[#03234D]"
+            style={{ borderRadius: "80px 0 80px 60px" }}
+            loading="lazy"
+          />
+          <Image
+            src="/images/smile3.jpg"
+            alt="financial"
+            width={220}
+            height={220}
+            className="border-2 border-[#03234D]"
+            style={{ borderRadius: "80px 80px 0 60px " }}
+            loading="lazy"
+          />
+        </div>
           </div>
         </div>
+      </div>
+      </div>
+    
       </div>
       <div className="lg:container lg:mx-auto flex flex-col lg:flex-row justify-center gap-5 lg:gap-20 lg:mb-20 mb-10">
         <div className="lg:w-1/1 p-2 lg:p-0">
