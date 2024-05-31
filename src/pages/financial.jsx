@@ -77,7 +77,6 @@ const Financial = () => {
           <h4 className="mt-10 lg:mt-40 mb-2 lg:mb-10 text-yellow-600 text-xl lg:text-3xl">
             How it working
           </h4>
-
           <h1 className="text-lg lg:text-2xl mb-3 lg:mb-5 font-bold">
             Alignment of your wealth and values.
           </h1>
